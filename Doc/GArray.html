@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>template<class TYPE> class  _GCONTAINER_H_::GArray</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>template<class TYPE> class  GArray</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GArray</A>: public <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt;</H2>
-<BLOCKQUOTE>Dynamic array.</BLOCKQUOTE>
+<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GArray</A></H2></H2><BLOCKQUOTE>Dynamic array.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,67 +23,67 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.5.4.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GArray</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.1">GArray</A></B>()
 <DD><I>Constructs an empty array.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GArray</B>(int hibound)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.2">GArray</A></B>(int hibound)
 <DD><I>Constructs an array with subscripts in range 0 to <TT>hibound</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GArray</B>(int lobound, int hibound)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.3">GArray</A></B>(int lobound, int hibound)
 <DD><I>Constructs an array with subscripts in range <TT>lobound</TT> to <TT>hibound</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GArray</B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.4">GArray</A></B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
 <DD><I>Constructs an array by copying the elements of container <TT>gc</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GArray</B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.5">GArray</A></B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.5">GArray</A>&lt;TYPE&gt; &amp;gc)
 <DD><I>Copy constructor.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>lbound</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.4.6">lbound</A></B>() const 
 <DD><I>Returns the lower bound of the valid subscript range.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>hbound</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.4.7">hbound</A></B>() const 
 <DD><I>Returns the upper bound of the valid subscript range.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>TYPE&amp; <B>operator[]</B>(int n)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>TYPE&amp; <B><A HREF="#DOC.1.4.5.4.8">operator[]</A></B>(int n)
 <DD><I>Returns a reference to the array element for subscript <TT>n</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>const TYPE&amp; <B>operator[]</B>(int n) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>const TYPE&amp; <B><A HREF="#DOC.1.4.5.4.9">operator[]</A></B>(int n) const 
 <DD><I>Returns a constant reference to the array element for subscript <TT>n</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>TYPE&amp; <B>operator[]</B>(<!1><A HREF="GPosition.html">GPosition</A> pos)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>TYPE&amp; <B><A HREF="#DOC.1.4.5.4.10">operator[]</A></B>(<!1><A HREF="GPosition.html">GPosition</A> pos)
 <DD><I>Returns a reference to the array element for position <TT>n</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>const TYPE&amp; <B>operator[]</B>(<!1><A HREF="GPosition.html">GPosition</A> pos) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>const TYPE&amp; <B><A HREF="#DOC.1.4.5.4.11">operator[]</A></B>(<!1><A HREF="GPosition.html">GPosition</A> pos) const 
 <DD><I>Returns a constant reference to the array element for position <TT>n</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>operator TYPE* </B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.12">operator TYPE* </A></B>()
 <DD><I>Returns a pointer for reading or writing the array elements.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>operator const TYPE* </B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.4.13">operator const TYPE* </A></B>() const 
 <DD><I>Returns a pointer for reading (but not modifying) the array elements.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>empty</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.14">empty</A></B>()
 <DD><I>Erases the array contents.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>touch</B>(int n)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.15">touch</A></B>(int n)
 <DD><I>Extends the subscript range so that is contains <TT>n</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>resize</B>(int hibound)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.16">resize</A></B>(int hibound)
 <DD><I>Resets the valid subscript range to <TT>0</TT>---<TT>hibound</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>resize</B>(int lobound, int hibound)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.17">resize</A></B>(int lobound, int hibound)
 <DD><I>Resets the valid subscript range to <TT>lobound</TT>---<TT>hibound</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>shift</B>(int disp)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.18">shift</A></B>(int disp)
 <DD><I>Shifts the valid subscript range.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>del</B>(int n, unsigned int howmany=1)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.19">del</A></B>(int n, unsigned int howmany=1)
 <DD><I>Deletes array elements.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.20"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>ins</B>(int n, const TYPE &amp;val, unsigned int howmany=1)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.4.20">ins</A></B>(int n, const TYPE &amp;val, unsigned int howmany=1)
 <DD><I>Insert new elements into an array.</I>
 <DT>
-<A HREF="#DOC.1.4.5.4.21"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp; <B>operator= </B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A> &amp;ga)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GArray.html">GArray</A>&lt;TYPE&gt; &amp; <B><A HREF="#DOC.1.4.5.4.21">operator= </A></B>(const <!1><A HREF="GArray.html">GArray</A> &amp;ga)
 <DD><I>Copy operator.</I>
 </DL></P>
 
@@ -114,7 +115,7 @@
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Dynamic array.  
@@ -123,31 +124,33 @@ elements of type <TT>TYPE</TT>.  Each element is identified by an integer
 subscript.  The valid subscripts range is defined by dynamically
 adjustable lower- and upper-bounds.  Besides accessing and setting
 elements, member functions are provided to insert or delete elements at
-specified positions.<P>This template class must be able to access
+specified positions.
+
+<P>This template class must be able to access
 <UL>
 <LI> a null constructor <TT>TYPE::TYPE()</TT>, 
-<LI> a copy constructor <TT>TYPE::TYPE(const TYPE &amp;)</TT>,
-<LI> and a copy operator <TT>TYPE &amp; operator=(const TYPE &amp;)</TT>.
+<LI> a copy constructor <TT>TYPE::TYPE(const&nbsp;TYPE&nbsp;&amp;)</TT>,
+<LI> and a copy operator <TT>TYPE&nbsp;&amp;&nbsp;operator=(const&nbsp;TYPE&nbsp;&amp;)</TT>.
 </UL> </BLOCKQUOTE>
 <DL>
 
-<A NAME="GArray">
-<A NAME="DOC.1.4.5.4.1">
+<A NAME="GArray"></A>
+<A NAME="DOC.1.4.5.4.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GArray()</B></TT>
 <DD>Constructs an empty array. The valid subscript range is initially
 empty. Member function <TT>touch</TT> and <TT>resize</TT> provide convenient ways
 to enlarge the subscript range. 
 <DL><DT><DD></DL><P>
-<A NAME="GArray">
-<A NAME="DOC.1.4.5.4.2">
+<A NAME="GArray"></A>
+<A NAME="DOC.1.4.5.4.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GArray(int hibound)</B></TT>
 <DD>Constructs an array with subscripts in range 0 to <TT>hibound</TT>. 
 The subscript range can be subsequently modified with member functions
 <TT>touch</TT> and <TT>resize</TT>.
 
 <DL><DT><DT><B>Parameters:</B><DD><B>hibound</B> -  upper bound of the initial subscript range. <BR><DD></DL><P>
-<A NAME="GArray">
-<A NAME="DOC.1.4.5.4.3">
+<A NAME="GArray"></A>
+<A NAME="DOC.1.4.5.4.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GArray(int lobound, int hibound)</B></TT>
 <DD>Constructs an array with subscripts in range <TT>lobound</TT> to <TT>hibound</TT>.  
 The subscript range can be subsequently modified with member functions
@@ -155,33 +158,33 @@ The subscript range can be subsequently modified with member functions
 
 <DL><DT><DT><B>Parameters:</B><DD><B>lobound</B> -  lower bound of the initial subscript range.
 <BR><B>hibound</B> -  upper bound of the initial subscript range. <BR><DD></DL><P>
-<A NAME="GArray">
-<A NAME="DOC.1.4.5.4.4">
+<A NAME="GArray"></A>
+<A NAME="DOC.1.4.5.4.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GArray(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)</B></TT>
 <DD>Constructs an array by copying the elements of container <TT>gc</TT>.
 The valid subscript will range from zero to the number of 
 elements in container <TT>gc</TT> minus one.      
 
 <DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  container from which elements will be copied. <BR><DD></DL><P>
-<A NAME="GArray">
-<A NAME="DOC.1.4.5.4.5">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GArray(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp;gc)</B></TT>
+<A NAME="GArray"></A>
+<A NAME="DOC.1.4.5.4.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GArray(const <!1><A HREF="GArray.html#DOC.1.4.5.4.5">GArray</A>&lt;TYPE&gt; &amp;gc)</B></TT>
 <DD>Copy constructor. The resulting array will have the same
 valid subscript range as array <TT>gc</TT>. All elements in <TT>gc</TT>
 will be copied into the constructed array. 
 <DL><DT><DD></DL><P>
-<A NAME="lbound">
-<A NAME="DOC.1.4.5.4.6">
+<A NAME="lbound"></A>
+<A NAME="DOC.1.4.5.4.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int lbound() const </B></TT>
 <DD>Returns the lower bound of the valid subscript range. 
 <DL><DT><DD></DL><P>
-<A NAME="hbound">
-<A NAME="DOC.1.4.5.4.7">
+<A NAME="hbound"></A>
+<A NAME="DOC.1.4.5.4.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int hbound() const </B></TT>
 <DD>Returns the upper bound of the valid subscript range. 
 <DL><DT><DD></DL><P>
-<A NAME="operator[]">
-<A NAME="DOC.1.4.5.4.8">
+<A NAME="operator[]"></A>
+<A NAME="DOC.1.4.5.4.8"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>TYPE&amp; operator[](int n)</B></TT>
 <DD>Returns a reference to the array element for subscript <TT>n</TT>.  This
 reference can be used for both reading (as "<TT>a[n]</TT>") and writing (as
@@ -189,35 +192,35 @@ reference can be used for both reading (as "<TT>a[n]</TT>") and writing (as
 subscript range: an exception <!1><A HREF="GException.html">GException</A> is thrown if argument <TT>n</TT>
 is not in the valid subscript range. 
 <DL><DT><DD></DL><P>
-<A NAME="operator[]">
-<A NAME="DOC.1.4.5.4.9">
+<A NAME="operator[]"></A>
+<A NAME="DOC.1.4.5.4.9"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>const TYPE&amp; operator[](int n) const </B></TT>
 <DD>Returns a constant reference to the array element for subscript <TT>n</TT>.
 This reference can only be used for reading (as "<TT>a[n]</TT>") an array
 element.  This operation will not extend the valid subscript range: an
 exception <!1><A HREF="GException.html">GException</A> is thrown if argument <TT>n</TT> is not in the valid
 subscript range.  This variant of <TT>operator[]</TT> is necessary when dealing
-with a <TT>const GArray&lt;TYPE&gt;</TT>. 
+with a <TT>const&nbsp;GArray&lt;TYPE&gt;</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="operator[]">
-<A NAME="DOC.1.4.5.4.10">
+<A NAME="operator[]"></A>
+<A NAME="DOC.1.4.5.4.10"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>TYPE&amp; operator[](<!1><A HREF="GPosition.html">GPosition</A> pos)</B></TT>
 <DD>Returns a reference to the array element for position <TT>n</TT>.  This
 reference can be used for both reading and writing an array element.  An
 exception <!1><A HREF="GException.html">GException</A> is thrown if argument <TT>n</TT> is not a valid
 <TT>GPosition</TT> for this container. 
 <DL><DT><DD></DL><P>
-<A NAME="operator[]">
-<A NAME="DOC.1.4.5.4.11">
+<A NAME="operator[]"></A>
+<A NAME="DOC.1.4.5.4.11"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>const TYPE&amp; operator[](<!1><A HREF="GPosition.html">GPosition</A> pos) const </B></TT>
 <DD>Returns a constant reference to the array element for position <TT>n</TT>.
 This reference can only be used for reading an array element.  An
 exception <!1><A HREF="GException.html">GException</A> is thrown if argument <TT>n</TT> is not a valid
 <TT>GPosition</TT> for this container. This variant of <TT>operator[]</TT> is
-necessary when dealing with a <TT>const GArray&lt;TYPE&gt;</TT>. 
+necessary when dealing with a <TT>const&nbsp;GArray&lt;TYPE&gt;</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="operator TYPE* ">
-<A NAME="DOC.1.4.5.4.12">
+<A NAME="operator TYPE* "></A>
+<A NAME="DOC.1.4.5.4.12"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> operator TYPE* ()</B></TT>
 <DD>Returns a pointer for reading or writing the array elements.  This
 pointer can be used to access the array elements with the same
@@ -226,8 +229,8 @@ long as the valid subscript range is unchanged. If you change the
 subscript range, you must stop using the pointers returned by prior
 invocation of this conversion operator. 
 <DL><DT><DD></DL><P>
-<A NAME="operator const TYPE* ">
-<A NAME="DOC.1.4.5.4.13">
+<A NAME="operator const TYPE* "></A>
+<A NAME="DOC.1.4.5.4.13"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> operator const TYPE* () const </B></TT>
 <DD>Returns a pointer for reading (but not modifying) the array elements.
 This pointer can be used to access the array elements with the same
@@ -236,14 +239,14 @@ long as the valid subscript range is unchanged. If you change the
 subscript range, you must stop using the pointers returned by prior
 invocation of this conversion operator. 
 <DL><DT><DD></DL><P>
-<A NAME="empty">
-<A NAME="DOC.1.4.5.4.14">
+<A NAME="empty"></A>
+<A NAME="DOC.1.4.5.4.14"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void empty()</B></TT>
 <DD>Erases the array contents. All elements in the array are destroyed.  
 The valid subscript range is set to the empty range. 
 <DL><DT><DD></DL><P>
-<A NAME="touch">
-<A NAME="DOC.1.4.5.4.15">
+<A NAME="touch"></A>
+<A NAME="DOC.1.4.5.4.15"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void touch(int n)</B></TT>
 <DD>Extends the subscript range so that is contains <TT>n</TT>.
 This function does nothing if <TT>n</TT> is already int the valid subscript range.
@@ -252,16 +255,16 @@ are set to <TT>n</TT>.  Otherwise the valid subscript range is extended
 to encompass <TT>n</TT>. This function is very handy when called before setting
 an array element:
 <PRE>
-        int lineno=1;
-        GArray&lt;GString&gt; a;
-        while (! end_of_file()) { 
-          a.touch[lineno]; 
-          a[lineno++] = read_a_line(); 
-        }
-      </PRE> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;lineno=1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GArray&lt;GString&gt;&nbsp;a;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(!&nbsp;end_of_file())&nbsp;{&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.touch[lineno];&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[lineno++]&nbsp;=&nbsp;read_a_line();&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</PRE> 
 <DL><DT><DD></DL><P>
-<A NAME="resize">
-<A NAME="DOC.1.4.5.4.16">
+<A NAME="resize"></A>
+<A NAME="DOC.1.4.5.4.16"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void resize(int hibound)</B></TT>
 <DD>Resets the valid subscript range to <TT>0</TT>---<TT>hibound</TT>. 
 This function may destroy some array elements and may construct
@@ -269,8 +272,8 @@ new array elements with the null constructor. Setting <TT>hibound</TT> to
 <TT>-1</TT> resets the valid subscript range to the empty range.
 
 <DL><DT><DT><B>Parameters:</B><DD><B>hibound</B> -  upper bound of the new subscript range. <BR><DD></DL><P>
-<A NAME="resize">
-<A NAME="DOC.1.4.5.4.17">
+<A NAME="resize"></A>
+<A NAME="DOC.1.4.5.4.17"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void resize(int lobound, int hibound)</B></TT>
 <DD>Resets the valid subscript range to <TT>lobound</TT>---<TT>hibound</TT>. 
 This function may destroy some array elements and may construct
@@ -279,15 +282,15 @@ new array elements with the null constructor. Setting <TT>lobound</TT> to <TT>0<
 
 <DL><DT><DT><B>Parameters:</B><DD><B>lobound</B> -  lower bound of the new subscript range.
 <BR><B>hibound</B> -  upper bound of the new subscript range. <BR><DD></DL><P>
-<A NAME="shift">
-<A NAME="DOC.1.4.5.4.18">
+<A NAME="shift"></A>
+<A NAME="DOC.1.4.5.4.18"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void shift(int disp)</B></TT>
 <DD>Shifts the valid subscript range. Argument <TT>disp</TT> is added to both 
 bounds of the valid subscript range. Array elements previously
 located at subscript <TT>x</TT> will now be located at subscript <TT>x+disp</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="del">
-<A NAME="DOC.1.4.5.4.19">
+<A NAME="del"></A>
+<A NAME="DOC.1.4.5.4.19"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void del(int n, unsigned int howmany=1)</B></TT>
 <DD>Deletes array elements. The array elements corresponding to
 subscripts <TT>n</TT>...<TT>n+howmany-1</TT> are destroyed. All array elements
@@ -297,8 +300,8 @@ bound is reduced in order to account for this shift.
 
 <DL><DT><DT><B>Parameters:</B><DD><B>n</B> -  subscript of the first element to delete.
 <BR><B>howmany</B> -  number of elements to delete. <BR><DD></DL><P>
-<A NAME="ins">
-<A NAME="DOC.1.4.5.4.20">
+<A NAME="ins"></A>
+<A NAME="DOC.1.4.5.4.20"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void ins(int n, const TYPE &amp;val, unsigned int howmany=1)</B></TT>
 <DD>Insert new elements into an array. This function inserts
 <TT>howmany</TT> elements at position <TT>n</TT> into the array. The initial value <TT>val</TT>
@@ -309,9 +312,9 @@ valid subscript range is increased in order to account for this shift.
 <DL><DT><DT><B>Parameters:</B><DD><B>n</B> -  subscript of the first inserted element.
 <BR><B>val</B> -  initial value of the new elements.
 <BR><B>howmany</B> -  number of elements to insert. <BR><DD></DL><P>
-<A NAME="operator= ">
-<A NAME="DOC.1.4.5.4.21">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp; operator= (const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A> &amp;ga)</B></TT>
+<A NAME="operator= "></A>
+<A NAME="DOC.1.4.5.4.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GArray.html">GArray</A>&lt;TYPE&gt; &amp; operator= (const <!1><A HREF="GArray.html">GArray</A> &amp;ga)</B></TT>
 <DD>Copy operator. All elements in array <TT>*this</TT> are destroyed.
 The valid subscript range is set to the valid subscript range of
 array <TT>ga</TT>. All elements of <TT>ga</TT> are copied into array <TT>*this</TT>. 
@@ -321,5 +324,5 @@ array <TT>ga</TT>. All elements of <TT>ga</TT> are copied into array <TT>*this</
 </B><DD><A HREF="GSArray.html">GSArray</A><BR>
 </DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>template<class TYPE> class  _GCONTAINER_H_::GList</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>template<class TYPE> class  GList</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GList</A>: public <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt;</H2>
-<BLOCKQUOTE>Doubly linked list.</BLOCKQUOTE>
+<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GList</A></H2></H2><BLOCKQUOTE>Doubly linked list.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -21,48 +22,60 @@
 
 <DL>
 <P><DL>
-<DT><H3>Public Fields</H3><DD><DT>
-<A HREF="#DOC.1.4.5.6.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>Inserts an element after the last element of the list.</B>
-<DD><I></I>
-</DL></P>
-
-<P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.5.6.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GList</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.6.1">GList</A></B>()
 <DD><I>Null Constructor.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GList</B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.6.2">GList</A></B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
 <DD><I>Constructs a list by copying the elements of container <TT>gc</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GList</B>(const <!1><A HREF="GList.html#DOC.1.4.5.6.1">GList</A>&lt;TYPE&gt; &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.6.3">GList</A></B>(const <!1><A HREF="GList.html#DOC.1.4.5.6.3">GList</A>&lt;TYPE&gt; &amp;gc)
 <DD><I>Constructs a list by copying the elements of list <TT>gc</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>~GList</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.6.4">~GList</A></B>()
 <DD><I>Virtual destructor.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>isempty</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.6.5">isempty</A></B>() const 
 <DD><I>Tests whether a list is empty.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>TYPE&amp; <B>operator[]</B>(<!1><A HREF="GPosition.html">GPosition</A> pos)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>TYPE&amp; <B><A HREF="#DOC.1.4.5.6.6">operator[]</A></B>(<!1><A HREF="GPosition.html">GPosition</A> pos)
 <DD><I>Returns a reference to the list element at position <TT>pos</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>const TYPE&amp; <B>operator[]</B>(<!1><A HREF="GPosition.html">GPosition</A> pos) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>const TYPE&amp; <B><A HREF="#DOC.1.4.5.6.7">operator[]</A></B>(<!1><A HREF="GPosition.html">GPosition</A> pos) const 
 <DD><I>Returns a constant reference to the list element at position <TT>pos</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>operator==</B>(const <!1><A HREF="GList.html#DOC.1.4.5.6.1">GList</A>&lt;TYPE&gt; &amp;l2) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.6.8">operator==</A></B>(const <!1><A HREF="GList.html">GList</A>&lt;TYPE&gt; &amp;l2) const 
 <DD><I>Compares two lists.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>nth</B>(unsigned int n, <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.6.9">nth</A></B>(unsigned int n, <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
 <DD><I>Initializes position <TT>pos</TT> for accessing the <TT>n</TT>-th list element.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>contains</B>(const TYPE &amp;elt) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.6.10">contains</A></B>(const TYPE &amp;elt) const 
 <DD><I>Tests whether the list contains a given element.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>search</B>(const TYPE &amp;elt, <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.6.11">search</A></B>(const TYPE &amp;elt, <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
 <DD><I>Searches the list for a given element.</I>
 <DT>
-<A HREF="#DOC.1.4.5.6.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>empty</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.6.12">empty</A></B>()
 <DD><I>Erases the list contents.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.6.13">append</A></B>(const TYPE&amp; elt)
+<DD><I>Inserts an element after the last element of the list.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.6.14">prepend</A></B>(const TYPE&amp; elt)
+<DD><I>Inserts an element before the first element of the list.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.6.15">insert_after</A></B>(<!1><A HREF="GPosition.html">GPosition</A> pos, const TYPE&amp; elt)
+<DD><I>Inserts an element after the list element at position <TT>pos</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.6.16">insert_before</A></B>(<!1><A HREF="GPosition.html">GPosition</A> pos, const TYPE&amp; elt)
+<DD><I>Inserts an element before the list element at position <TT>pos</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.6.17">del</A></B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos)
+<DD><I>Destroys the list element at position <TT>pos</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GList.html">GList</A>&lt;TYPE&gt; &amp; <B><A HREF="#DOC.1.4.5.6.18">operator= </A></B>(const <!1><A HREF="GList.html">GList</A>&lt;TYPE&gt;&amp; gl)
+<DD><I>Copy operator.</I>
 </DL></P>
 
 </DL>
@@ -93,49 +106,51 @@
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Doubly linked list.
 Template class <TT>GList&lt;TYPE&gt;</TT> implements a doubly linked list of elements
 of type <TT>TYPE</TT>.  Member functions are provided to search the list for an element,
-to insert or delete elements at specified positions.<P>This template class must be able to access
+to insert or delete elements at specified positions.
+
+<P>This template class must be able to access
 <UL>
-<LI> a copy constructor <TT>TYPE::TYPE(const TYPE &amp;)</TT>,
-<LI> and a comparison operator <TT>TYPE::operator==(const TYPE &amp;)</TT>.
+<LI> a copy constructor <TT>TYPE::TYPE(const&nbsp;TYPE&nbsp;&amp;)</TT>,
+<LI> and a comparison operator <TT>TYPE::operator==(const&nbsp;TYPE&nbsp;&amp;)</TT>.
 </UL> </BLOCKQUOTE>
 <DL>
 
-<A NAME="GList">
-<A NAME="DOC.1.4.5.6.1">
+<A NAME="GList"></A>
+<A NAME="DOC.1.4.5.6.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GList()</B></TT>
 <DD>Null Constructor. Constructs a list with zero elements. 
 <DL><DT><DD></DL><P>
-<A NAME="GList">
-<A NAME="DOC.1.4.5.6.2">
+<A NAME="GList"></A>
+<A NAME="DOC.1.4.5.6.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GList(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)</B></TT>
 <DD>Constructs a list by copying the elements of container <TT>gc</TT>.
 
 <DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  container from which elements will be copied. <BR><DD></DL><P>
-<A NAME="GList">
-<A NAME="DOC.1.4.5.6.3">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GList(const <!1><A HREF="GList.html#DOC.1.4.5.6.1">GList</A>&lt;TYPE&gt; &amp;gc)</B></TT>
+<A NAME="GList"></A>
+<A NAME="DOC.1.4.5.6.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GList(const <!1><A HREF="GList.html#DOC.1.4.5.6.3">GList</A>&lt;TYPE&gt; &amp;gc)</B></TT>
 <DD>Constructs a list by copying the elements of list <TT>gc</TT>.
 
 <DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  list from which elements will be copied. <BR><DD></DL><P>
-<A NAME="~GList">
-<A NAME="DOC.1.4.5.6.4">
+<A NAME="~GList"></A>
+<A NAME="DOC.1.4.5.6.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ~GList()</B></TT>
 <DD>Virtual destructor. 
 <DL><DT><DD></DL><P>
-<A NAME="isempty">
-<A NAME="DOC.1.4.5.6.5">
+<A NAME="isempty"></A>
+<A NAME="DOC.1.4.5.6.5"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int isempty() const </B></TT>
 <DD>Tests whether a list is empty.  Returns a non zero value if the list
 contains no elements. 
 <DL><DT><DD></DL><P>
-<A NAME="operator[]">
-<A NAME="DOC.1.4.5.6.6">
+<A NAME="operator[]"></A>
+<A NAME="DOC.1.4.5.6.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>TYPE&amp; operator[](<!1><A HREF="GPosition.html">GPosition</A> pos)</B></TT>
 <DD>Returns a reference to the list element at position <TT>pos</TT>.  This
 reference can be used for both reading (as "<TT>a[n]</TT>") and modifying (as
@@ -143,66 +158,98 @@ reference can be used for both reading (as "<TT>a[n]</TT>") and modifying (as
 <TT>pos</TT> is not a valid position for this list. See <!1><A HREF="GPosition.html">GPosition</A> for
 efficient operations on positions. 
 <DL><DT><DD></DL><P>
-<A NAME="operator[]">
-<A NAME="DOC.1.4.5.6.7">
+<A NAME="operator[]"></A>
+<A NAME="DOC.1.4.5.6.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>const TYPE&amp; operator[](<!1><A HREF="GPosition.html">GPosition</A> pos) const </B></TT>
 <DD>Returns a constant reference to the list element at position <TT>pos</TT>.
 This reference only be used for reading a list element.  An exception
 <!1><A HREF="GException.html">GException</A> is thrown if <TT>pos</TT> is not a valid position. This
-variant of <TT>operator[]</TT> is necessary when dealing with a <TT>const</TT>GList&lt;TYPE&gt;<TT>.  See \Ref{GPosition} for efficient operations on</TT>positions. 
+variant of <TT>operator[]</TT> is necessary when dealing with a <TT>const</TT>GList&lt;TYPE&gt;<TT>.&nbsp;&nbsp;See&nbsp;\Ref{GPosition}&nbsp;for&nbsp;efficient&nbsp;operations&nbsp;on</TT>positions. 
 <DL><DT><DD></DL><P>
-<A NAME="operator==">
-<A NAME="DOC.1.4.5.6.8">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int operator==(const <!1><A HREF="GList.html#DOC.1.4.5.6.1">GList</A>&lt;TYPE&gt; &amp;l2) const </B></TT>
+<A NAME="operator=="></A>
+<A NAME="DOC.1.4.5.6.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int operator==(const <!1><A HREF="GList.html">GList</A>&lt;TYPE&gt; &amp;l2) const </B></TT>
 <DD>Compares two lists. Returns a non zero value if and only if both lists
-contain the same elements (as tested by <TT>TYPE::operator==(const TYPE&amp;)</TT>
+contain the same elements (as tested by <TT>TYPE::operator==(const&nbsp;TYPE&amp;)</TT>
 in the same order. 
 <DL><DT><DD></DL><P>
-<A NAME="nth">
-<A NAME="DOC.1.4.5.6.9">
+<A NAME="nth"></A>
+<A NAME="DOC.1.4.5.6.9"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int nth(unsigned int n, <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
 <DD>Initializes position <TT>pos</TT> for accessing the <TT>n</TT>-th list element.  If
 the list contains less than <TT>n</TT> elements, function <TT>nth</TT> returns zero
 and the position <TT>pos</TT> is left unchanged. Otherwise function <TT>nth</TT>
 returns a non zero value.  Position <TT>pos</TT> can be subsequently used to
-access the list element with <TT>operator[](const GPosition&amp;)</TT>.  The
+access the list element with <TT>operator[](const&nbsp;GPosition&amp;)</TT>.  The
 operation works by sequentially scanning the list until reaching the
 <TT>n</TT>-th element. 
 <DL><DT><DD></DL><P>
-<A NAME="contains">
-<A NAME="DOC.1.4.5.6.10">
+<A NAME="contains"></A>
+<A NAME="DOC.1.4.5.6.10"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int contains(const TYPE &amp;elt) const </B></TT>
 <DD>Tests whether the list contains a given element.  Returns a non zero
-value if and only if the list contains an element equal to
-checked by <TT>TYPE::operator==(const TYPE&amp;)</TT>. 
+value if and only if the list contains an element equal to <TT>elt</TT> as
+checked by <TT>TYPE::operator==(const&nbsp;TYPE&amp;)</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="search">
-<A NAME="DOC.1.4.5.6.11">
+<A NAME="search"></A>
+<A NAME="DOC.1.4.5.6.11"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int search(const TYPE &amp;elt, <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
 <DD>Searches the list for a given element. If position <TT>pos</TT> is a valid
 position for this list, the search starts at the specified position. If
 position <TT>pos</TT> is not a valid position, the search starts at the
-beginning of the list.  The list elements are sequentially compared with<P>is equal to
+beginning of the list.  The list elements are sequentially compared with
+<TT>elt</TT> using <TT>TYPE::operator==(const&nbsp;TYPE&amp;)</TT>.  As soon as a list element
+is equal to <TT>elt</TT>, function <TT>search</TT> initializes argument <TT>pos</TT> with the
 position of this list element and returns a non zero value.  If however
 the search reaches the end of the list, function <TT>search</TT> returns
 zero without altering <TT>pos</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="empty">
-<A NAME="DOC.1.4.5.6.12">
+<A NAME="empty"></A>
+<A NAME="DOC.1.4.5.6.12"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void empty()</B></TT>
 <DD>Erases the list contents.  All list elements are destroyed and
 unlinked. The list is left with zero elements. 
 <DL><DT><DD></DL><P>
-<A NAME="Inserts an element after the last element of the list.">
-<A NAME="DOC.1.4.5.6.13">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Inserts an element after the last element of the list.</B></TT>
+<A NAME="append"></A>
+<A NAME="DOC.1.4.5.6.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void append(const TYPE&amp; elt)</B></TT>
 <DD>Inserts an element after the last element of the list. 
-The new element is initialized with a copy of argument
-void append(const TYPE&amp; elt);
-
+The new element is initialized with a copy of argument <TT>elt</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="prepend"></A>
+<A NAME="DOC.1.4.5.6.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void prepend(const TYPE&amp; elt)</B></TT>
+<DD>Inserts an element before the first element of the list. 
+The new element is initialized with a copy of argument <TT>elt</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="insert_after"></A>
+<A NAME="DOC.1.4.5.6.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void insert_after(<!1><A HREF="GPosition.html">GPosition</A> pos, const TYPE&amp; elt)</B></TT>
+<DD>Inserts an element after the list element at position <TT>pos</TT>.  An
+exception <!1><A HREF="GException.html">GException</A> is thrown if <TT>pos</TT> is not a valid position
+for this list.  The new element is initialized with a copy of <TT>elt</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="insert_before"></A>
+<A NAME="DOC.1.4.5.6.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void insert_before(<!1><A HREF="GPosition.html">GPosition</A> pos, const TYPE&amp; elt)</B></TT>
+<DD>Inserts an element before the list element at position <TT>pos</TT>.  An
+exception <!1><A HREF="GException.html">GException</A> is thrown if <TT>pos</TT> is not a valid position
+for this list.  The new element is initialized with a copy of <TT>elt</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="del"></A>
+<A NAME="DOC.1.4.5.6.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void del(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos)</B></TT>
+<DD>Destroys the list element at position <TT>pos</TT>. This function does 
+nothing unless position <TT>pos</TT> is a valid position for this list 
+<DL><DT><DD></DL><P>
+<A NAME="operator= "></A>
+<A NAME="DOC.1.4.5.6.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GList.html">GList</A>&lt;TYPE&gt; &amp; operator= (const <!1><A HREF="GList.html">GList</A>&lt;TYPE&gt;&amp; gl)</B></TT>
+<DD>Copy operator.  
+The list is reinitialized by copying all elements of list <TT>gl</TT>. 
 <DL><DT><DD></DL><P></DL>
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DT><B>Friends:</B><DD>  class GListNode<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

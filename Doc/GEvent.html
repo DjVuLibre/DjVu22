@@ -1,49 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _GTHREADS_H_::GEvent</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GEvent</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">GEvent</A></H2>
-<BLOCKQUOTE>Thread synchronization class.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GEvent</A></H2></H2><BLOCKQUOTE>Thread synchronization class.</BLOCKQUOTE>
 <HR>
 
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.7.3.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>set</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.7.3.1">set</A></B>()
 <DD><I>Sets the event object to <EM>signaled</EM>.</I>
 <DT>
-<A HREF="#DOC.1.4.7.3.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>wait</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.7.3.2">wait</A></B>()
 <DD><I>Waits until the event object is <EM>signaled</EM>.</I>
 <DT>
-<A HREF="#DOC.1.4.7.3.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>wait</B>(int timeout)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.7.3.3">wait</A></B>(int timeout)
 <DD><I>Waits until the event object is <EM>signaled</EM> with a timeout.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Thread synchronization class. Class <TT>GEvent</TT> provides a simple way to
 synchronize several threads.  An event object can be either <EM>signaled</EM>
 or <EM>non-signaled</EM>. Event objects are initially <EM>
 non-signaled</EM>. Function <!1><A HREF="GEvent.html#DOC.1.4.7.3.1">set</A> turns an event object to <EM>signaled</EM>.
-Function <!1><A HREF="GEvent.html#DOC.1.4.7.3.3">wait</A> waits until the event object is <EM>signaled</EM> and
-then turns it to <EM>non-signaled</EM>.<P><B>Note</B>. Both the copy constructor and the copy operator are declared
+Function <!1><A HREF="GEvent.html#DOC.1.4.7.3.2">wait</A> waits until the event object is <EM>signaled</EM> and
+then turns it to <EM>non-signaled</EM>.
+
+<P><B>Note</B>. Both the copy constructor and the copy operator are declared
 as private members. It is therefore not possible to make multiple copies
 of instances of this class, as implied by the class semantic. </BLOCKQUOTE>
 <DL>
 
-<A NAME="set">
-<A NAME="DOC.1.4.7.3.1">
+<A NAME="set"></A>
+<A NAME="DOC.1.4.7.3.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void set()</B></TT>
 <DD>Sets the event object to <EM>signaled</EM>. 
 <DL><DT><DD></DL><P>
-<A NAME="wait">
-<A NAME="DOC.1.4.7.3.2">
+<A NAME="wait"></A>
+<A NAME="DOC.1.4.7.3.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void wait()</B></TT>
 <DD>Waits until the event object is <EM>signaled</EM>.  If the event object was
 <EM>signaled</EM> before, the event object is turned to <EM>non signaled</EM>
@@ -52,15 +55,15 @@ signaled</EM>, this function waits until another thread calls function
 <!1><A HREF="GEvent.html#DOC.1.4.7.3.1">set</A>, then turns the object to the <EM>non-signaled</EM> state and
 returns. 
 <DL><DT><DD></DL><P>
-<A NAME="wait">
-<A NAME="DOC.1.4.7.3.3">
+<A NAME="wait"></A>
+<A NAME="DOC.1.4.7.3.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void wait(int timeout)</B></TT>
 <DD>Waits until the event object is <EM>signaled</EM> with a timeout.  This
-function is similar to <!1><A HREF="GEvent.html#DOC.1.4.7.3.3">wait</A> but will return after
+function is similar to GEvent::wait but will return after
 <TT>timeout</TT> milliseconds, regardless of the status of the event object.  
 <DL><DT><DD></DL><P></DL>
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

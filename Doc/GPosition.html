@@ -1,39 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  GContainerBaseclass  GPositionclass  _GCONTAINER_H_::GPosition</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GPosition</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  GContainerBaseclass  GPositionclass  <A HREF="#DOC.DOCU">GPosition</A></H2>
-<BLOCKQUOTE>Generic iterator class.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GPosition</A></H2></H2><BLOCKQUOTE>Generic iterator class.</BLOCKQUOTE>
 <HR>
 
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.5.1.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GPosition</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.1.1">GPosition</A></B>()
 <DD><I>Constructs a null <TT>GPosition</TT> object.</I>
 <DT>
-<A HREF="#DOC.1.4.5.1.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GPosition</B>(const <!1><A HREF="GContainerBase.html">GContainerBase</A> &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.1.2">GPosition</A></B>(const <!1><A HREF="GContainerBase.html">GContainerBase</A> &amp;gc)
 <DD><I>Constructs a <TT>GPosition</TT> object for a container.</I>
 <DT>
-<A HREF="#DOC.1.4.5.1.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>operator int</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.1.3">operator int</A></B>()
 <DD><I>Tests if a position is valid.</I>
 <DT>
-<A HREF="#DOC.1.4.5.1.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>operator !</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.5.1.4">operator !</A></B>()
 <DD><I>Tests if a position is valid.</I>
 <DT>
-<A HREF="#DOC.1.4.5.1.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GPosition.html#DOC.1.4.5.1.1">GPosition</A>&amp; <B>operator ++</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GPosition.html">GPosition</A>&amp; <B><A HREF="#DOC.1.4.5.1.5">operator ++</A></B>()
 <DD><I>Moves to the next position.</I>
 <DT>
-<A HREF="#DOC.1.4.5.1.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GPosition.html#DOC.1.4.5.1.1">GPosition</A>&amp; <B>operator --</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GPosition.html">GPosition</A>&amp; <B><A HREF="#DOC.1.4.5.1.6">operator --</A></B>()
 <DD><I>Moves to the previous position.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Generic iterator class.
@@ -41,54 +42,54 @@ This class represents a position in an arbitrary container
 It provides a generic way to iterate over the objects contained
 in a container.  This is achieved with the following code:
 <PRE>
-    GArray&lt;int&gt;    a;
-    GList&lt;GString&gt; l;
-    for (GPosition pos=a.firstpos(); pos; ++pos) 
-      l.append(a[pos]); 
-    for (GPosition pos=l.lastpos(); pos; --pos)
-      printf(&quot;%d\n&quot;, l[pos]);
-    </PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;GArray&lt;int&gt;&nbsp;&nbsp;&nbsp;&nbsp;a;
+&nbsp;&nbsp;&nbsp;&nbsp;GList&lt;GString&gt;&nbsp;l;
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(GPosition&nbsp;pos=a.firstpos();&nbsp;pos;&nbsp;++pos)&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l.append(a[pos]);&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(GPosition&nbsp;pos=l.lastpos();&nbsp;pos;&nbsp;--pos)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%d\n&quot;,&nbsp;l[pos]);
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
 A <TT>GPosition</TT> object remains meaningful as long as you do not modify the
 contents of the underlying container.  You should not use a <TT>GPosition</TT>
 that was initialized before modifying the contents of container object.
 Undetermined results may occur (as they say...) </BLOCKQUOTE>
 <DL>
 
-<A NAME="GPosition">
-<A NAME="DOC.1.4.5.1.1">
+<A NAME="GPosition"></A>
+<A NAME="DOC.1.4.5.1.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GPosition()</B></TT>
 <DD>Constructs a null <TT>GPosition</TT> object. 
 <DL><DT><DD></DL><P>
-<A NAME="GPosition">
-<A NAME="DOC.1.4.5.1.2">
+<A NAME="GPosition"></A>
+<A NAME="DOC.1.4.5.1.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GPosition(const <!1><A HREF="GContainerBase.html">GContainerBase</A> &amp;gc)</B></TT>
 <DD>Constructs a <TT>GPosition</TT> object for a container.
 The constructed object denotes the first position in the container.
 
-<DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  reference to a <!1><A HREF="GArray.html">GArray</A>, <!1><A HREF="GList.html">GList</A> or GMap. <BR><DD></DL><P>
-<A NAME="operator int">
-<A NAME="DOC.1.4.5.1.3">
+<DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  reference to a <!1><A HREF="GArray.html">GArray</A>, <!1><A HREF="GList.html">GList</A> or <!1><A HREF="GMap.html">GMap</A>. <BR><DD></DL><P>
+<A NAME="operator int"></A>
+<A NAME="DOC.1.4.5.1.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> operator int()</B></TT>
 <DD>Tests if a position is valid.
 Returns true if <TT>this</TT> denotes a valid position in a container. 
 <DL><DT><DD></DL><P>
-<A NAME="operator !">
-<A NAME="DOC.1.4.5.1.4">
+<A NAME="operator !"></A>
+<A NAME="DOC.1.4.5.1.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int operator !()</B></TT>
 <DD>Tests if a position is valid.
 Returns true if <TT>this</TT> denotes an invalid position. 
 <DL><DT><DD></DL><P>
-<A NAME="operator ++">
-<A NAME="DOC.1.4.5.1.5">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GPosition.html#DOC.1.4.5.1.1">GPosition</A>&amp; operator ++()</B></TT>
+<A NAME="operator ++"></A>
+<A NAME="DOC.1.4.5.1.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GPosition.html">GPosition</A>&amp; operator ++()</B></TT>
 <DD>Moves to the next position.
 The <TT>GPosition</TT> object then points to the next position in the 
 corresponding container object. It is marked as invalid if no such
 position exists. 
 <DL><DT><DD></DL><P>
-<A NAME="operator --">
-<A NAME="DOC.1.4.5.1.6">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GPosition.html#DOC.1.4.5.1.1">GPosition</A>&amp; operator --()</B></TT>
+<A NAME="operator --"></A>
+<A NAME="DOC.1.4.5.1.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GPosition.html">GPosition</A>&amp; operator --()</B></TT>
 <DD>Moves to the previous position.
 The <TT>GPosition</TT> object then points to the previous position in the 
 corresponding container object. It is marked as invalid if no such
@@ -97,5 +98,5 @@ position exists.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>template<class TYPE> class  _GCONTAINER_H_::GSArray</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>template<class TYPE> class  GSArray</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GSArray</A>: public <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt;</H2>
-<BLOCKQUOTE>Sortable array.</BLOCKQUOTE>
+<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GSArray</A></H2></H2><BLOCKQUOTE>Sortable array.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,25 +23,25 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.5.5.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.5.1">GSArray</A></B>()
 <DD><I>Constructs an empty array.</I>
 <DT>
-<A HREF="#DOC.1.4.5.5.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(int hibound)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.5.2">GSArray</A></B>(int hibound)
 <DD><I>Constructs an array with subscripts in range 0 to <TT>hibound</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.5.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(int lobound, int hibound)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.5.3">GSArray</A></B>(int lobound, int hibound)
 <DD><I>Constructs an array with subscripts in range <TT>lobound</TT> to <TT>hibound</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.5.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.5.4">GSArray</A></B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
 <DD><I>Constructs an array by copying the elements of container <TT>gc</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.5.5.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp;gc)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.5.5.5">GSArray</A></B>(const <!1><A HREF="GArray.html">GArray</A>&lt;TYPE&gt; &amp;gc)
 <DD><I>Copy constructor.</I>
 <DT>
-<A HREF="#DOC.1.4.5.5.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>sort</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.5.6">sort</A></B>()
 <DD><I>Sort array elements.</I>
 <DT>
-<A HREF="#DOC.1.4.5.5.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>sort</B>(int lo, int hi)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.5.5.7">sort</A></B>(int lo, int hi)
 <DD><I>Sort array elements in subscript range <TT>lo</TT> to <TT>hi</TT>.</I>
 </DL></P>
 
@@ -79,7 +80,7 @@
 <DT>
 <IMG ALT="o" SRC=icon2.gif>void <B>ins</B>(int n, const TYPE &amp;val, unsigned int howmany=1)
 <DT>
-<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp; <B>operator= </B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A> &amp;ga)
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GArray.html">GArray</A>&lt;TYPE&gt; &amp; <B>operator= </B>(const <!1><A HREF="GArray.html">GArray</A> &amp;ga)
 </DL></P>
 
 </DL>
@@ -110,7 +111,7 @@
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Sortable array.  
@@ -119,26 +120,26 @@ elements. These sorting routines are implemented in a subclass in order
 to reduce the template instantiation overhead for class <TT>GArray</TT>.  Besides
 the <TT>TYPE</TT> constructors and operators required by class <TT>GArray</TT>, this
 template class must be able to access a less-or-equal comparison operator:
-<TT>TYPE::operator&lt;=(const TYPE&amp;)</TT>.  </BLOCKQUOTE>
+<TT>TYPE::operator&lt;=(const&nbsp;TYPE&amp;)</TT>.  </BLOCKQUOTE>
 <DL>
 
-<A NAME="GSArray">
-<A NAME="DOC.1.4.5.5.1">
+<A NAME="GSArray"></A>
+<A NAME="DOC.1.4.5.5.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray()</B></TT>
 <DD>Constructs an empty array. The valid subscript range is initially
 empty. Member function <TT>touch</TT> and <TT>resize</TT> provide convenient ways
 to enlarge the subscript range. 
 <DL><DT><DD></DL><P>
-<A NAME="GSArray">
-<A NAME="DOC.1.4.5.5.2">
+<A NAME="GSArray"></A>
+<A NAME="DOC.1.4.5.5.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(int hibound)</B></TT>
 <DD>Constructs an array with subscripts in range 0 to <TT>hibound</TT>. 
 The subscript range can be subsequently modified with member functions
 <TT>touch</TT> and <TT>resize</TT>.
 
 <DL><DT><DT><B>Parameters:</B><DD><B>hibound</B> -  upper bound of the initial subscript range. <BR><DD></DL><P>
-<A NAME="GSArray">
-<A NAME="DOC.1.4.5.5.3">
+<A NAME="GSArray"></A>
+<A NAME="DOC.1.4.5.5.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(int lobound, int hibound)</B></TT>
 <DD>Constructs an array with subscripts in range <TT>lobound</TT> to <TT>hibound</TT>.  
 The subscript range can be subsequently modified with member functions
@@ -146,30 +147,30 @@ The subscript range can be subsequently modified with member functions
 
 <DL><DT><DT><B>Parameters:</B><DD><B>lobound</B> -  lower bound of the initial subscript range.
 <BR><B>hibound</B> -  upper bound of the initial subscript range. <BR><DD></DL><P>
-<A NAME="GSArray">
-<A NAME="DOC.1.4.5.5.4">
+<A NAME="GSArray"></A>
+<A NAME="DOC.1.4.5.5.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)</B></TT>
 <DD>Constructs an array by copying the elements of container <TT>gc</TT>.
 The valid subscript will range from zero to the number of 
 elements in container <TT>gc</TT> minus one.      
 
 <DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  container from which elements will be copied. <BR><DD></DL><P>
-<A NAME="GSArray">
-<A NAME="DOC.1.4.5.5.5">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp;gc)</B></TT>
+<A NAME="GSArray"></A>
+<A NAME="DOC.1.4.5.5.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(const <!1><A HREF="GArray.html">GArray</A>&lt;TYPE&gt; &amp;gc)</B></TT>
 <DD>Copy constructor. The resulting array will have the same
 valid subscript range as array <TT>gc</TT>. All elements in <TT>gc</TT>
 will be copied into the constructed array. 
 <DL><DT><DD></DL><P>
-<A NAME="sort">
-<A NAME="DOC.1.4.5.5.6">
+<A NAME="sort"></A>
+<A NAME="DOC.1.4.5.5.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void sort()</B></TT>
 <DD>Sort array elements.  Sort all array elements in ascending order.  Array
 elements are compared using the less-or-equal comparison operator for
 type <TT>TYPE</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="sort">
-<A NAME="DOC.1.4.5.5.7">
+<A NAME="sort"></A>
+<A NAME="DOC.1.4.5.5.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void sort(int lo, int hi)</B></TT>
 <DD>Sort array elements in subscript range <TT>lo</TT> to <TT>hi</TT>.  Sort all array
 elements whose subscripts are in range <TT>lo</TT>..<TT>hi</TT> in ascending order.
@@ -183,5 +184,5 @@ for type <TT>TYPE</TT>.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,17 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> Decoding DjVu Content</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">Decoding DjVu Content</A></H2>
-<A NAME="DOC.DOCU">
+<H2> <A HREF="#DOC.DOCU">Decoding DjVu Content</A></H2></H2><A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 Class <!1><A HREF="DjVuImage.html">DjVuImage</A> provides a simple interface for processing DjVu
 content.  The complete documentation is found in section
 <!1><A HREF="DjVuImage.h.html">DjVuImage.h</A>.  You may also consult the source code of program
-<!1><A HREF="djvutopnm.html">djvutopnm</A>.<P>The DjVu Reference Library uses a two stage decoding model. 
+<!1><A HREF="djvutopnm.html">djvutopnm</A>.
+
+<P>The DjVu Reference Library uses a two stage decoding model. 
 <UL>
 <LI> The first stage, called <EM>decoding</EM>, consists of analyzing a DjVu
 or IW44 file and constructing a partially decoded representation of
@@ -23,15 +26,17 @@ representation to recreate the pixels for any part of the image at
 any resolution.  You should render <EM>on-the-fly</EM> the part of the
 image that you actually wish to display.  This strategy minimizes
 both the memory and the computational requirements.
-</UL><P>
+</UL>
+
+<P>
 The sample decoding code below may be called once when you receive the
-DjVu data.  The function <!1><A HREF="DjVuImage.html#DOC.1.4.18.5.4.1">decode</A> processes the data stream 
+DjVu data.  The function DjVuImage::decode processes the data stream 
 represented by class <!1><A HREF="ByteStream.html">ByteStream</A> and updates the <!1><A HREF="DjVuImage.html">DjVuImage</A> object.
 <PRE>
-       DjVuImage img;
-       ByteStream &amp;bs = my_incoming_data_stream();
-       img.decode(bs);
-    </PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DjVuImage&nbsp;img;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ByteStream&nbsp;&amp;bs&nbsp;=&nbsp;my_incoming_data_stream();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img.decode(bs);
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
 The sample rendering code below may be called whenever you need to
 redisplay part of a window showing DjVu image.  Class <!1><A HREF="GRect.html">GRect</A> is used
 to represent two rectangles of interest. Rectangle <TT>full</TT> represents the
@@ -41,25 +46,29 @@ the size of this rectangle and the size of the image implicitly defines
 the resolution of the displayed image.  Rectangle <TT>part</TT> represents the
 range of pixel that you actually want to compute.  This rectangle always
 corresponds to a visible portion of your screen.  The functions
-<!1><A HREF="DjVuImage.html#DOC.1.4.18.5.6.1">get_pixmap</A> and <!1><A HREF="DjVuImage.html#DOC.1.4.18.5.6.2">get_bitmap</A> return a
+DjVuImage::get_pixmap and DjVuImage::get_bitmap return a
 "smart" <!1><A HREF="GP.html">GP</A> pointer to either a <!1><A HREF="GPixmap.html">GPixmap</A> or <!1><A HREF="GBitmap.html">GBitmap</A>
 containing the requested pixels.
 <PRE>
-       GRect part = my_rectangle_to_redisplay();
-       GRect full = my_rectangle_for_the_full_image();
-       // Try rendering in color
-       GP&lt;GPixmap&gt; pm = img-&gt;get_pixmap(part, full);
-       if (pm) { my_display_in_color(pm); return; }
-       // Try rendering in gray
-       GP&lt;GBitmap&gt; bm = img-&gt;get_bitmap(part, full);
-       if (bm) { my_display_in_grays(bm); return ; }
-    </PRE><P>Progressive display can be implemented using multi-threading.  The browser
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRect&nbsp;part&nbsp;=&nbsp;my_rectangle_to_redisplay();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRect&nbsp;full&nbsp;=&nbsp;my_rectangle_for_the_full_image();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Try&nbsp;rendering&nbsp;in&nbsp;color
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GP&lt;GPixmap&gt;&nbsp;pm&nbsp;=&nbsp;img-&gt;get_pixmap(part,&nbsp;full);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(pm)&nbsp;{&nbsp;my_display_in_color(pm);&nbsp;return;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Try&nbsp;rendering&nbsp;in&nbsp;gray
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GP&lt;GBitmap&gt;&nbsp;bm&nbsp;=&nbsp;img-&gt;get_bitmap(part,&nbsp;full);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(bm)&nbsp;{&nbsp;my_display_in_grays(bm);&nbsp;return&nbsp;;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
+
+<P>Progressive display can be implemented using multi-threading.  The browser
 starts a decoding thread as soon as it starts receiving data.  The
 decoding progress can be monitored using class <!1><A HREF="DjVuInterface.html">DjVuInterface</A>. The
 main thread can call the rendering functions at any time while the
 decoding is in progress.  These function render the image as early as
-possible, using only the already decoded data.<P>Section <!1><A HREF="GThreads.h.html">GThreads.h</A> discusses the multi-threading capabilities of the
+possible, using only the already decoded data.
+
+<P>Section <!1><A HREF="GThreads.h.html">GThreads.h</A> discusses the multi-threading capabilities of the
 DjVu Reference Library.  These features must be enabled at compile-time
 using the adequate option of the configuration script.  </BLOCKQUOTE>
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

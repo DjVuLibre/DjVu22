@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
    <TITLE>class  ByteStream</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">ByteStream</A></H2>
-<BLOCKQUOTE>Abstract class for a stream of bytes.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">ByteStream</A></H2></H2><BLOCKQUOTE>Abstract class for a stream of bytes.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -21,69 +22,15 @@
 
 <DL>
 <P><DL>
-<DT><H3>Public</H3><DD><DT>
-<A HREF="#DOC.1.4.9.1.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>Virtual Functions.</B>
-<DD><I></I>
-<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.9.1.1">Virtual Functions.</A></B>
 <DT>
-<A HREF="#DOC.1.4.9.1.1.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <B>~ByteStream</B>()
-<DD><I>Virtual destructor.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   size_t <B>read</B>(void *buffer, size_t size)
-<DD><I>Reads data from a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   size_t <B>write</B>(const void *buffer, size_t size)
-<DD><I>Writes data to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   long <B>tell</B>(void)
-<DD><I>Returns the offset of the current position in the ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   int <B>is_seekable</B>(void) const 
-<DD><I>Tests whether function <TT>seek</TT> can seek backwards.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>seek</B>(long offset, int whence = SEEK_SET)
-<DD><I>Sets the current position for reading or writing the ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>flush</B>()
-<DD><I>Flushes all buffers in the ByteStream.</I>
-</DL></P>
-<DT>
-<A HREF="#DOC.1.4.9.1.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>Utility Functions.  </B>
-<DD><I></I>
-<P><DL>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>size_t <B>readall</B>(void *buffer, size_t size)
-<DD><I>Reads data and blocks until everything has been read.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>size_t <B>writall</B>(const void *buffer, size_t size)
-<DD><I>Writes data and blocks until everything has been written.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>size_t <B>copy</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bsfrom, size_t size=0)
-<DD><I>Copy data from another ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>write8</B>(unsigned int card8)
-<DD><I>Writes a one-byte integer to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>write16</B>(unsigned int card16)
-<DD><I>Writes a two-bytes integer to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>write32</B>(unsigned int card32)
-<DD><I>Writes a four-bytes integer to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>read8</B>()
-<DD><I>Reads a one-byte integer from a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>read16</B>()
-<DD><I>Reads a two-bytes integer from a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>read32</B>()
-<DD><I>Reads a four-bytes integer from a ByteStream.</I>
-</DL></P>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.9.1.2">Utility Functions.  </A></B>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Abstract class for a stream of bytes.  Class <TT>ByteStream</TT> represent an
@@ -91,25 +38,27 @@ object from which (resp. to which) bytes can be read (resp. written) as
 with a regular file.  Virtual functions <TT>read</TT> and <TT>write</TT> must implement
 these two basic operations.  In addition, function <TT>tell</TT> returns an
 offset identifying the current position, and function <TT>seek</TT> may be used
-to change the current position.<P><B>Note</B>. Both the copy constructor and the copy operator are declared
+to change the current position.
+
+<P><B>Note</B>. Both the copy constructor and the copy operator are declared
 as private members. It is therefore not possible to make multiple copies
 of instances of this class, as implied by the class semantic.  </BLOCKQUOTE>
 <DL>
 
-<A NAME="Virtual Functions.">
-<A NAME="DOC.1.4.9.1.1">
+<A NAME="Virtual Functions."></A>
+<A NAME="DOC.1.4.9.1.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Virtual Functions.</B></TT>
 <DD>These functions are usually implemented by each subclass of <TT>ByteStream</TT>. 
 <DL><DT><DD></DL><P><DL>
 
-<A NAME="~ByteStream">
-<A NAME="DOC.1.4.9.1.1.1">
+<A NAME="~ByteStream"></A>
+<A NAME="DOC.1.4.9.1.1.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~ByteStream()</B></TT>
 <DD>Virtual destructor. 
 <DL><DT><DD></DL><P>
-<A NAME="read">
-<A NAME="DOC.1.4.9.1.1.2">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   size_t read(void *buffer, size_t size)</B></TT>
+<A NAME="read"></A>
+<A NAME="DOC.1.4.9.1.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   size_t read(void* buffer, size_t <!1><A HREF="GContainerBase.html#DOC.1.4.5.2.2">size</A>) = 0</B></TT>
 <DD>Reads data from a ByteStream.  This function <EM>must</EM> be implemented
 by each subclass of <TT>ByteStream</TT>.  At most <TT>size</TT> bytes are read from
 the ByteStream and stored in the memory area pointed to by <TT>buffer</TT>.
@@ -122,9 +71,9 @@ than <TT>size</TT> for internal reasons. Programs must be ready to handle these
 cases or use function <!1><A HREF="ByteStream.html#DOC.1.4.9.1.2.1">readall</A>. Exception <!1><A HREF="GException.html">GException</A> is
 thrown with a plain text error message whenever an error occurs. 
 <DL><DT><DD></DL><P>
-<A NAME="write">
-<A NAME="DOC.1.4.9.1.1.3">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   size_t write(const void *buffer, size_t size)</B></TT>
+<A NAME="write"></A>
+<A NAME="DOC.1.4.9.1.1.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   size_t write(const void* buffer, size_t <!1><A HREF="GContainerBase.html#DOC.1.4.5.2.2">size</A>) = 0</B></TT>
 <DD>Writes data to a ByteStream.  This function <EM>must</EM> be implemented by
 each subclass of <TT>ByteStream</TT>.  At most <TT>size</TT> bytes from buffer
 <TT>buffer</TT> are written to the ByteStream.  Function <TT>write</TT> returns
@@ -135,22 +84,22 @@ handle these cases or use function <!1><A HREF="ByteStream.html#DOC.1.4.9.1.2.2"
 <!1><A HREF="GException.html">GException</A> is thrown with a plain text error message whenever an
 error occurs. 
 <DL><DT><DD></DL><P>
-<A NAME="tell">
-<A NAME="DOC.1.4.9.1.1.4">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   long tell(void)</B></TT>
+<A NAME="tell"></A>
+<A NAME="DOC.1.4.9.1.1.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   long tell(void) = 0</B></TT>
 <DD>Returns the offset of the current position in the ByteStream.  This
 function <EM>must</EM> be implemented by each subclass of <TT>ByteStream</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="is_seekable">
-<A NAME="DOC.1.4.9.1.1.5">
+<A NAME="is_seekable"></A>
+<A NAME="DOC.1.4.9.1.1.5"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int is_seekable(void) const </B></TT>
 <DD>Tests whether function <TT>seek</TT> can seek backwards. Class
 <TT>ByteStream</TT> provides a default implementation which always returns false. 
 Subclasses implementing backward seek capabilities must override this
 default implementation and return true. 
 <DL><DT><DD></DL><P>
-<A NAME="seek">
-<A NAME="DOC.1.4.9.1.1.6">
+<A NAME="seek"></A>
+<A NAME="DOC.1.4.9.1.1.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void seek(long offset, int whence = SEEK_SET)</B></TT>
 <DD>Sets the current position for reading or writing the ByteStream.  Class
 <TT>ByteStream</TT> provides a default implementation able to seek forward by
@@ -171,8 +120,8 @@ Results are undefined whenever the new position is greater than the
 total size of the ByteStream. Exception <!1><A HREF="GException.html">GException</A> is thrown with
 a plain text error message whenever an error occurs. 
 <DL><DT><DD></DL><P>
-<A NAME="flush">
-<A NAME="DOC.1.4.9.1.1.7">
+<A NAME="flush"></A>
+<A NAME="DOC.1.4.9.1.1.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void flush()</B></TT>
 <DD>Flushes all buffers in the ByteStream.  Calling this function
 guarantees that pending data have been actually written (i.e. passed to
@@ -180,17 +129,17 @@ the operating system). Class <TT>ByteStream</TT> provides a default
 implementation which does nothing. 
 <DL><DT><DD></DL><P></DL>
 
-<A NAME="Utility Functions.  ">
-<A NAME="DOC.1.4.9.1.2">
+<A NAME="Utility Functions.  "></A>
+<A NAME="DOC.1.4.9.1.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Utility Functions.  </B></TT>
 <DD>Class <TT>ByteStream</TT> implements these functions using the virtual
 interface functions only.  All subclasses of <TT>ByteStream</TT> inherit these
 functions. 
 <DL><DT><DD></DL><P><DL>
 
-<A NAME="readall">
-<A NAME="DOC.1.4.9.1.2.1">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>size_t readall(void *buffer, size_t size)</B></TT>
+<A NAME="readall"></A>
+<A NAME="DOC.1.4.9.1.2.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>size_t readall(void* buffer, size_t <!1><A HREF="GContainerBase.html#DOC.1.4.5.2.2">size</A>)</B></TT>
 <DD>Reads data and blocks until everything has been read.  This function is
 essentially similar to function <TT>read</TT>.  Unlike function <TT>read</TT> however,
 function <TT>readall</TT> will never return a value smaller than <TT>size</TT> unless
@@ -199,9 +148,9 @@ calling function <TT>read</TT> until everything is read or until we reach an
 end-of-file mark.  Note that <TT>read</TT> and <TT>readall</TT> are equivalent when
 <TT>size</TT> is one. 
 <DL><DT><DD></DL><P>
-<A NAME="writall">
-<A NAME="DOC.1.4.9.1.2.2">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>size_t writall(const void *buffer, size_t size)</B></TT>
+<A NAME="writall"></A>
+<A NAME="DOC.1.4.9.1.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>size_t writall(const void* buffer, size_t <!1><A HREF="GContainerBase.html#DOC.1.4.5.2.2">size</A>)</B></TT>
 <DD>Writes data and blocks until everything has been written.  This function
 is essentially similar to function <TT>write</TT>.  Unlike function <TT>write</TT>
 however, function <TT>writall</TT> will only return after all <TT>size</TT> bytes have
@@ -209,9 +158,9 @@ been written.  This is implemented by repeatedly calling function
 <TT>write</TT> until everything is written.  Note that <TT>write</TT> and <TT>writall</TT>
 are equivalent when <TT>size</TT> is one. 
 <DL><DT><DD></DL><P>
-<A NAME="copy">
-<A NAME="DOC.1.4.9.1.2.3">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>size_t copy(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bsfrom, size_t size=0)</B></TT>
+<A NAME="copy"></A>
+<A NAME="DOC.1.4.9.1.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>size_t copy(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bsfrom, size_t <!1><A HREF="GContainerBase.html#DOC.1.4.5.2.2">size</A>=0)</B></TT>
 <DD>Copy data from another ByteStream.  A maximum of <TT>size</TT> bytes are read
 from the ByteStream <TT>bsfrom</TT> and are written to the ByteStream <TT>*this</TT>
 at the current position.  Less than <TT>size</TT> bytes may be written if an
@@ -221,39 +170,39 @@ default value) has a special meaning: the copying process will continue
 until reaching the end-of-file mark on ByteStream <TT>bsfrom</TT>, regardless
 of the number of bytes transferred.  
 <DL><DT><DD></DL><P>
-<A NAME="write8">
-<A NAME="DOC.1.4.9.1.2.4">
+<A NAME="write8"></A>
+<A NAME="DOC.1.4.9.1.2.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void write8(unsigned int card8)</B></TT>
 <DD>Writes a one-byte integer to a ByteStream. 
 <DL><DT><DD></DL><P>
-<A NAME="write16">
-<A NAME="DOC.1.4.9.1.2.5">
+<A NAME="write16"></A>
+<A NAME="DOC.1.4.9.1.2.5"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void write16(unsigned int card16)</B></TT>
 <DD>Writes a two-bytes integer to a ByteStream.
 The integer most significant byte is written first,
 regardless of the processor endianness. 
 <DL><DT><DD></DL><P>
-<A NAME="write32">
-<A NAME="DOC.1.4.9.1.2.6">
+<A NAME="write32"></A>
+<A NAME="DOC.1.4.9.1.2.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void write32(unsigned int card32)</B></TT>
 <DD>Writes a four-bytes integer to a ByteStream. 
 The integer most significant bytes are written first,
 regardless of the processor endianness. 
 <DL><DT><DD></DL><P>
-<A NAME="read8">
-<A NAME="DOC.1.4.9.1.2.7">
+<A NAME="read8"></A>
+<A NAME="DOC.1.4.9.1.2.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned int read8()</B></TT>
 <DD>Reads a one-byte integer from a ByteStream. 
 <DL><DT><DD></DL><P>
-<A NAME="read16">
-<A NAME="DOC.1.4.9.1.2.8">
+<A NAME="read16"></A>
+<A NAME="DOC.1.4.9.1.2.8"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned int read16()</B></TT>
 <DD>Reads a two-bytes integer from a ByteStream.
 The integer most significant byte is read first,
 regardless of the processor endianness. 
 <DL><DT><DD></DL><P>
-<A NAME="read32">
-<A NAME="DOC.1.4.9.1.2.9">
+<A NAME="read32"></A>
+<A NAME="DOC.1.4.9.1.2.9"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned int read32()</B></TT>
 <DD>Reads a four-bytes integer from a ByteStream.
 The integer most significant bytes are read first,
@@ -269,5 +218,5 @@ regardless of the processor endianness.
 <A HREF="BSByteStream.html">BSByteStream</A><BR>
 </DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,27 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _GTHREADS_H_::GCriticalSection</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GCriticalSection</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">GCriticalSection</A></H2>
-<BLOCKQUOTE>Mutual exclusion class.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GCriticalSection</A></H2></H2><BLOCKQUOTE>Mutual exclusion class.</BLOCKQUOTE>
 <HR>
 
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.7.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>lock</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.7.2.1">lock</A></B>()
 <DD><I>Locks a critical section.</I>
 <DT>
-<A HREF="#DOC.1.4.7.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>unlock</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.7.2.2">unlock</A></B>()
 <DD><I>Unlocks a critical section object.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Mutual exclusion class.  Class <TT>GCriticalSection</TT> provides an efficient
@@ -34,13 +35,15 @@ object.  Critical section in the code are easily protected by creating a
 critical section object, locking this object at beginning of the critical
 section code, and unlocking the object at the end of the critical section
 code. Class <!1><A HREF="GCriticalSectionLock.html">GCriticalSectionLock</A> provides a convenient way to do
-this effectively.<P><B>Note</B>. Both the copy constructor and the copy operator are declared
+this effectively.
+
+<P><B>Note</B>. Both the copy constructor and the copy operator are declared
 as private members. It is therefore not possible to make multiple copies of
 instances of this class, as implied by the class semantic. </BLOCKQUOTE>
 <DL>
 
-<A NAME="lock">
-<A NAME="DOC.1.4.7.2.1">
+<A NAME="lock"></A>
+<A NAME="DOC.1.4.7.2.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void lock()</B></TT>
 <DD>Locks a critical section. Only one thread can own a critical section at
 a given time. If the critical section is already owned by another
@@ -48,8 +51,8 @@ thread, the thread waits until the critical section is released.
 Otherwise the locking counter is incremented and the current thread is
 given ownership of the critical section object. 
 <DL><DT><DD></DL><P>
-<A NAME="unlock">
-<A NAME="DOC.1.4.7.2.2">
+<A NAME="unlock"></A>
+<A NAME="DOC.1.4.7.2.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void unlock()</B></TT>
 <DD>Unlocks a critical section object. If the critical section is owned by
 the current thread, the locking counter is decremented. The critical
@@ -58,5 +61,5 @@ section is released when the counter reaches zero.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

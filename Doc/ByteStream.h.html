@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> ByteStream.h</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">ByteStream.h</A></H2>
-<BLOCKQUOTE>Input/output classes </BLOCKQUOTE>
+<H2> <A HREF="#DOC.DOCU">ByteStream.h</A></H2></H2><BLOCKQUOTE>Input/output classes </BLOCKQUOTE>
 
 <HR>
 <DL>
@@ -27,26 +28,30 @@
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="StaticByteStream"></A>
 <A HREF=StaticByteStream.html><B>StaticByteStream</B></A><DD><I>Read-only ByteStream interface to a memory area.</I>
 </DL>
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 Files <TT>&quot;ByteStream.h&quot;</TT> and <TT>&quot;ByteStream.cpp&quot;</TT> define input/output classes
-similar in spirit to the well known C++
+similar in spirit to the well known C++ <TT>iostream</TT> classes.  Class
 <!1><A HREF="ByteStream.html">ByteStream</A> is an abstract base class for all byte streams.  It
 defines a virtual interface and also provides useful functions.  These
 files provide two subclasses. Class <!1><A HREF="StdioByteStream.html">StdioByteStream</A> provides a
 simple interface to the Ansi C buffered input/output functions. Class
 <!1><A HREF="MemoryByteStream.html">MemoryByteStream</A> provides stream-like access to a dynamical array
 maintained in memory. Class <!1><A HREF="StaticByteStream.html">StaticByteStream</A> provides read-only
-stream-like access to a user allocated data buffer.<P><B>Notes</B> --- These classes were partly written because we did not want to
+stream-like access to a user allocated data buffer.
+
+<P><B>Notes</B> --- These classes were partly written because we did not want to
 depend on the standard C++ library.  The main reason however is related to
 the browser interface. We want to have a tight control over the
 implementation of subclasses because we want to use a byte stream to
 represent data passed by a web browser to a plugin.  This operation
 involves multi-threading issues that many implementations of the standard
-C++ library would squarely ignore.<P></BLOCKQUOTE>
+C++ library would squarely ignore.
+
+<P></BLOCKQUOTE>
 <DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; -- initial implementation<BR>
 Andrei Erofeev &lt;eaf@research.att.com&gt; -- 
 
-<DT><B>Version:</B><DD><TT>$Id: ByteStream.h.html,v 1.2 2000-08-26 00:09:29 bcr Exp $</TT> 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DT><B>Version:</B><DD><TT>$Id: ByteStream.h.html,v 1.3 2003-12-30 17:53:53 leonb Exp $</TT> 
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

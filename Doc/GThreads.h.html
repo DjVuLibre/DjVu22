@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>define _GTHREADS_H_</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> GThreads.h</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>define <A HREF="#DOC.DOCU">GThreads.h</A></H2>
-<BLOCKQUOTE>Portable threads </BLOCKQUOTE>
+<H2> <A HREF="#DOC.DOCU">GThreads.h</A></H2></H2><BLOCKQUOTE>Portable threads </BLOCKQUOTE>
 
 <HR>
 <DL>
@@ -27,14 +28,16 @@
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GCriticalSectionLock"></A>
 <A HREF=GCriticalSectionLock.html><B>GCriticalSectionLock</B></A><DD><I>Wrapper for mutually exclusive code.</I>
 </DL>
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 Files <TT>&quot;GThreads.h&quot;</TT> and <TT>&quot;GThreads.cpp&quot;</TT> implement common entry points
 for multithreading on multiple platforms.  Each execution thread is
 represented by an instance of class <!1><A HREF="GThread.html">GThread</A>.  Portions of code can
 be protected using class <!1><A HREF="GCriticalSection.html">GCriticalSection</A> or class
 <!1><A HREF="GCriticalSectionLock.html">GCriticalSectionLock</A>. Synchronization is provided by class
-<!1><A HREF="GEvent.html">GEvent</A>.<P>The value of compiler symbol <TT>THREADMODEL</TT> selects an appropriate
+<!1><A HREF="GEvent.html">GEvent</A>.
+
+<P>The value of compiler symbol <TT>THREADMODEL</TT> selects an appropriate
 implementation for these classes. The current implementation supports
 the following values:
 <DL>
@@ -69,17 +72,23 @@ Java and to access them using JRI.  The classes just contain a
 JRIGlobalRef.  This is not a real implementation since everything
 (Java code, native functions, stubs, exception thread safety) must
 be addressed by the plugin source code. Performance may be an issue.
-</DL><P><B>Portability</B>: The simultaneous use of threads and exceptions caused a
+</DL>
+
+<P><B>Portability</B>: The simultaneous use of threads and exceptions caused a
 lot of portability headaches under Unix.  We eventually decided to
 implement the COTHREADS cooperative threads (because preemptive threads
 have more problems) and to patch EGCS in order to make exception handling
 COTHREAD-safe.  We expect to make COTHREADs the default in future
-releases.<P><B>ToDo</B>: For historical reasons, the interface is modeled after the
+releases.
+
+<P><B>ToDo</B>: For historical reasons, the interface is modeled after the
 Win32 model.  This is unfortunate because more and more systems adopt the
-simpler monitor approach.  It would be nice to change that some day.<P></BLOCKQUOTE>
+simpler monitor approach.  It would be nice to change that some day.
+
+<P></BLOCKQUOTE>
 <DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; -- initial implementation.<BR>
 Praveen Guduru &lt;praveen@sanskrit.lz.att.com&gt; -- mac implementation.
 
-<DT><B>Version:</B><DD><TT>$Id: GThreads.h.html,v 1.2 2000-08-26 00:09:29 bcr Exp $</TT> 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DT><B>Version:</B><DD><TT>$Id: GThreads.h.html,v 1.3 2003-12-30 17:53:53 leonb Exp $</TT> 
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

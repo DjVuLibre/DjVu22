@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
    <TITLE>class  JB2Image</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">JB2Image</A>: public <!1><A HREF="GPEnabled.html#DOC.1.4.3.1.2">GPEnabled</A></H2>
-<BLOCKQUOTE>Main JB2 data structure.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">JB2Image</A></H2></H2><BLOCKQUOTE>Main JB2 data structure.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,64 +23,64 @@
 <DL>
 <P><DL>
 <DT><H3>Public Fields</H3><DD><DT>
-<A HREF="#DOC.1.4.17.3.19"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GString.html">GString</A> <B>comment</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GString.html">GString</A> <B><A HREF="#DOC.1.4.17.3.19">comment</A></B>
 <DD><I>Comment string.</I>
 </DL></P>
 
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.17.3.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>JB2Image</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.17.3.1">JB2Image</A></B>()
 <DD><I>Null Constructor.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>get_width</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.3.2">get_width</A></B>() const 
 <DD><I>Returns the width of the image.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>get_height</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.3.3">get_height</A></B>() const 
 <DD><I>Returns the height of the image.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  <B>get_bitmap</B>(int subsample = 1, int align = 1) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  <B><A HREF="#DOC.1.4.17.3.4">get_bitmap</A></B>(int subsample = 1, int align = 1) const 
 <DD><I>Renders an anti-aliased gray level image.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  <B>get_bitmap</B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect, int subsample=1, int align=1, int dispy=0) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  <B><A HREF="#DOC.1.4.17.3.5">get_bitmap</A></B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect, int subsample=1, int align=1, int dispy=0) const 
 <DD><I>Renders an anti-aliased gray level sub-image.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>get_shape_count</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.3.6">get_shape_count</A></B>() const 
 <DD><I>Returns the total number of shapes.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="JB2Shape.html">JB2Shape</A>* <B>get_shape</B>(int shapeno)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="JB2Shape.html">JB2Shape</A>* <B><A HREF="#DOC.1.4.17.3.7">get_shape</A></B>(int <!1><A HREF="JB2Blit.html#DOC.1.4.17.1.3">shapeno</A>)
 <DD><I>Returns a pointer to shape <TT>shapeno</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>const <!1><A HREF="JB2Shape.html">JB2Shape</A>* <B>get_shape</B>(int shapeno) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>const <!1><A HREF="JB2Shape.html">JB2Shape</A>* <B><A HREF="#DOC.1.4.17.3.8">get_shape</A></B>(int <!1><A HREF="JB2Blit.html#DOC.1.4.17.1.3">shapeno</A>) const 
 <DD><I>Returns a constant pointer to shape <TT>shapeno</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>get_blit_count</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.3.9">get_blit_count</A></B>() const 
 <DD><I>Returns the total number of blits.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="JB2Blit.html">JB2Blit</A>* <B>get_blit</B>(int blitno)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="JB2Blit.html">JB2Blit</A>* <B><A HREF="#DOC.1.4.17.3.10">get_blit</A></B>(int blitno)
 <DD><I>Returns a pointer to blit <TT>blitno</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>const <!1><A HREF="JB2Blit.html">JB2Blit</A>* <B>get_blit</B>(int blitno) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>const <!1><A HREF="JB2Blit.html">JB2Blit</A>* <B><A HREF="#DOC.1.4.17.3.11">get_blit</A></B>(int blitno) const 
 <DD><I>Returns a constant pointer to blit <TT>blitno</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>compress</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.17.3.12">compress</A></B>()
 <DD><I>Compresses all shape bitmaps.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>get_memory_usage</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>unsigned int <B><A HREF="#DOC.1.4.17.3.13">get_memory_usage</A></B>() const 
 <DD><I>Returns the total memory used by the JB2Image.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>set_dimension</B>(int width, int height)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.17.3.14">set_dimension</A></B>(int <!1><A HREF="GRect.html#DOC.1.4.6.1.3">width</A>, int <!1><A HREF="GRect.html#DOC.1.4.6.1.4">height</A>)
 <DD><I>Sets the size of the JB2Image.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>add_shape</B>(const <!1><A HREF="JB2Shape.html">JB2Shape</A> &amp;shape)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.3.15">add_shape</A></B>(const <!1><A HREF="JB2Shape.html">JB2Shape</A> &amp;shape)
 <DD><I>Appends a shape to the shape array.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>add_blit</B>(const <!1><A HREF="JB2Blit.html">JB2Blit</A> &amp;blit)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.3.16">add_blit</A></B>(const <!1><A HREF="JB2Blit.html">JB2Blit</A> &amp;<!1><A HREF="GBitmap.html#DOC.1.4.13.1.6.1">blit</A>)
 <DD><I>Appends a blit to the blit array.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.17"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>encode</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int mode=0) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.17.3.17">encode</A></B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int mode=0) const 
 <DD><I>Encodes the JB2Image into ByteStream <TT>bs</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.17.3.18"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>decode</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int mode=0)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.17.3.18">decode</A></B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int mode=0)
 <DD><I>Decodes JB2 data from ByteStream <TT>bs</TT>.</I>
 </DL></P>
 
@@ -88,7 +89,7 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GPEnabled.html#DOC.1.4.3.1.2">GPEnabled</A>&amp; <B>operator=</B>(const <!1><A HREF="GPEnabled.html#DOC.1.4.3.1.2">GPEnabled</A> &amp; obj)
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GPEnabled.html">GPEnabled</A>&amp; <B>operator=</B>(const <!1><A HREF="GPEnabled.html">GPEnabled</A> &amp; obj)
 </DL></P>
 
 <P><DL>
@@ -103,7 +104,7 @@
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Main JB2 data structure.  Each <TT>JB2Image</TT> consists of an array of shapes
@@ -114,28 +115,28 @@ to render anti-aliased images, or use function <!1><A HREF="JB2Image.html#DOC.1.
 JB2 data. </BLOCKQUOTE>
 <DL>
 
-<A NAME="JB2Image">
-<A NAME="DOC.1.4.17.3.1">
+<A NAME="JB2Image"></A>
+<A NAME="DOC.1.4.17.3.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> JB2Image()</B></TT>
 <DD>Null Constructor.  Constructs an empty <TT>JB2Image</TT> object.  You can then
 call the decoding function <TT>decode</TT>.  You can also manually set the
 image size using <TT>set_dimension</TT> and populate the shape and blit arrays
 using <TT>add_shape</TT> and <TT>add_blit</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="get_width">
-<A NAME="DOC.1.4.17.3.2">
+<A NAME="get_width"></A>
+<A NAME="DOC.1.4.17.3.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int get_width() const </B></TT>
 <DD>Returns the width of the image.  
 This is the width value previously set with <TT>set_dimension</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="get_height">
-<A NAME="DOC.1.4.17.3.3">
+<A NAME="get_height"></A>
+<A NAME="DOC.1.4.17.3.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int get_height() const </B></TT>
 <DD>Returns the height of the image.  
 This is the height value previously set with <TT>set_dimension</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="get_bitmap">
-<A NAME="DOC.1.4.17.3.4">
+<A NAME="get_bitmap"></A>
+<A NAME="DOC.1.4.17.3.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  get_bitmap(int subsample = 1, int align = 1) const </B></TT>
 <DD>Renders an anti-aliased gray level image.  This function renders the
 JB2Image as a bilevel or gray level image.  Argument <TT>subsample</TT>
@@ -146,8 +147,8 @@ rows of the returned images.  Setting <TT>align</TT> to <TT>4</TT>, for instance
 adjust the bitmap border in order to make sure that each row of the
 returned image starts on a word (four byte) boundary. 
 <DL><DT><DD></DL><P>
-<A NAME="get_bitmap">
-<A NAME="DOC.1.4.17.3.5">
+<A NAME="get_bitmap"></A>
+<A NAME="DOC.1.4.17.3.5"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  get_bitmap(const <!1><A HREF="GRect.html">GRect</A> &amp;rect, int subsample=1, int align=1, int dispy=0) const </B></TT>
 <DD>Renders an anti-aliased gray level sub-image.  This function renders a
 segment of the JB2Image as a bilevel or gray level image.  Conceptually,
@@ -157,103 +158,103 @@ Both operations of course are efficiently performed simultaneously.
 Argument <TT>align</TT> specified the alignment of the rows of the returned
 images, as explained above.  Argument <TT>dispy</TT> should remain null. 
 <DL><DT><DD></DL><P>
-<A NAME="get_shape_count">
-<A NAME="DOC.1.4.17.3.6">
+<A NAME="get_shape_count"></A>
+<A NAME="DOC.1.4.17.3.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int get_shape_count() const </B></TT>
 <DD>Returns the total number of shapes.
 Shape indices range from <TT>0</TT> to <TT>get_shape_count()-1</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="get_shape">
-<A NAME="DOC.1.4.17.3.7">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="JB2Shape.html">JB2Shape</A>* get_shape(int shapeno)</B></TT>
+<A NAME="get_shape"></A>
+<A NAME="DOC.1.4.17.3.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="JB2Shape.html">JB2Shape</A>* get_shape(int <!1><A HREF="JB2Blit.html#DOC.1.4.17.1.3">shapeno</A>)</B></TT>
 <DD>Returns a pointer to shape <TT>shapeno</TT>.
 The returned pointer directly points into the shape array.
 This pointer can be used for reading or writing the shape data. 
 <DL><DT><DD></DL><P>
-<A NAME="get_shape">
-<A NAME="DOC.1.4.17.3.8">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>const <!1><A HREF="JB2Shape.html">JB2Shape</A>* get_shape(int shapeno) const </B></TT>
+<A NAME="get_shape"></A>
+<A NAME="DOC.1.4.17.3.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>const <!1><A HREF="JB2Shape.html">JB2Shape</A>* get_shape(int <!1><A HREF="JB2Blit.html#DOC.1.4.17.1.3">shapeno</A>) const </B></TT>
 <DD>Returns a constant pointer to shape <TT>shapeno</TT>.
 The returned pointer directly points into the shape array.
 This pointer can only be used for reading the shape data. 
 <DL><DT><DD></DL><P>
-<A NAME="get_blit_count">
-<A NAME="DOC.1.4.17.3.9">
+<A NAME="get_blit_count"></A>
+<A NAME="DOC.1.4.17.3.9"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int get_blit_count() const </B></TT>
 <DD>Returns the total number of blits.
 Blit indices range from <TT>0</TT> to <TT>get_blit_count()-1</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="get_blit">
-<A NAME="DOC.1.4.17.3.10">
+<A NAME="get_blit"></A>
+<A NAME="DOC.1.4.17.3.10"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="JB2Blit.html">JB2Blit</A>* get_blit(int blitno)</B></TT>
 <DD>Returns a pointer to blit <TT>blitno</TT>.
 The returned pointer directly points into the blit array.
 This pointer can be used for reading or writing the blit data. 
 <DL><DT><DD></DL><P>
-<A NAME="get_blit">
-<A NAME="DOC.1.4.17.3.11">
+<A NAME="get_blit"></A>
+<A NAME="DOC.1.4.17.3.11"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>const <!1><A HREF="JB2Blit.html">JB2Blit</A>* get_blit(int blitno) const </B></TT>
 <DD>Returns a constant pointer to blit <TT>blitno</TT>.
 The returned pointer directly points into the shape array.
 This pointer can only be used for reading the shape data. 
 <DL><DT><DD></DL><P>
-<A NAME="compress">
-<A NAME="DOC.1.4.17.3.12">
+<A NAME="compress"></A>
+<A NAME="DOC.1.4.17.3.12"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void compress()</B></TT>
 <DD>Compresses all shape bitmaps.  This function reduces the memory required
-by the <TT>JB2Image</TT> by calling <!1><A HREF="GBitmap.html#DOC.1.4.13.1.5.1">compress</A> on all shapes
+by the <TT>JB2Image</TT> by calling GBitmap::compress on all shapes
 bitmaps.  This function is best called after decoding a <TT>JB2Image</TT>,
 because function <!1><A HREF="JB2Image.html#DOC.1.4.17.3.4">get_bitmap</A> can directly use the compressed
 bitmaps.  
 <DL><DT><DD></DL><P>
-<A NAME="get_memory_usage">
-<A NAME="DOC.1.4.17.3.13">
+<A NAME="get_memory_usage"></A>
+<A NAME="DOC.1.4.17.3.13"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned int get_memory_usage() const </B></TT>
 <DD>Returns the total memory used by the JB2Image.
 The returned value is expressed in bytes. 
 <DL><DT><DD></DL><P>
-<A NAME="set_dimension">
-<A NAME="DOC.1.4.17.3.14">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void set_dimension(int width, int height)</B></TT>
+<A NAME="set_dimension"></A>
+<A NAME="DOC.1.4.17.3.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void set_dimension(int <!1><A HREF="GRect.html#DOC.1.4.6.1.3">width</A>, int <!1><A HREF="GRect.html#DOC.1.4.6.1.4">height</A>)</B></TT>
 <DD>Sets the size of the JB2Image.
 This function can be called at any time. 
 The corresponding <TT>width</TT> and the <TT>height</TT> are stored
 in the JB2 file. 
 <DL><DT><DD></DL><P>
-<A NAME="add_shape">
-<A NAME="DOC.1.4.17.3.15">
+<A NAME="add_shape"></A>
+<A NAME="DOC.1.4.17.3.15"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int add_shape(const <!1><A HREF="JB2Shape.html">JB2Shape</A> &amp;shape)</B></TT>
 <DD>Appends a shape to the shape array.  This function appends a copy of
 shape <TT>shape</TT> to the shape array and returns the subscript of the new
 shape.  The subscript of the parent shape <TT>shape.parent</TT> must 
 actually designate an already existing shape. 
 <DL><DT><DD></DL><P>
-<A NAME="add_blit">
-<A NAME="DOC.1.4.17.3.16">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int add_blit(const <!1><A HREF="JB2Blit.html">JB2Blit</A> &amp;blit)</B></TT>
+<A NAME="add_blit"></A>
+<A NAME="DOC.1.4.17.3.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int add_blit(const <!1><A HREF="JB2Blit.html">JB2Blit</A> &amp;<!1><A HREF="GBitmap.html#DOC.1.4.13.1.6.1">blit</A>)</B></TT>
 <DD>Appends a blit to the blit array.  This function appends a copy of blit
 <TT>blit</TT> to the blit array and returns the subscript of the new blit.  The
 shape subscript <TT>blit.shapeno</TT> must actually designate an already
 existing shape. 
 <DL><DT><DD></DL><P>
-<A NAME="encode">
-<A NAME="DOC.1.4.17.3.17">
+<A NAME="encode"></A>
+<A NAME="DOC.1.4.17.3.17"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void encode(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int mode=0) const </B></TT>
 <DD>Encodes the JB2Image into ByteStream <TT>bs</TT>.  This function generates the
 JB2 data stream without any header.  Argument <TT>mode</TT> is reserved for
 future extensions (such as specifying JBIG2 encoding versus JB2
 encoding) and should be left to the default value. 
 <DL><DT><DD></DL><P>
-<A NAME="decode">
-<A NAME="DOC.1.4.17.3.18">
+<A NAME="decode"></A>
+<A NAME="DOC.1.4.17.3.18"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void decode(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int mode=0)</B></TT>
 <DD>Decodes JB2 data from ByteStream <TT>bs</TT>. This function decodes the image
 size and populates the shape and blit arrays. Argument <TT>mode</TT> is
 reserved for future extensions (such as specifying JBIG2 encoding versus
 JB2 encoding) and should be left to the default value. 
 <DL><DT><DD></DL><P>
-<A NAME="comment">
-<A NAME="DOC.1.4.17.3.19">
+<A NAME="comment"></A>
+<A NAME="DOC.1.4.17.3.19"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GString.html">GString</A> comment</B></TT>
 <DD>Comment string. 
 This variable holds the optional comment included in JB2 files. 
@@ -261,5 +262,5 @@ This variable holds the optional comment included in JB2 files.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

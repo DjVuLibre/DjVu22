@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _GCONTAINER_H_::GContainerBase</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GContainerBase</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">GContainerBase</A></H2>
-<BLOCKQUOTE>Abstract base class for all containers.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GContainerBase</A></H2></H2><BLOCKQUOTE>Abstract base class for all containers.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,28 +23,28 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.5.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <B>~GContainerBase</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <B><A HREF="#DOC.1.4.5.2.1">~GContainerBase</A></B>()
 <DD><I>Virtual destructor.</I>
 <DT>
-<A HREF="#DOC.1.4.5.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   int <B>size</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.1.4.5.2.2">size</A></B>() const  = 0
 <DD><I>Returns the number of contained elements.</I>
 <DT>
-<A HREF="#DOC.1.4.5.2.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>firstpos</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B><A HREF="#DOC.1.4.5.2.3">firstpos</A></B>() const  = 0
 <DD><I>Returns a <TT>GPosition</TT> for the first element in the container.</I>
 <DT>
-<A HREF="#DOC.1.4.5.2.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>lastpos</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B><A HREF="#DOC.1.4.5.2.4">lastpos</A></B>() const  = 0
 <DD><I>Returns a <TT>GPosition</TT> for the last element in the container.</I>
 <DT>
-<A HREF="#DOC.1.4.5.2.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>nextpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.1.4.5.2.5">nextpos</A></B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const  = 0
 <DD><I>Moves position <TT>pos</TT> to the next element in the container.</I>
 <DT>
-<A HREF="#DOC.1.4.5.2.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>prevpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.1.4.5.2.6">prevpos</A></B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const  = 0
 <DD><I>Moves position <TT>pos</TT> to the previous element in the container.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Abstract base class for all containers.
@@ -54,40 +55,40 @@ the type of its elements.  In particular, functions <TT>nextpos</TT> and
 operators on a <!1><A HREF="GPosition.html">GPosition</A> object.</BLOCKQUOTE>
 <DL>
 
-<A NAME="~GContainerBase">
-<A NAME="DOC.1.4.5.2.1">
+<A NAME="~GContainerBase"></A>
+<A NAME="DOC.1.4.5.2.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~GContainerBase()</B></TT>
 <DD>Virtual destructor. 
 <DL><DT><DD></DL><P>
-<A NAME="size">
-<A NAME="DOC.1.4.5.2.2">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int size() const </B></TT>
+<A NAME="size"></A>
+<A NAME="DOC.1.4.5.2.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int size() const  = 0</B></TT>
 <DD>Returns the number of contained elements. 
 <DL><DT><DD></DL><P>
-<A NAME="firstpos">
-<A NAME="DOC.1.4.5.2.3">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="GPosition.html">GPosition</A> firstpos() const </B></TT>
+<A NAME="firstpos"></A>
+<A NAME="DOC.1.4.5.2.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="GPosition.html">GPosition</A> firstpos() const  = 0</B></TT>
 <DD>Returns a <TT>GPosition</TT> for the first element in the container.
 The <TT>GPosition</TT> object is marked as invalid when the container is empty. 
 <DL><DT><DD></DL><P>
-<A NAME="lastpos">
-<A NAME="DOC.1.4.5.2.4">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="GPosition.html">GPosition</A> lastpos() const </B></TT>
+<A NAME="lastpos"></A>
+<A NAME="DOC.1.4.5.2.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="GPosition.html">GPosition</A> lastpos() const  = 0</B></TT>
 <DD>Returns a <TT>GPosition</TT> for the last element in the container.
 The <TT>GPosition</TT> object is marked as invalid when the container is empty. 
 <DL><DT><DD></DL><P>
-<A NAME="nextpos">
-<A NAME="DOC.1.4.5.2.5">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void nextpos(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
+<A NAME="nextpos"></A>
+<A NAME="DOC.1.4.5.2.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void nextpos(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const  = 0</B></TT>
 <DD>Moves position <TT>pos</TT> to the next element in the container.
 Argument <TT>pos</TT> is set to an invalid position when 
 (<EM>a</EM>) there is no next element in the container, or
 (<EM>b</EM>) the input value of <TT>pos</TT> is not a valid position for this container.
 This function is called by <TT>GPosition::operator++</TT>. 
 <DL><DT><DD></DL><P>
-<A NAME="prevpos">
-<A NAME="DOC.1.4.5.2.6">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void prevpos(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
+<A NAME="prevpos"></A>
+<A NAME="DOC.1.4.5.2.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void prevpos(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const  = 0</B></TT>
 <DD>Moves position <TT>pos</TT> to the previous element in the container.
 Argument <TT>pos</TT> is set to an invalid position when 
 (<EM>a</EM>) there is no previous element in the container, or
@@ -99,5 +100,5 @@ This function is called by <TT>GPosition::operator--</TT>.
 </B><DD><A HREF="GContainer.html">GContainer</A><BR>
 </DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

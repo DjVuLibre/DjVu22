@@ -1,54 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _GRECT_H_::GRectMapper</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GRectMapper</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">GRectMapper</A></H2>
-<BLOCKQUOTE>Maps points from one rectangle to another rectangle.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GRectMapper</A></H2></H2><BLOCKQUOTE>Maps points from one rectangle to another rectangle.</BLOCKQUOTE>
 <HR>
 
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.6.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GRectMapper</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.6.2.1">GRectMapper</A></B>()
 <DD><I>Constructs a rectangle mapper.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>clear</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.2">clear</A></B>()
 <DD><I>Resets the rectangle mapper state.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>set_input</B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.3">set_input</A></B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect)
 <DD><I>Sets the input rectangle.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>set_output</B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.4">set_output</A></B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect)
 <DD><I>Sets the output rectangle.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>rotate</B>(int count=1)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.5">rotate</A></B>(int <!1><A HREF="GPEnabled.html#DOC.1.4.3.1.4">count</A>=1)
 <DD><I>Composes the affine transform with a rotation of <TT>count</TT> quarter turns counter-clockwise.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>mirrorx</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.6">mirrorx</A></B>()
 <DD><I>Composes the affine transform with a symmetry with respect to the vertical line crossing the center of the output rectangle.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>mirrory</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.7">mirrory</A></B>()
 <DD><I>Composes the affine transform with a symmetry with respect to the horizontal line crossing the center of the output rectangle.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>map</B>(int &amp;x, int &amp;y)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.8">map</A></B>(int &amp;x, int &amp;y)
 <DD><I>Maps a point according to the affine transform.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>map</B>(<!1><A HREF="GRect.html">GRect</A> &amp;rect)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.9">map</A></B>(<!1><A HREF="GRect.html">GRect</A> &amp;rect)
 <DD><I>Maps a rectangle according to the affine transform.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>unmap</B>(int &amp;x, int &amp;y)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.10">unmap</A></B>(int &amp;x, int &amp;y)
 <DD><I>Maps a point according to the inverse of the affine transform.</I>
 <DT>
-<A HREF="#DOC.1.4.6.2.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>unmap</B>(<!1><A HREF="GRect.html">GRect</A> &amp;rect)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.2.11">unmap</A></B>(<!1><A HREF="GRect.html">GRect</A> &amp;rect)
 <DD><I>Maps a rectangle according to the inverse of the affine transform.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Maps points from one rectangle to another rectangle.  This class
@@ -62,53 +63,53 @@ performed using integer fraction arithmetic in order to maximize
 accuracy. </BLOCKQUOTE>
 <DL>
 
-<A NAME="GRectMapper">
-<A NAME="DOC.1.4.6.2.1">
+<A NAME="GRectMapper"></A>
+<A NAME="DOC.1.4.6.2.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GRectMapper()</B></TT>
 <DD>Constructs a rectangle mapper. 
 <DL><DT><DD></DL><P>
-<A NAME="clear">
-<A NAME="DOC.1.4.6.2.2">
+<A NAME="clear"></A>
+<A NAME="DOC.1.4.6.2.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void clear()</B></TT>
 <DD>Resets the rectangle mapper state. Both the input rectangle
 and the output rectangle are marked as undefined. 
 <DL><DT><DD></DL><P>
-<A NAME="set_input">
-<A NAME="DOC.1.4.6.2.3">
+<A NAME="set_input"></A>
+<A NAME="DOC.1.4.6.2.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void set_input(const <!1><A HREF="GRect.html">GRect</A> &amp;rect)</B></TT>
 <DD>Sets the input rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="set_output">
-<A NAME="DOC.1.4.6.2.4">
+<A NAME="set_output"></A>
+<A NAME="DOC.1.4.6.2.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void set_output(const <!1><A HREF="GRect.html">GRect</A> &amp;rect)</B></TT>
 <DD>Sets the output rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="rotate">
-<A NAME="DOC.1.4.6.2.5">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void rotate(int count=1)</B></TT>
+<A NAME="rotate"></A>
+<A NAME="DOC.1.4.6.2.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void rotate(int <!1><A HREF="GPEnabled.html#DOC.1.4.3.1.4">count</A>=1)</B></TT>
 <DD>Composes the affine transform with a rotation of <TT>count</TT> quarter turns
 counter-clockwise.  This operation essentially is a modification of the
 match between the corners of the input rectangle and the corners of the
 output rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="mirrorx">
-<A NAME="DOC.1.4.6.2.6">
+<A NAME="mirrorx"></A>
+<A NAME="DOC.1.4.6.2.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void mirrorx()</B></TT>
 <DD>Composes the affine transform with a symmetry with respect to the
 vertical line crossing the center of the output rectangle.  This
 operation essentially is a modification of the match between the corners
 of the input rectangle and the corners of the output rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="mirrory">
-<A NAME="DOC.1.4.6.2.7">
+<A NAME="mirrory"></A>
+<A NAME="DOC.1.4.6.2.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void mirrory()</B></TT>
 <DD>Composes the affine transform with a symmetry with respect to the
 horizontal line crossing the center of the output rectangle.  This
 operation essentially is a modification of the match between the corners
 of the input rectangle and the corners of the output rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="map">
-<A NAME="DOC.1.4.6.2.8">
+<A NAME="map"></A>
+<A NAME="DOC.1.4.6.2.8"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void map(int &amp;x, int &amp;y)</B></TT>
 <DD>Maps a point according to the affine transform.  Variables <TT>x</TT> and <TT>y</TT>
 initially contain the coordinates of a point. This operation overwrites
@@ -116,16 +117,16 @@ these variables with the coordinates of a second point located in the
 same position relative to the corners of the output rectangle as the
 first point relative to the matching corners of the input rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="map">
-<A NAME="DOC.1.4.6.2.9">
+<A NAME="map"></A>
+<A NAME="DOC.1.4.6.2.9"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void map(<!1><A HREF="GRect.html">GRect</A> &amp;rect)</B></TT>
 <DD>Maps a rectangle according to the affine transform. This operation
 consists in mapping the rectangle corners and reordering the corners in
 the canonical rectangle representation.  Variable <TT>rect</TT> is overwritten
 with the new rectangle coordinates. 
 <DL><DT><DD></DL><P>
-<A NAME="unmap">
-<A NAME="DOC.1.4.6.2.10">
+<A NAME="unmap"></A>
+<A NAME="DOC.1.4.6.2.10"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void unmap(int &amp;x, int &amp;y)</B></TT>
 <DD>Maps a point according to the inverse of the affine transform.
 Variables <TT>x</TT> and <TT>y</TT> initially contain the coordinates of a point. This
@@ -134,8 +135,8 @@ point located in the same position relative to the corners of input
 rectangle as the first point relative to the matching corners of the
 input rectangle. 
 <DL><DT><DD></DL><P>
-<A NAME="unmap">
-<A NAME="DOC.1.4.6.2.11">
+<A NAME="unmap"></A>
+<A NAME="DOC.1.4.6.2.11"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void unmap(<!1><A HREF="GRect.html">GRect</A> &amp;rect)</B></TT>
 <DD>Maps a rectangle according to the inverse of the affine transform. This
 operation consists in mapping the rectangle corners and reordering the
@@ -145,5 +146,5 @@ overwritten with the new rectangle coordinates.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DT><B>Friends:</B><DD>  int operator*(int, GRatio)<BR>  int operator/(int, GRatio)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> IFFByteStream.h</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">IFFByteStream.h</A></H2>
-<BLOCKQUOTE>IFF file parser. </BLOCKQUOTE>
+<H2> <A HREF="#DOC.DOCU">IFFByteStream.h</A></H2></H2><BLOCKQUOTE>IFF file parser. </BLOCKQUOTE>
 
 <HR>
 <DL>
@@ -15,7 +16,7 @@
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="IFFByteStream"></A>
 <A HREF=IFFByteStream.html><B>IFFByteStream</B></A><DD><I>ByteStream interface for an IFF file.</I>
 </DL>
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 Files <TT>&quot;IFFByteStream.h&quot;</TT> and <TT>&quot;IFFByteStream.cpp&quot;</TT> implement a parser for
 files structured according the Electronic Arts ``EA IFF 85 Interchange
@@ -26,20 +27,28 @@ identifiers, for instance <TT>&quot;FORM&quot;</TT>, are reserved for <EM>compos
 chunks</EM> which themselves contain a sequence of data chunks.  This
 conventions effectively provides IFF files with a convenient hierarchical
 structure.  Composite chunks are further identified by a secondary chunk
-identifier.<P>We found convenient to define a <EM>extended chunk identifier</EM>.  In the
+identifier.
+
+<P>We found convenient to define a <EM>extended chunk identifier</EM>.  In the
 case of a regular chunk, the extended chunk identifier is simply the
 chunk identifier, as in <TT>&quot;PM44&quot;</TT>. In the case of a composite chunk, the
 extended chunk identifier is composed by concatenating the main chunk
 identifier, a colon, and the secondary chunk identifier, as in
-<TT>&quot;FORM:DJVU&quot;</TT>.<P>Class <!1><A HREF="IFFByteStream.html">IFFByteStream</A> provides a way to read or write IFF structured
+<TT>&quot;FORM:DJVU&quot;</TT>.
+
+<P>Class <!1><A HREF="IFFByteStream.html">IFFByteStream</A> provides a way to read or write IFF structured
 files.  Member functions provide an easy mean to position the underlying
 <!1><A HREF="ByteStream.html">ByteStream</A> at the beginning of each chunk and to read or write the
 data until reaching the end of the chunk.  The utility program
-<!1><A HREF="djvuinfo.2.html">djvuinfo</A> demonstrates how to use class <TT>IFFByteStream</TT>.<P><B>IFF Files and ZP-Coder</B> ---
+<!1><A HREF="djvuinfo.2.html">djvuinfo</A> demonstrates how to use class <TT>IFFByteStream</TT>.
+
+<P><B>IFF Files and ZP-Coder</B> ---
 Class <TT>IFFByteStream</TT> repositions the underlying ByteStream whenever a new
 chunk is accessed.  It is possible to code chunk data with the ZP-Coder
 without worrying about the final file position. See class <!1><A HREF="ZPCodec.html">ZPCodec</A>
-for more details.<P><B>DjVu IFF Files</B> --- We had initially planned to exactly follow the
+for more details.
+
+<P><B>DjVu IFF Files</B> --- We had initially planned to exactly follow the
 IFF specifications.  Then we realized that certain versions of MSIE
 recognize any IFF file as a Microsoft AIFF sound file and pop a message
 box "Cannot play that sound".  It appears that the structure of AIFF files
@@ -48,11 +57,15 @@ regarding the endianness of numbers and the padding rules.  We eliminate
 this problem by casting an octet protection spell.  Our IFF files always
 start with the four octets 0x41, 0x54, 0x26, 0x54 followed by the fully
 conformant IFF byte stream.  Class <TT>IFFByteStream</TT> silently skips these
-four octets when it encounters them.<P><B>References</B> --- EA IFF 85 Interchange File Format specification:<BR>
+four octets when it encounters them.
+
+<P><B>References</B> --- EA IFF 85 Interchange File Format specification:<BR>
 <A HREF=http://www.cica.indiana.edu/graphics/image_specs/ilbm.format.txt>http://www.cica.indiana.edu/graphics/image_specs/ilbm.format.txt</A> or
-<A HREF=http://www.tnt.uni-hannover.de/soft/compgraph/fileformats/docs/iff.pre>http://www.tnt.uni-hannover.de/soft/compgraph/fileformats/docs/iff.pre</A><P></BLOCKQUOTE>
+<A HREF=http://www.tnt.uni-hannover.de/soft/compgraph/fileformats/docs/iff.pre>http://www.tnt.uni-hannover.de/soft/compgraph/fileformats/docs/iff.pre</A>
+
+<P></BLOCKQUOTE>
 <DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt;
 
-<DT><B>Version:</B><DD><TT>$Id: IFFByteStream.h.html,v 1.2 2000-08-26 00:09:29 bcr Exp $</TT> 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DT><B>Version:</B><DD><TT>$Id: IFFByteStream.h.html,v 1.3 2003-12-30 17:53:53 leonb Exp $</TT> 
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,174 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _GRECT_H_::GRect</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GRect</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">GRect</A></H2>
-<BLOCKQUOTE>Rectangle class.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GRect</A></H2></H2><BLOCKQUOTE>Rectangle class.</BLOCKQUOTE>
 <HR>
 
 <DL>
 <P><DL>
 <DT><H3>Public Fields</H3><DD><DT>
-<A HREF="#DOC.1.4.6.1.13"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>xmin</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.12">xmin</A></B>
 <DD><I>Minimal (inclusive) horizontal coordinate of the rectangle points.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.14"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>ymin</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.13">ymin</A></B>
 <DD><I>Minimal (inclusive) vertical coordinate of the rectangle points.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.15"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>xmax</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.14">xmax</A></B>
 <DD><I>Maximal (exclusive) horizontal coordinate of the rectangle points.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.16"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>ymax</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.15">ymax</A></B>
 <DD><I>Maximal (exclusive) vertical coordinate of the rectangle points.</I>
 </DL></P>
 
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.6.1.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GRect</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.6.1.1">GRect</A></B>()
 <DD><I>Constructs an empty rectangle </I>
 <DT>
-<A HREF="#DOC.1.4.6.1.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GRect</B>(int <!1><A HREF="GRect.html#DOC.1.4.6.1.13">xmin</A>, int <!1><A HREF="GRect.html#DOC.1.4.6.1.14">ymin</A>, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.3">width</A>=0, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.4">height</A>=0)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.6.1.2">GRect</A></B>(int <!1><A HREF="GRect.html#DOC.1.4.6.1.12">xmin</A>, int <!1><A HREF="GRect.html#DOC.1.4.6.1.13">ymin</A>, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.3">width</A>=0, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.4">height</A>=0)
 <DD><I>Constructs a rectangle given its minimal coordinates <TT>xmin</TT> and <TT>ymin</TT>, and its measurements <TT>width</TT> and <TT>height</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>width</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.3">width</A></B>() const 
 <DD><I>Returns the rectangle width.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>height</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.4">height</A></B>() const 
 <DD><I>Returns the rectangle height.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>isempty</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.5">isempty</A></B>() const 
 <DD><I>Returns true iff the rectangle is empty.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>contains</B>(int x, int y) const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.6">contains</A></B>(int x, int y) const 
 <DD><I>Returns true iff the rectangle contains point (<TT>x</TT>,<TT>y</TT>).</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>friend int <B>operator==</B>(const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp; r1, const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp; r2)
-<DD><I>Returns true iff rectangles <TT>r1</TT> and <TT>r2</TT> are equal.</I>
-<DT>
-<A HREF="#DOC.1.4.6.1.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>clear</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.6.1.7">clear</A></B>()
 <DD><I>Resets the rectangle to the empty rectangle </I>
 <DT>
-<A HREF="#DOC.1.4.6.1.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>inflate</B>(int dx, int dy)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.8">inflate</A></B>(int dx, int dy)
 <DD><I>Fatten the rectangle.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.10"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>translate</B>(int dx, int dy)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.9">translate</A></B>(int dx, int dy)
 <DD><I>Translate the rectangle.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.11"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>intersect</B>(const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect2)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.10">intersect</A></B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html">GRect</A> &amp;rect2)
 <DD><I>Sets the rectangle to the intersection of rectangles <TT>rect1</TT> and <TT>rect2</TT>.</I>
 <DT>
-<A HREF="#DOC.1.4.6.1.12"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>recthull</B>(const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect2)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.6.1.11">recthull</A></B>(const <!1><A HREF="GRect.html">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html">GRect</A> &amp;rect2)
 <DD><I>Sets the rectangle to the smallest rectangle containing the points of both rectangles <TT>rect1</TT> and <TT>rect2</TT>.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Rectangle class.  Each instance of this class represents a rectangle whose
 sides are parallel to the axis. Such a rectangle is composed of points
 whose coordinates lies between well defined minimal and maximal values.
 Member functions can combine several rectangles by computing the
-intersection of rectangles (<!1><A HREF="GRect.html#DOC.1.4.6.1.11">intersect</A>) or the smallest rectangle
-enclosing two rectangles (<!1><A HREF="GRect.html#DOC.1.4.6.1.12">recthull</A>).  </BLOCKQUOTE>
+intersection of rectangles (<!1><A HREF="GRect.html#DOC.1.4.6.1.10">intersect</A>) or the smallest rectangle
+enclosing two rectangles (<!1><A HREF="GRect.html#DOC.1.4.6.1.11">recthull</A>).  </BLOCKQUOTE>
 <DL>
 
-<A NAME="GRect">
-<A NAME="DOC.1.4.6.1.1">
+<A NAME="GRect"></A>
+<A NAME="DOC.1.4.6.1.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GRect()</B></TT>
 <DD>Constructs an empty rectangle 
 <DL><DT><DD></DL><P>
-<A NAME="GRect">
-<A NAME="DOC.1.4.6.1.2">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GRect(int <!1><A HREF="GRect.html#DOC.1.4.6.1.13">xmin</A>, int <!1><A HREF="GRect.html#DOC.1.4.6.1.14">ymin</A>, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.3">width</A>=0, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.4">height</A>=0)</B></TT>
+<A NAME="GRect"></A>
+<A NAME="DOC.1.4.6.1.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GRect(int <!1><A HREF="GRect.html#DOC.1.4.6.1.12">xmin</A>, int <!1><A HREF="GRect.html#DOC.1.4.6.1.13">ymin</A>, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.3">width</A>=0, unsigned int <!1><A HREF="GRect.html#DOC.1.4.6.1.4">height</A>=0)</B></TT>
 <DD>Constructs a rectangle given its minimal coordinates <TT>xmin</TT> and <TT>ymin</TT>,
 and its measurements <TT>width</TT> and <TT>height</TT>. Setting <TT>width</TT> or <TT>height</TT> to zero
 produces an empty rectangle.  
 <DL><DT><DD></DL><P>
-<A NAME="width">
-<A NAME="DOC.1.4.6.1.3">
+<A NAME="width"></A>
+<A NAME="DOC.1.4.6.1.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int width() const </B></TT>
 <DD>Returns the rectangle width. 
 <DL><DT><DD></DL><P>
-<A NAME="height">
-<A NAME="DOC.1.4.6.1.4">
+<A NAME="height"></A>
+<A NAME="DOC.1.4.6.1.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int height() const </B></TT>
 <DD>Returns the rectangle height. 
 <DL><DT><DD></DL><P>
-<A NAME="isempty">
-<A NAME="DOC.1.4.6.1.5">
+<A NAME="isempty"></A>
+<A NAME="DOC.1.4.6.1.5"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int isempty() const </B></TT>
 <DD>Returns true iff the rectangle is empty. 
 <DL><DT><DD></DL><P>
-<A NAME="contains">
-<A NAME="DOC.1.4.6.1.6">
+<A NAME="contains"></A>
+<A NAME="DOC.1.4.6.1.6"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int contains(int x, int y) const </B></TT>
 <DD>Returns true iff the rectangle contains point (<TT>x</TT>,<TT>y</TT>). 
 <DL><DT><DD></DL><P>
-<A NAME="operator==">
-<A NAME="DOC.1.4.6.1.7">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>friend int operator==(const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp; r1, const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp; r2)</B></TT>
-<DD>Returns true iff rectangles <TT>r1</TT> and <TT>r2</TT> are equal. 
-<DL><DT><DD></DL><P>
-<A NAME="clear">
-<A NAME="DOC.1.4.6.1.8">
+<A NAME="clear"></A>
+<A NAME="DOC.1.4.6.1.7"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void clear()</B></TT>
 <DD>Resets the rectangle to the empty rectangle 
 <DL><DT><DD></DL><P>
-<A NAME="inflate">
-<A NAME="DOC.1.4.6.1.9">
+<A NAME="inflate"></A>
+<A NAME="DOC.1.4.6.1.8"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int inflate(int dx, int dy)</B></TT>
 <DD>Fatten the rectangle. Both vertical sides of the rectangle are pushed
 apart by <TT>dx</TT> units. Both horizontal sides of the rectangle are pushed
 apart by <TT>dy</TT> units. Setting arguments <TT>dx</TT> (resp. <TT>dy</TT>) to a negative
 value reduces the rectangle horizontal (resp. vertical) size. 
 <DL><DT><DD></DL><P>
-<A NAME="translate">
-<A NAME="DOC.1.4.6.1.10">
+<A NAME="translate"></A>
+<A NAME="DOC.1.4.6.1.9"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int translate(int dx, int dy)</B></TT>
 <DD>Translate the rectangle. The new rectangle is composed of all the points
 of the old rectangle translated by <TT>dx</TT> units horizontally and <TT>dy</TT>
 units vertically. 
 <DL><DT><DD></DL><P>
-<A NAME="intersect">
-<A NAME="DOC.1.4.6.1.11">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int intersect(const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect2)</B></TT>
+<A NAME="intersect"></A>
+<A NAME="DOC.1.4.6.1.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int intersect(const <!1><A HREF="GRect.html">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html">GRect</A> &amp;rect2)</B></TT>
 <DD>Sets the rectangle to the intersection of rectangles <TT>rect1</TT> and <TT>rect2</TT>.
 This function returns true iff the intersection rectangle is not empty. 
 <DL><DT><DD></DL><P>
-<A NAME="recthull">
-<A NAME="DOC.1.4.6.1.12">
-<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int recthull(const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html#DOC.1.4.6.1.1">GRect</A> &amp;rect2)</B></TT>
+<A NAME="recthull"></A>
+<A NAME="DOC.1.4.6.1.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int recthull(const <!1><A HREF="GRect.html">GRect</A> &amp;rect1, const <!1><A HREF="GRect.html">GRect</A> &amp;rect2)</B></TT>
 <DD>Sets the rectangle to the smallest rectangle containing the points of
 both rectangles <TT>rect1</TT> and <TT>rect2</TT>. This function returns true iff the
 intersection rectangle is not empty. 
 <DL><DT><DD></DL><P>
-<A NAME="xmin">
-<A NAME="DOC.1.4.6.1.13">
+<A NAME="xmin"></A>
+<A NAME="DOC.1.4.6.1.12"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int xmin</B></TT>
 <DD>Minimal (inclusive) horizontal coordinate of the rectangle points. 
 <DL><DT><DD></DL><P>
-<A NAME="ymin">
-<A NAME="DOC.1.4.6.1.14">
+<A NAME="ymin"></A>
+<A NAME="DOC.1.4.6.1.13"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int ymin</B></TT>
 <DD>Minimal (inclusive) vertical coordinate of the rectangle points. 
 <DL><DT><DD></DL><P>
-<A NAME="xmax">
-<A NAME="DOC.1.4.6.1.15">
+<A NAME="xmax"></A>
+<A NAME="DOC.1.4.6.1.14"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int xmax</B></TT>
 <DD>Maximal (exclusive) horizontal coordinate of the rectangle points. 
 <DL><DT><DD></DL><P>
-<A NAME="ymax">
-<A NAME="DOC.1.4.6.1.16">
+<A NAME="ymax"></A>
+<A NAME="DOC.1.4.6.1.15"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int ymax</B></TT>
 <DD>Maximal (exclusive) vertical coordinate of the rectangle points. 
 <DL><DT><DD></DL><P></DL>
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DT><B>Friends:</B><DD>  int operator==(const <!1><A HREF="GRect.html">GRect</A> &amp; r1, const <!1><A HREF="GRect.html">GRect</A> &amp; r2)<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> ZPCodec.h</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">ZPCodec.h</A></H2>
-<BLOCKQUOTE>Binary adaptive quasi-arithmetic coder. </BLOCKQUOTE>
+<H2> <A HREF="#DOC.DOCU">ZPCodec.h</A></H2></H2><BLOCKQUOTE>Binary adaptive quasi-arithmetic coder. </BLOCKQUOTE>
 
 <HR>
 <DL>
@@ -18,15 +19,21 @@
 
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="ZPCodec"></A>
 <A HREF=ZPCodec.html><B>ZPCodec</B></A><DD><I>Performs ZP-Coder encoding and decoding.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="ZPCodec Examples"></A>
+<A HREF=ZPCodecExamples.html><B>ZPCodec Examples</B></A><DD><I>Suggestions for efficiently using the ZP-Coder.  </I>
 </DL>
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 Files <TT>&quot;ZPCodec.h&quot;</TT> and <TT>&quot;ZPCodec.cpp&quot;</TT> implement a fast binary adaptive
 quasi-arithmetic coder named ZP-Coder.  Because of its speed and
 convenience, the ZP-Coder is used in several parts of the DjVu reference
 library (See <!1><A HREF="BSByteStream.h.html">BSByteStream.h</A>, <!1><A HREF="JB2Image.h.html">JB2Image.h</A>, <!1><A HREF="IWImage.h.html">IWImage.h</A>).
 The following comments avoid the theory (see the historical remarks for
-useful pointers) and concentrate on the user perspective on the ZP-Coder.<P><B>Introduction</B> ---
+useful pointers) and concentrate on the user perspective on the ZP-Coder.
+
+<P><B>Introduction</B> ---
 Encoding consists of transforming a sequence of <EM>message bits</EM> into a
 sequence of <EM>code bits</EM>. Decoding consists of retrieving the message
 bits using only the code bits.  We can make the code smaller than the
@@ -35,7 +42,9 @@ coding context</EM> composed of previously encoded or decoded bits. If the
 prediction is always correct, we do not even need to encode the message
 bit. If the prediction is totally unreliable, we need to generate one code
 bit in order to unambiguously specify the message bit.  In other words,
-the more reliable the prediction, the more compression we get.<P>The ZP-Coder handles prediction by means of <EM>context variables</EM> (see
+the more reliable the prediction, the more compression we get.
+
+<P>The ZP-Coder handles prediction by means of <EM>context variables</EM> (see
 <!1><A HREF="BitContext.html">BitContext</A>).  There must be a context variable for each possible
 combination of context bits.  Both the encoder and the decoder use same
 context variable for coding each message bit.  For instance, we can code a
@@ -48,7 +57,9 @@ encoded using the context variable corresponding to the values of the 10
 neighboring pixels.  Each pixel will be decoded by specifying the same
 context variable corresponding to the values of these 10 pixels. This is
 possible because these 10 pixels (located above and to the left) have
-already been decoded and therefore are known by the decoder program.<P>The context variables are initially set to zero, which mean that we do not
+already been decoded and therefore are known by the decoder program.
+
+<P>The context variables are initially set to zero, which mean that we do not
 know yet how to predict the current message bit on the basis of the
 context bits. While coding the message bits, the ZP-Coder automatically
 estimates the frequencies of <TT>0</TT>s and <TT>1</TT>s coded using each context
@@ -58,22 +69,28 @@ often the prediction was correct in the past).  All this statistical
 information is stored into the context variable after coding each bit.  In
 other words, the more we code bits within a particular context, the better
 the ZP-Coder adapts its prediction model, and the more compression we can
-obtain.<P>All this adaptation works indeed because both the encoder program and the
+obtain.
+
+<P>All this adaptation works indeed because both the encoder program and the
 decoder program are always synchronized. Both the encoder and the decoder
 see the same message bits encoded (or decoded) with the same context
 variables.  Both the encoder and the decoder apply the same rules to
 update the context variables and improve the predictors.  Both the encoder
 and the decoder programs use the same predictors for any given message
-bit.  The decoder could not work if this was not the case.<P>Just before encoding a message bit, all the context variables in the
+bit.  The decoder could not work if this was not the case.
+
+<P>Just before encoding a message bit, all the context variables in the
 encoder program contain certain values. Just before decoding this message
 bit, all the context variables in the decoder program must contain the same
 values as for the encoder program.  This is guaranteed as long as
 each prediction only depends on already coded bits: <EM>the coding context,
 on which the each prediction is based, must be composed of message bits which
-have already been coded. </EM><P><B>Usage</B> ---
+have already been coded. </EM>
+
+<P><B>Usage</B> ---
 Once you know how to organize the predictions (i.e. which coding context
 to use, how many context variables to initialize, etc.), using the
-ZP-Coder is straightforward (see ZPCodec Examples):
+ZP-Coder is straightforward (see <!1><A HREF="ZPCodecExamples.html">ZPCodec Examples</A>):
 <UL>
 <LI> The <EM>encoder program</EM> allocates context variables and
 initializes them to zero. It then constructs a <!1><A HREF="ZPCodec.html">ZPCodec</A> object for
@@ -88,11 +105,13 @@ bits, selects a context variable on the basis of the context bits and
 calls member function ZPCodec::decoder with a reference to the
 context variable. This function returns the message bit.
 </UL>
-Functions
+Functions <TT>encoder</TT> and <TT>decoder</TT> only require a few machine cycles to
 perform two essential tasks, namely <EM>coding</EM> and <EM>context
 adaptation</EM>.  Function <TT>decoder</TT> often returns after two arithmetic
 operations only.  To make your program fast, you just need to feed message
-bits and context variables fast enough.<P><B>History</B> --- The ZP-Coder is similar in function and performance to
+bits and context variables fast enough.
+
+<P><B>History</B> --- The ZP-Coder is similar in function and performance to
 the seminal Q-Coder (Pennebaker, Mitchell, Langdon, Arps, IBM J. Res Dev. 32,
 1988). An improved version of the Q-Coder, named QM-Coder, has been
 described in certain parts of the JPEG standard.  Unfortunate patent
@@ -104,13 +123,17 @@ extension of the Golomb codes (Bottou, Howard, Bengio, IEEE DCC 98, 1998
 This new approach does not infringe the QM-Coder patents.  Unfortunately
 the Z-Coder is dangerously close to the patented Arithmetic MEL Coder.
 Therefore we wrote the ZP-Coder (pronounce Zee-Prime Coder) which we
-believe is clear of legal problems.<P>Needless, to say, LizardTech has patents pending for both the Z-Coder and
+believe is clear of legal problems.
+
+<P>Needless, to say, LizardTech has patents pending for both the Z-Coder and
 the ZP-Coder. The good news however is that we can grant a license to use
 the ZP-Coder in "free software" without further complication. See
 LizardTech's Web Site for information on availability of the Reference
-Library under the GNU GPL.<P></BLOCKQUOTE>
-<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; 
-<DT><B>Version:</B><DD><TT>$Id: ZPCodec.h.html,v 1.2 2000-08-26 00:09:29 bcr Exp $</TT>
+Library under the GNU GPL.
 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; 
+<DT><B>Version:</B><DD><TT>$Id: ZPCodec.h.html,v 1.3 2003-12-30 17:53:53 leonb Exp $</TT>
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

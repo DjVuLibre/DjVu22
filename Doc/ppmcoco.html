@@ -1,18 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> ppmcoco</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">ppmcoco</A></H2>
-<BLOCKQUOTE>Perform color correction on PPM files. </BLOCKQUOTE>
-<A NAME="DOC.DOCU">
+<H2> <A HREF="#DOC.DOCU">ppmcoco</A></H2></H2><BLOCKQUOTE>Perform color correction on PPM files. </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 <B>Synopsis</B>
 <PRE>
-        ppmcoco [-from &lt;gamma&gt;] [-to &lt;gamma&gt;] [&lt;ppmin&gt;] [&lt;ppmout&gt;]
-    </PRE><P><B>Arguments</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ppmcoco&nbsp;[-from&nbsp;&lt;gamma&gt;]&nbsp;[-to&nbsp;&lt;gamma&gt;]&nbsp;[&lt;ppmin&gt;]&nbsp;[&lt;ppmout&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
+
+<P><B>Arguments</B><BR>
 <DL>
 <DT><B>-from &lt;gamma&gt;</B><DD>  
 Gamma coefficient of the display for which the image was designed.
@@ -28,7 +31,9 @@ file is to be read on the standard input.  See
 Name of the PPM file into which the color corrected image will be written.
 Omitting this argument or providing a single dash (<TT>&quot;-&quot;</TT>) means that the
 PPM data will be written to the standard output.
-</DL><P>
+</DL>
+
+<P>
 <B>Description</B> ---
 File <TT>&quot;ppmcoco.cpp&quot;</TT> illustrates how the DjVu Reference Library performs
 color correction on <!1><A HREF="GPixmap.html">GPixmap</A> objects.  Each color image is in theory
@@ -37,7 +42,9 @@ image on a different device, we need to correct the image in order to
 compensate the differences between the color profile of the <EM>design
 device</EM> (the device for which the image was designed) and the color
 profile of the <EM>rendering device</EM> (the device on which the image will
-be displayed.)<P>The current release of the DjVu Reference Library only implements gamma
+be displayed.)
+
+<P>The current release of the DjVu Reference Library only implements gamma
 correction.  Cathodic displays are reasonably well characterized by a
 single floating point number called ``gamma''.  Typical gamma values 
 are given in the table below:
@@ -47,7 +54,9 @@ are given in the table below:
 PC                </TD><TD>  2.5 </TD></TR><TR><TD>
 Apple Macintosh   </TD><TD>  1.9 </TD></TR><TR><TD>
 Silicon Graphics  </TD><TD>  1.4
-</TR></TABLE></CENTER><P>Gamma correction is performed by function <!1><A HREF="GPixmap.html#DOC.1.4.14.2.6.3">color_correct</A> in
+</TR></TABLE></CENTER>
+
+<P>Gamma correction is performed by function GPixmap::color_correct in
 class <!1><A HREF="GPixmap.html">GPixmap</A>.  The argument of function <TT>color_correct</TT> must be the
 ratio between the gamma coefficient of the rendering device and the gamma
 coefficient of the design device.  This function works best when both
@@ -58,13 +67,17 @@ data compression artifacts in the dark areas of the image.  We suggest
 therefore to design images with a intermediate gamma coefficient.  Value
 2.2 gives decent results on all computers.  This value is suggested by
 several photo editing programs (such as Photoshop), and is
-supported by virtually all scanner drivers.<P>Program <TT>ppmcoco</TT> reads a PPM file <TT>ppmin</TT> containing an image designed
+supported by virtually all scanner drivers.
+
+<P>Program <TT>ppmcoco</TT> reads a PPM file <TT>ppmin</TT> containing an image designed
 for a display whose gamma coefficient is specified with option <TT>-from</TT>.
 Color correction is then performed for a display whose gamma coefficient
 is specified with option <TT>-to</TT>.  The corrected file is then written into
-PPM file <TT>ppmout</TT>.<P></BLOCKQUOTE>
+PPM file <TT>ppmout</TT>.
+
+<P></BLOCKQUOTE>
 <DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt;
 
-<DT><B>Version:</B><DD><TT>$Id: ppmcoco.html,v 1.2 2000-08-26 00:09:29 bcr Exp $</TT> 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DT><B>Version:</B><DD><TT>$Id: ppmcoco.html,v 1.3 2003-12-30 17:53:53 leonb Exp $</TT> 
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _GSCALER_H_::GPixmapScaler</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  GPixmapScaler</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">GPixmapScaler</A>: public <!1><A HREF="GScaler.html">GScaler</A></H2>
-<BLOCKQUOTE>Fast rescaling code for color images.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">GPixmapScaler</A></H2></H2><BLOCKQUOTE>Fast rescaling code for color images.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,13 +23,13 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.15.3.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GPixmapScaler</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.15.3.1">GPixmapScaler</A></B>()
 <DD><I>Constructs an empty GPixmapScaler.</I>
 <DT>
-<A HREF="#DOC.1.4.15.3.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GPixmapScaler</B>(int inw, int inh, int outw, int outh)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.15.3.2">GPixmapScaler</A></B>(int inw, int inh, int outw, int outh)
 <DD><I>Constructs a GPixmapScaler.</I>
 <DT>
-<A HREF="#DOC.1.4.15.3.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>scale</B>( const <!1><A HREF="GRect.html">GRect</A> &amp;provided_input, const <!1><A HREF="GPixmap.html">GPixmap</A> &amp;input, const <!1><A HREF="GRect.html">GRect</A> &amp;desired_output, <!1><A HREF="GPixmap.html">GPixmap</A> &amp;output )
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.15.3.3">scale</A></B>( const <!1><A HREF="GRect.html">GRect</A> &amp;provided_input, const <!1><A HREF="GPixmap.html">GPixmap</A> &amp;input, const <!1><A HREF="GRect.html">GRect</A> &amp;desired_output, <!1><A HREF="GPixmap.html">GPixmap</A> &amp;output )
 <DD><I>Computes a segment of the rescaled output image.</I>
 </DL></P>
 
@@ -50,57 +51,61 @@
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Fast rescaling code for color images.  This class augments the base class
 <!1><A HREF="GScaler.html">GScaler</A> with a function for rescaling color images.  Function
-<!1><A HREF="GPixmapScaler.html#DOC.1.4.15.3.3">scale</A> computes an arbitrary segment of the output
-image given the corresponding pixels in the input image.<P><B>Example</B> --- The following functions returns a color image
+GPixmapScaler::scale computes an arbitrary segment of the output
+image given the corresponding pixels in the input image.
+
+<P><B>Example</B> --- The following functions returns a color image
 of size <TT>nw</TT> by <TT>nh</TT> containing a rescaled version of
-the input image
+the input image <TT>in</TT>.
 <PRE>
-    GPixmap *rescale_pixmap(const GPixmap &amp;in, int nw, int nh)
-    {
-      int w = in.columns();       // Get input width
-      int h = in.raws();          // Get output width
-      GPixmapScaler scaler(w,h,nw,nh);  // Creates bitmap scaler
-      GRect desired(0,0,nw,nh);   // Desired output = complete image
-      GRect provided(0,0,w,h);    // Provided input = complete image
-      GPixmap *out = new GPixmap;
-      scaler.scale(provided, in, desired, *out);  // Rescale
-      return out;
-    }
-    </PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;GPixmap&nbsp;*rescale_pixmap(const&nbsp;GPixmap&nbsp;&amp;in,&nbsp;int&nbsp;nw,&nbsp;int&nbsp;nh)
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;w&nbsp;=&nbsp;in.columns();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Get&nbsp;input&nbsp;width
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;h&nbsp;=&nbsp;in.raws();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Get&nbsp;output&nbsp;width
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPixmapScaler&nbsp;scaler(w,h,nw,nh);&nbsp;&nbsp;//&nbsp;Creates&nbsp;bitmap&nbsp;scaler
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRect&nbsp;desired(0,0,nw,nh);&nbsp;&nbsp;&nbsp;//&nbsp;Desired&nbsp;output&nbsp;=&nbsp;complete&nbsp;image
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GRect&nbsp;provided(0,0,w,h);&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Provided&nbsp;input&nbsp;=&nbsp;complete&nbsp;image
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GPixmap&nbsp;*out&nbsp;=&nbsp;new&nbsp;GPixmap;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scaler.scale(provided,&nbsp;in,&nbsp;desired,&nbsp;*out);&nbsp;&nbsp;//&nbsp;Rescale
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;out;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
 </BLOCKQUOTE>
 <DL>
 
-<A NAME="GPixmapScaler">
-<A NAME="DOC.1.4.15.3.1">
+<A NAME="GPixmapScaler"></A>
+<A NAME="DOC.1.4.15.3.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GPixmapScaler()</B></TT>
 <DD>Constructs an empty GPixmapScaler. You must call functions
-<!1><A HREF="GScaler.html#DOC.1.4.15.1.1">set_input_size</A> and <!1><A HREF="GScaler.html#DOC.1.4.15.1.2">set_output_size</A> before
+GScaler::set_input_size and GScaler::set_output_size before
 calling any of the scaling functions. 
 <DL><DT><DD></DL><P>
-<A NAME="GPixmapScaler">
-<A NAME="DOC.1.4.15.3.2">
+<A NAME="GPixmapScaler"></A>
+<A NAME="DOC.1.4.15.3.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GPixmapScaler(int inw, int inh, int outw, int outh)</B></TT>
-<DD>Constructs a GPixmapScaler. The size of the input image is given by<P><!1><A HREF="GScaler.html#DOC.1.4.15.1.1">set_input_size</A> and <!1><A HREF="GScaler.html#DOC.1.4.15.1.2">set_output_size</A>. The
+<DD>Constructs a GPixmapScaler. The size of the input image is given by
+<TT>inw</TT> and <TT>inh</TT>.  This function internally calls
+GScaler::set_input_size and GScaler::set_output_size. The
 size of the output image is given by <TT>outw</TT> and <TT>outh</TT>.  . 
 <DL><DT><DD></DL><P>
-<A NAME="scale">
-<A NAME="DOC.1.4.15.3.3">
+<A NAME="scale"></A>
+<A NAME="DOC.1.4.15.3.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void scale( const <!1><A HREF="GRect.html">GRect</A> &amp;provided_input, const <!1><A HREF="GPixmap.html">GPixmap</A> &amp;input, const <!1><A HREF="GRect.html">GRect</A> &amp;desired_output, <!1><A HREF="GPixmap.html">GPixmap</A> &amp;output )</B></TT>
 <DD>Computes a segment of the rescaled output image.  The pixmap <TT>output</TT> is
 overwritten with the segment of the output image specified by the
 rectangle <TT>desired_output</TT>.  The rectangle <TT>provided_input</TT> specifies
-which segment of the input image is provided in the pixmap
+which segment of the input image is provided in the pixmap <TT>input</TT>.  An
 exception <!1><A HREF="GException.html">GException</A> is thrown if the rectangle <TT>provided_input</TT>
 is smaller then the rectangle <TT>required_input</TT> returned by function
-<!1><A HREF="GScaler.html#DOC.1.4.15.1.5">get_input_rect</A>. 
+GScaler::get_input_rect. 
 <DL><DT><DD></DL><P></DL>
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

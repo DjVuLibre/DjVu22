@@ -1,19 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> PNM and RLE file formats</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">PNM and RLE file formats</A></H2>
-<BLOCKQUOTE>Simple image file formats.  </BLOCKQUOTE>
-<A NAME="DOC.DOCU">
+<H2> <A HREF="#DOC.DOCU">PNM and RLE file formats</A></H2></H2><BLOCKQUOTE>Simple image file formats.  </BLOCKQUOTE>
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 <B>PNM</B> --- There are actually three PNM file formats: PBM for bilevel
 images, PGM for gray level images, and PPM for color images.  These
 formats are widely used by popular image manipulation packages such as
 NetPBM <A HREF=http://www.arc.umn.edu/GVL/Software/netpbm.html>http://www.arc.umn.edu/GVL/Software/netpbm.html</A> or
-ImageMagick <A HREF=http://www.wizards.dupont.com/cristy/>http://www.wizards.dupont.com/cristy/</A>.<P><B>RLE</B> --- The binary RLE file format is a simple run-length encoding
+ImageMagick <A HREF=http://www.wizards.dupont.com/cristy/>http://www.wizards.dupont.com/cristy/</A>.
+
+<P><B>RLE</B> --- The binary RLE file format is a simple run-length encoding
 scheme for storing bilevel images.  Encoding or decoding a RLE encoded
 file is extremely simple. Yet RLE encoded files are usually much smaller
 than the corresponding PBM encoded files.  RLE files always begin with a
@@ -23,7 +26,9 @@ header line composed of:<BR>
 - the number of columns, encoded using characters <TT>&quot;0&quot;</TT> to <TT>&quot;9&quot;</TT>,<BR>
 - one or more blank characters,<BR>
 - the number of lines, encoded using characters <TT>&quot;0&quot;</TT> to <TT>&quot;9&quot;</TT>,<BR>
-- exactly one blank character (usually a line-feed character).<P>The rest of the file encodes a sequence of numbers representing the
+- exactly one blank character (usually a line-feed character).
+
+<P>The rest of the file encodes a sequence of numbers representing the
 lengths of alternating runs of white and black pixels.  Lines are encoded
 starting with the top line and progressing towards the bottom line.  Each
 line starts with a white run. The decoder knows that a line is finished
@@ -35,6 +40,8 @@ are represented by a two byte sequence: the first byte, in range <TT>0xc0</TT> t
 byte encodes the remaining eight bits of the number. This scheme allows
 for runs of length zero, which are useful when a line starts with a black
 pixel, and when a very long run (whose length exceeds <TT>16383</TT>) must be
-split into smaller runs.<P></BLOCKQUOTE>
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+split into smaller runs.
+
+<P></BLOCKQUOTE>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

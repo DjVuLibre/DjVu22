@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> BSByteStream.h</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">BSByteStream.h</A></H2>
-<BLOCKQUOTE>Simple Burrows-Wheeler general purpose compressor. </BLOCKQUOTE>
+<H2> <A HREF="#DOC.DOCU">BSByteStream.h</A></H2></H2><BLOCKQUOTE>Simple Burrows-Wheeler general purpose compressor. </BLOCKQUOTE>
 
 <HR>
 <DL>
@@ -15,19 +16,23 @@
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="BSByteStream"></A>
 <A HREF=BSByteStream.html><B>BSByteStream</B></A><DD><I>Performs bzz compression/decompression.</I>
 </DL>
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 Files <TT>&quot;BSByteStream.h&quot;</TT> and <TT>&quot;BSByteStream.cpp&quot;</TT> implement a very compact
 general purpose compressor based on the Burrows-Wheeler transform.  The
 utility program <!1><A HREF="bzz.html">bzz</A> provides a front-end for this class. Although
 this compression model is not currently used in DjVu files, it may be used
-in the future for encoding textual data chunks.<P><B>Algorithms</B> --- The Burrows-Wheeler transform (also named Block-Sorting)
+in the future for encoding textual data chunks.
+
+<P><B>Algorithms</B> --- The Burrows-Wheeler transform (also named Block-Sorting)
 is performed using a combination of the Karp-Miller-Rosenberg and the
 Bentley-Sedgewick algorithms. This is comparable to (Sadakane, DCC 98)
 with a slightly more flexible ranking scheme. Symbols are then ordered
 according to a running estimate of their occurrence frequencies.  The
 symbol ranks are then coded using a simple fixed tree and the
-<!1><A HREF="ZPCodec.html">ZPCodec</A> binary adaptive coder.<P><B>Performances</B> --- The basic algorithm is mostly similar to those
+<!1><A HREF="ZPCodec.html">ZPCodec</A> binary adaptive coder.
+
+<P><B>Performances</B> --- The basic algorithm is mostly similar to those
 implemented in well known compressors like <TT>bzip</TT> or <TT>bzip2</TT>
 (<A HREF=http://www.muraroa.demon.co.uk>http://www.muraroa.demon.co.uk</A>).  The adaptive binary coder however
 generates small differences. The adaptation noise may cost up to 5% in
@@ -36,13 +41,17 @@ adaptation.  This is good when processing large and highly structured
 files like spreadsheet files.  Compression and decompression speed is
 about twice slower than <TT>bzip2</TT> but the sorting algorithms is more
 robust. Unlike <TT>bzip2</TT> (as of August 1998), this code can compress half a
-megabyte of "abababab...." in bounded time.<P>Here are some comparative results (in bits per character) obtained on the
+megabyte of "abababab...." in bounded time.
+
+<P>Here are some comparative results (in bits per character) obtained on the
 Canterbury Corpus (<A HREF=http://corpus.canterbury.ac.nz>http://corpus.canterbury.ac.nz</A>) as of August
 1998. The BSByteStream performance on the single spreadsheet file <TT>Excl</TT>
 moves <TT>bzz</TT>'s weighted average ahead of much more sophisticated methods,
 like Suzanne Bunton's <TT>fsmxBest</TT> system
 <A HREF=http://corpus.canterbury.ac.nz/methodinfo/fsmx.html>http://corpus.canterbury.ac.nz/methodinfo/fsmx.html</A>.  This result
-will not last very long.<P><FONT SIZE="-2">
+will not last very long.
+
+<P><FONT SIZE="-2">
 <TABLE BORDER>
 <TR><TD>
 </TD><TD> text </TD><TD> fax </TD><TD> Csrc </TD><TD> Excl </TD><TD> SPRC </TD><TD> tech 
@@ -72,15 +81,19 @@ fsmx
 </TD><TD> 2.40 </TD><TD> 2.52 </TD><TD> 2.60 </TD><TD> 3.19 </TD><TD> 2.52 
 </TD><TD> <B>1.44</B> </TD><TD> 2.16
 </TR></TABLE>
-</FONT><P>Note that the DjVu people have several entries in this table.  Program
+</FONT>
+
+<P>Note that the DjVu people have several entries in this table.  Program
 <TT>compress</TT> was written some time ago by Joe Orost
 (<A HREF=http://www.research.att.com/info/orost>http://www.research.att.com/info/orost</A>). The <TT>ppmc</TT> method, (a
 precursor of <TT>ppmd</TT>) was created by Paul Howard
 (<A HREF=http://www.research.att.com/info/pgh>http://www.research.att.com/info/pgh</A>). The <TT>bzz</TT> program is just
-below your eyes.<P></BLOCKQUOTE>
+below your eyes.
+
+<P></BLOCKQUOTE>
 <DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; -- Initial implementation<BR>
 Andrei Erofeev &lt;eaf@research.att.com&gt; -- Improved Block Sorting algorithm.
 
-<DT><B>Version:</B><DD><TT>$Id: BSByteStream.h.html,v 1.2 2000-08-26 00:09:29 bcr Exp $</TT> 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DT><B>Version:</B><DD><TT>$Id: BSByteStream.h.html,v 1.3 2003-12-30 17:53:53 leonb Exp $</TT> 
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

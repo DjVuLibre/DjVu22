@@ -1,69 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE> </TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE> DjVu Reference Library</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2> <A HREF="#DOC.DOCU">DjVu Reference Library</A></H2>
-
+<H2> <A HREF="#DOC.DOCU">DjVu Reference Library</A></H2></H2>
 <HR>
 <DL>
 <DT>
 
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Introduction"></A>
-<A HREF=Introduction.html><B>Introduction</B></A><DD><I></I>
-<DT>
+<A HREF=Introduction.html><B>Introduction</B></A><DT>
 
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Getting Started"></A>
-<A HREF=GettingStarted.html><B>Getting Started</B></A><DD><I></I>
-<DT>
+<A HREF=GettingStarted.html><B>Getting Started</B></A><DT>
 
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="DjVu File Structure"></A>
-<A HREF=DjVuFileStructure.html><B>DjVu File Structure</B></A><DD><I></I>
-<DT>
+<A HREF=DjVuFileStructure.html><B>DjVu File Structure</B></A><DT>
 
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Library Reference"></A>
-<A HREF=LibraryReference.html><B>Library Reference</B></A><DD><I></I>
-<DT>
+<A HREF=LibraryReference.html><B>Library Reference</B></A><DT>
 
 <IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="Utility Programs"></A>
-<A HREF=UtilityPrograms.html><B>Utility Programs</B></A><DD><I></I>
-</DL>
-<A NAME="DOC.DOCU">
+<A HREF=UtilityPrograms.html><B>Utility Programs</B></A></DL>
+<A NAME="DOC.DOCU"></A>
 <BLOCKQUOTE>
 <PRE>
-//C- -*- C++ -*-
-//C- Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.
-//C- 
-//C- This software (the &quot;Original Code&quot;) is subject to, and may be
-//C- distributed under, the GNU General Public License, Version 2.
-//C- You may obtain a copy of the license from the Free Software
-//C- Foundation at http://www.fsf.org.
+//C-&nbsp;-*-&nbsp;C++&nbsp;-*-
+//C-&nbsp;Copyright&nbsp;(c)&nbsp;1999-2000&nbsp;LizardTech,&nbsp;Inc.&nbsp;All&nbsp;Rights&nbsp;Reserved.
+//C-&nbsp;
+//C-&nbsp;This&nbsp;software&nbsp;(the&nbsp;&quot;Original&nbsp;Code&quot;)&nbsp;is&nbsp;subject&nbsp;to,&nbsp;and&nbsp;may&nbsp;be
+//C-&nbsp;distributed&nbsp;under,&nbsp;the&nbsp;GNU&nbsp;General&nbsp;Public&nbsp;License,&nbsp;Version&nbsp;2.
+//C-&nbsp;You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;license&nbsp;from&nbsp;the&nbsp;Free&nbsp;Software
+//C-&nbsp;Foundation&nbsp;at&nbsp;http://www.fsf.org.
 //C-
-//C- With respect to the Original Code, and subject to any third party
-//C- intellectual property claims, LizardTech grants recipient a worldwide,
-//C- royalty-free, non-exclusive license under patent claims infringed by
-//C- making, using, or selling Original Code which are now or hereafter
-//C- owned or controlled by LizardTech, but solely to the extent that any
-//C- such patent is reasonably necessary to enable you to make, have made,
-//C- practice, sell, or otherwise dispose of Original Code (or portions
-//C- thereof) and not to any greater extent that may be necessary to utilize
-//C- further modifications or combinations.
-//C- 
-//C- The Original Code is provided &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND,
-//C- EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY
-//C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
-//C- FITNESS FOR A PARTICULAR PURPOSE.
-    </PRE><P>
+//C-&nbsp;With&nbsp;respect&nbsp;to&nbsp;the&nbsp;Original&nbsp;Code,&nbsp;and&nbsp;subject&nbsp;to&nbsp;any&nbsp;third&nbsp;party
+//C-&nbsp;intellectual&nbsp;property&nbsp;claims,&nbsp;LizardTech&nbsp;grants&nbsp;recipient&nbsp;a&nbsp;worldwide,
+//C-&nbsp;royalty-free,&nbsp;non-exclusive&nbsp;license&nbsp;under&nbsp;patent&nbsp;claims&nbsp;infringed&nbsp;by
+//C-&nbsp;making,&nbsp;using,&nbsp;or&nbsp;selling&nbsp;Original&nbsp;Code&nbsp;which&nbsp;are&nbsp;now&nbsp;or&nbsp;hereafter
+//C-&nbsp;owned&nbsp;or&nbsp;controlled&nbsp;by&nbsp;LizardTech,&nbsp;but&nbsp;solely&nbsp;to&nbsp;the&nbsp;extent&nbsp;that&nbsp;any
+//C-&nbsp;such&nbsp;patent&nbsp;is&nbsp;reasonably&nbsp;necessary&nbsp;to&nbsp;enable&nbsp;you&nbsp;to&nbsp;make,&nbsp;have&nbsp;made,
+//C-&nbsp;practice,&nbsp;sell,&nbsp;or&nbsp;otherwise&nbsp;dispose&nbsp;of&nbsp;Original&nbsp;Code&nbsp;(or&nbsp;portions
+//C-&nbsp;thereof)&nbsp;and&nbsp;not&nbsp;to&nbsp;any&nbsp;greater&nbsp;extent&nbsp;that&nbsp;may&nbsp;be&nbsp;necessary&nbsp;to&nbsp;utilize
+//C-&nbsp;further&nbsp;modifications&nbsp;or&nbsp;combinations.
+//C-&nbsp;
+//C-&nbsp;The&nbsp;Original&nbsp;Code&nbsp;is&nbsp;provided&nbsp;&quot;AS&nbsp;IS&quot;&nbsp;WITHOUT&nbsp;WARRANTY&nbsp;OF&nbsp;ANY&nbsp;KIND,
+//C-&nbsp;EITHER&nbsp;EXPRESS&nbsp;OR&nbsp;IMPLIED,&nbsp;INCLUDING&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO&nbsp;ANY&nbsp;WARRANTY
+//C-&nbsp;OF&nbsp;NON-INFRINGEMENT,&nbsp;OR&nbsp;ANY&nbsp;IMPLIED&nbsp;WARRANTY&nbsp;OF&nbsp;MERCHANTIBILITY&nbsp;OF
+//C-&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
+
+<P>
 <B>Acknowledgements</B> --- The ideas discussed in this library are the
 result of endless discussions with Yoshua Bengio, Patrick Haffner, Paul
 Howard, and Yann Le Cun.  Many improvements have suggested by Andrei
 Erofeev, Praveen Guduru, and Bill Riemers.  Credits are given whenever
 possible.  Finally, this document would be much worse without Joe Orost's
-and Paul Howard's careful proofreading.<P></BLOCKQUOTE>
+and Paul Howard's careful proofreading.
+
+<P></BLOCKQUOTE>
 <DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou, 02/1999 
 <DT><B>Version:</B><DD>2.2
 
-<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,27 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
    <TITLE>class  JB2Shape</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">JB2Shape</A></H2>
-<BLOCKQUOTE>Shape data structure.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">JB2Shape</A></H2></H2><BLOCKQUOTE>Shape data structure.</BLOCKQUOTE>
 <HR>
 
 <DL>
 <P><DL>
 <DT><H3>Public Fields</H3><DD><DT>
-<A HREF="#DOC.1.4.17.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>int <B>parent</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.1.4.17.2.1">parent</A></B>
 <DD><I>Subscript of the parent shape.</I>
 <DT>
-<A HREF="#DOC.1.4.17.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  <B>bits</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  <B><A HREF="#DOC.1.4.17.2.2">bits</A></B>
 <DD><I>Bilevel image of the shape pixels.</I>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Shape data structure.  A <TT>JB2Image</TT> contains an array of <TT>JB2Shape</TT> data
@@ -31,8 +32,8 @@ image representing the shape pixels.  Member <TT>parent</TT> is the subscript of
 the parent shape.  </BLOCKQUOTE>
 <DL>
 
-<A NAME="parent">
-<A NAME="DOC.1.4.17.2.1">
+<A NAME="parent"></A>
+<A NAME="DOC.1.4.17.2.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int parent</B></TT>
 <DD>Subscript of the parent shape.  The parent shape must always be located
 before the current shape in the shape array.  A negative value indicates
@@ -42,8 +43,8 @@ is used to enable a few internal optimizations.  This information is
 saved into the JB2 file, but the actual value of the <TT>parent</TT> variable
 is not. 
 <DL><DT><DD></DL><P>
-<A NAME="bits">
-<A NAME="DOC.1.4.17.2.2">
+<A NAME="bits"></A>
+<A NAME="DOC.1.4.17.2.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GP.html">GP</A>&lt;<!1><A HREF="GBitmap.html">GBitmap</A>&gt;  bits</B></TT>
 <DD>Bilevel image of the shape pixels.  This must be a pointer to a bilevel
 <TT>GBitmap</TT> image.  This pointer can also be null. The encoder will just
@@ -53,5 +54,5 @@ bitmap.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
    <TITLE>class  BSByteStream</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">BSByteStream</A>: public <!1><A HREF="ByteStream.html">ByteStream</A></H2>
-<BLOCKQUOTE>Performs bzz compression/decompression.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">BSByteStream</A></H2></H2><BLOCKQUOTE>Performs bzz compression/decompression.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,7 +23,7 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.12.1.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>BSByteStream</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int blocksize=0)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.12.1.1">BSByteStream</A></B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int blocksize=0)
 <DD><I>Constructs a BSByteStream.</I>
 </DL></P>
 
@@ -30,87 +31,39 @@
 <HR><H3>Inherited from <A HREF="ByteStream.html">ByteStream</A>:</H3>
 <DL>
 <P><DL>
-<DT><H3>Public</H3><DD><DT>
+<DT><H3>Public Methods</H3><DD><DT>
 <P> <B>Virtual Functions.</B>
-<P><DL>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <B>~ByteStream</B>()
-<DD><I>Virtual destructor.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   size_t <B>read</B>(void *buffer, size_t size)
-<DD><I>Reads data from a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   size_t <B>write</B>(const void *buffer, size_t size)
-<DD><I>Writes data to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   long <B>tell</B>(void)
-<DD><I>Returns the offset of the current position in the ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   int <B>is_seekable</B>(void) const 
-<DD><I>Tests whether function <TT>seek</TT> can seek backwards.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>seek</B>(long offset, int whence = SEEK_SET)
-<DD><I>Sets the current position for reading or writing the ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.1.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>flush</B>()
-<DD><I>Flushes all buffers in the ByteStream.</I>
-</DL></P>
 <DT>
 <P> <B>Utility Functions.  </B>
-<P><DL>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>size_t <B>readall</B>(void *buffer, size_t size)
-<DD><I>Reads data and blocks until everything has been read.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>size_t <B>writall</B>(const void *buffer, size_t size)
-<DD><I>Writes data and blocks until everything has been written.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>size_t <B>copy</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bsfrom, size_t size=0)
-<DD><I>Copy data from another ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>write8</B>(unsigned int card8)
-<DD><I>Writes a one-byte integer to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>write16</B>(unsigned int card16)
-<DD><I>Writes a two-bytes integer to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>write32</B>(unsigned int card32)
-<DD><I>Writes a four-bytes integer to a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>read8</B>()
-<DD><I>Reads a one-byte integer from a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.8"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>read16</B>()
-<DD><I>Reads a two-bytes integer from a ByteStream.</I>
-<DT>
-<A HREF="#DOC.1.4.9.1.2.9"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>read32</B>()
-<DD><I>Reads a four-bytes integer from a ByteStream.</I>
-</DL></P>
 </DL></P>
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
-<BLOCKQUOTE>Performs bzz compression/decompression.<P>Class <TT>BSByteStream</TT> defines a <!1><A HREF="ByteStream.html">ByteStream</A> which transparently
+<BLOCKQUOTE>Performs bzz compression/decompression.
+
+<P>Class <TT>BSByteStream</TT> defines a <!1><A HREF="ByteStream.html">ByteStream</A> which transparently
 performs the BZZ compression/decompression. The constructor of class
-<!1><A HREF="BSByteStream.html#DOC.1.4.12.1.1">BSByteStream</A> takes another <!1><A HREF="ByteStream.html">ByteStream</A> as argument.  Any data
+<!1><A HREF="BSByteStream.html">BSByteStream</A> takes another <!1><A HREF="ByteStream.html">ByteStream</A> as argument.  Any data
 written to the BSByteStream is compressed and written to this second
 ByteStream. Any data read from the BSByteStream is internally generated by
-decompressing data read from the second ByteStream.<P>Program <!1><A HREF="bzz.html">bzz</A> demonstrates how to use this class.  All the hard work
+decompressing data read from the second ByteStream.
+
+<P>Program <!1><A HREF="bzz.html">bzz</A> demonstrates how to use this class.  All the hard work
 is achieved by a simple ByteStream to ByteStream copy, as shown below.
 <PRE>
-      StdioByteStream in(infile,&quot;rb&quot;);
-      StdioByteStream out(outfile,&quot;wb&quot;);
-      if (encoding) {
-          BSByteStream bsb(&amp;out, blocksize);
-          bsb.copy(in);
-      } else {
-          BSByteStream bsb(&amp;in);
-          out.copy(bsb);
-      }
-    </PRE>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StdioByteStream&nbsp;in(infile,&quot;rb&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StdioByteStream&nbsp;out(outfile,&quot;wb&quot;);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(encoding)&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSByteStream&nbsp;bsb(&amp;out,&nbsp;blocksize);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bsb.copy(in);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSByteStream&nbsp;bsb(&amp;in);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out.copy(bsb);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;</PRE>
 Due to the block oriented nature of the Burrows-Wheeler transform, there
 is a very significant latency between the data input and the data output.
 You can use function <TT>flush</TT> to force data output at the expense of
@@ -118,8 +71,8 @@ compression efficiency.  Destroying the BSByteStream performs an implicit
 <TT>flush</TT>.  </BLOCKQUOTE>
 <DL>
 
-<A NAME="BSByteStream">
-<A NAME="DOC.1.4.12.1.1">
+<A NAME="BSByteStream"></A>
+<A NAME="DOC.1.4.12.1.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> BSByteStream(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs, int blocksize=0)</B></TT>
 <DD>Constructs a BSByteStream.
 Argument <TT>blocksize</TT> determines whether the BSByteStream will be used
@@ -144,5 +97,5 @@ Setting <TT>blocksize</TT> to <TT>1024</TT> is a good starting point.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->

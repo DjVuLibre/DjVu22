@@ -1,12 +1,13 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
 <HTML>
 <HEAD>
-   <TITLE>class  _DJVUIMAGE_H::DjVuAnno</TITLE>
-   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+   <TITLE>class  DjVuAnno</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.10">
 </HEAD>
 <BODY BGCOLOR="#ffffff">
 
-<H2>class  <A HREF="#DOC.DOCU">DjVuAnno</A>: public <!1><A HREF="GPEnabled.html#DOC.1.4.3.1.2">GPEnabled</A></H2>
-<BLOCKQUOTE>Display annotation component.</BLOCKQUOTE>
+<H2>class  <A HREF="#DOC.DOCU">DjVuAnno</A></H2></H2><BLOCKQUOTE>Display annotation component.</BLOCKQUOTE>
 <HR>
 
 <H2>Inheritance:</H2>
@@ -22,22 +23,22 @@
 <DL>
 <P><DL>
 <DT><H3>Public Fields</H3><DD><DT>
-<A HREF="#DOC.1.4.18.3.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A><!1><A HREF="GString.html">GString</A> <B>raw</B>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GString.html">GString</A> <B><A HREF="#DOC.1.4.18.3.5">raw</A></B>
 <DD><I>Raw annotation data.</I>
 </DL></P>
 
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<A HREF="#DOC.1.4.18.3.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>DjVuAnno</B>()
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.1.4.18.3.1">DjVuAnno</A></B>()
 <DD><I>Constructs an empty annotation object.</I>
 <DT>
-<A HREF="#DOC.1.4.18.3.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>decode</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.18.3.2">decode</A></B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs)
 <DD><I>Decode an annotation chunk.</I>
 <DT>
-<A HREF="#DOC.1.4.18.3.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>encode</B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs)
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.1.4.18.3.3">encode</A></B>(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs)
 <DD><I>Encodes the annotation chunk.</I>
 <DT>
-<A HREF="#DOC.1.4.18.3.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>unsigned int <B>get_memory_usage</B>() const 
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>unsigned int <B><A HREF="#DOC.1.4.18.3.4">get_memory_usage</A></B>() const 
 <DD><I>Returns the number of bytes needed by this data structure.</I>
 </DL></P>
 
@@ -46,7 +47,7 @@
 <DL>
 <P><DL>
 <DT><H3>Public Methods</H3><DD><DT>
-<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GPEnabled.html#DOC.1.4.3.1.2">GPEnabled</A>&amp; <B>operator=</B>(const <!1><A HREF="GPEnabled.html#DOC.1.4.3.1.2">GPEnabled</A> &amp; obj)
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GPEnabled.html">GPEnabled</A>&amp; <B>operator=</B>(const <!1><A HREF="GPEnabled.html">GPEnabled</A> &amp; obj)
 </DL></P>
 
 <P><DL>
@@ -61,43 +62,45 @@
 
 </DL>
 
-<A NAME="DOC.DOCU">
+<A NAME="DOC.DOCU"></A>
 <HR>
 <H2>Documentation</H2>
 <BLOCKQUOTE>Display annotation component.
 The annotation chunk contains directives for displaying DjVu image, such
 as hyperlinks, border color, centering, preferred zoom factor, etc.
-Directives are encoded in plain text using a lisp like syntax.<P><B>Todo</B> --- The decoding/encoding functions should actually
+Directives are encoded in plain text using a lisp like syntax.
+
+<P><B>Todo</B> --- The decoding/encoding functions should actually
 convert the annotation chunk into/from an abstract representation
 of the hyperlinks and display modes.  </BLOCKQUOTE>
 <DL>
 
-<A NAME="DjVuAnno">
-<A NAME="DOC.1.4.18.3.1">
+<A NAME="DjVuAnno"></A>
+<A NAME="DOC.1.4.18.3.1"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DjVuAnno()</B></TT>
 <DD>Constructs an empty annotation object. 
 <DL><DT><DD></DL><P>
-<A NAME="decode">
-<A NAME="DOC.1.4.18.3.2">
+<A NAME="decode"></A>
+<A NAME="DOC.1.4.18.3.2"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void decode(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs)</B></TT>
 <DD>Decode an annotation chunk.  The annotation data is simply read from
 ByteStream <TT>bs</TT> until reaching an end-of-stream marker.  This function
-is normally called after a call to <!1><A HREF="IFFByteStream.html#DOC.1.4.10.1.2">get_chunk</A>. 
+is normally called after a call to IFFByteStream::get_chunk. 
 <DL><DT><DD></DL><P>
-<A NAME="encode">
-<A NAME="DOC.1.4.18.3.3">
+<A NAME="encode"></A>
+<A NAME="DOC.1.4.18.3.3"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void encode(<!1><A HREF="ByteStream.html">ByteStream</A> &amp;bs)</B></TT>
 <DD>Encodes the annotation chunk.  The annotation data is simply written
 into ByteStream <TT>bs</TT> with no IFF header. This function is normally
-called after a call to <!1><A HREF="IFFByteStream.html#DOC.1.4.10.1.3">put_chunk</A>. 
+called after a call to IFFByteStream::put_chunk. 
 <DL><DT><DD></DL><P>
-<A NAME="get_memory_usage">
-<A NAME="DOC.1.4.18.3.4">
+<A NAME="get_memory_usage"></A>
+<A NAME="DOC.1.4.18.3.4"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>unsigned int get_memory_usage() const </B></TT>
 <DD>Returns the number of bytes needed by this data structure. 
 <DL><DT><DD></DL><P>
-<A NAME="raw">
-<A NAME="DOC.1.4.18.3.5">
+<A NAME="raw"></A>
+<A NAME="DOC.1.4.18.3.5"></A>
 <DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GString.html">GString</A> raw</B></TT>
 <DD>Raw annotation data. The current version of the DjVu Reference Library
 does not yet use that data. 
@@ -105,5 +108,5 @@ does not yet use that data.
 
 <HR><DL><DT><B>This class has no child classes.</B></DL>
 
-<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
 <!-- This is were the DOC++ footer is defined  -->
