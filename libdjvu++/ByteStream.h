@@ -51,7 +51,7 @@
     L\'eon Bottou <leonb@research.att.com> -- initial implementation\\
     Andrei Erofeev <eaf@research.att.com> -- 
     @version
-    #$Id: ByteStream.h,v 1.1 2000-08-17 23:23:28 bcr Exp $# */
+    #$Id: ByteStream.h,v 1.1.1.1 2000-08-17 23:23:28 bcr Exp $# */
 //@{
 
 #ifdef __GNUC__

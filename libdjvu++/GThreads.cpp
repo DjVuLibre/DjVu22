@@ -22,7 +22,7 @@
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
 
-// **** File "$Id: GThreads.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// **** File "$Id: GThreads.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 // This file defines machine independent classes
 // for running and synchronizing threads.
 // - Author: Leon Bottou, 01/1998

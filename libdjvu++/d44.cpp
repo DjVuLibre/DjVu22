@@ -74,7 +74,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: d44.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# 
+    #$Id: d44.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# 
 */
 //@{
 //@}

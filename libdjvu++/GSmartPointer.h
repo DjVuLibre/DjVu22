@@ -41,7 +41,7 @@
     L\'eon Bottou <leonb@research.att.com> -- initial implementation\\
     Andrei Erofeev <eaf@research.att.com> -- bug fix.
     @version 
-    #$Id: GSmartPointer.h,v 1.1 2000-08-17 23:23:29 bcr Exp $# 
+    #$Id: GSmartPointer.h,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# 
     @args
 */
 //@{

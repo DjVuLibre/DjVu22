@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// "$Id: BSByteStream.cpp,v 1.1 2000-08-17 23:23:28 bcr Exp $"
+// "$Id: BSByteStream.cpp,v 1.1.1.1 2000-08-17 23:23:28 bcr Exp $"
 // - Author: Leon Bottou, 07/1998
 
 

@@ -37,7 +37,7 @@
     @memo
     Global definitions.
     @version
-    #$Id: DjVuGlobal.h,v 1.1 2000-08-17 23:23:28 bcr Exp $#
+    #$Id: DjVuGlobal.h,v 1.1.1.1 2000-08-17 23:23:28 bcr Exp $#
     @author
     L\'eon Bottou <leonb@research.att.com> -- empty file.\\
     Bill Riemers <bcr@sanskrit.lz.att.com> -- real work.  */

@@ -86,7 +86,7 @@
     @memo 
     Template header file
     @version 
-    #$Id: Template.h,v 1.1 2000-08-17 23:23:29 bcr Exp $# 
+    #$Id: Template.h,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# 
     @author: 
     L\'eon Bottou <leonb@research.att.com> -- initial implementation \\
     Andrew Erofeev <eaf@research.att.com> -- implemented EXTERNAL_TEMPLATES */

@@ -35,7 +35,7 @@
 
 #include "GString.h"
 
-// File "$Id: GString.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: GString.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 // - Author: Leon Bottou, 04/1997
 
 static GStringRep nullstring;

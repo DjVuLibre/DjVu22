@@ -97,7 +97,7 @@
     Yann Le Cun <yann@research.att.com>\\
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: djvutopnm.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: djvutopnm.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# */
 //@{
 //@}
 

@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// File "$Id: GSmartPointer.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: GSmartPointer.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 // - Author: Leon Bottou, 05/1997
 
 /* Put this into *one* file, which instantiates all the required containers

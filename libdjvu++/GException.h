@@ -70,7 +70,7 @@
     L\'eon Bottou <leonb@research.att.com> -- initial implementation.\\
     Andrei Erofeev <eaf@research.att.com> -- fixed message memory allocation.
     @version 
-    #$Id: GException.h,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: GException.h,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# */
 //@{
 
 #include "DjVuGlobal.h"

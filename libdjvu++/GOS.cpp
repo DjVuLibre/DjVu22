@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// "$Id: GOS.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// "$Id: GOS.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 
 #ifdef __GNUC__
 #pragma implementation

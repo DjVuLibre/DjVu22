@@ -41,7 +41,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com> -- Initial implementation
     @version
-    #$Id: GOS.h,v 1.1 2000-08-17 23:23:29 bcr Exp $#
+    #$Id: GOS.h,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $#
 */
 //@{
 

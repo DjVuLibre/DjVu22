@@ -33,7 +33,7 @@
 #include "GString.h"
 
 
-// File "$Id: GBitmap.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: GBitmap.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 // - Author: Leon Bottou, 05/1997
 
 // ----- constructor and destructor

@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// File "$Id: IFFByteStream.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: IFFByteStream.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 // -- Implementation of IFFByteStream
 // - Author: Leon Bottou, 06/1998
 

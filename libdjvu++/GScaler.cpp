@@ -22,7 +22,7 @@
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
 // Rescale images with fast bilinear interpolation
-// $Id: GScaler.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $
+// $Id: GScaler.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $
 
 #include "GScaler.h"
 

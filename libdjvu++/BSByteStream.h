@@ -104,7 +104,7 @@
     @memo
     Simple Burrows-Wheeler general purpose compressor.
     @version
-    #$Id: BSByteStream.h,v 1.1 2000-08-17 23:23:28 bcr Exp $# */
+    #$Id: BSByteStream.h,v 1.1.1.1 2000-08-17 23:23:28 bcr Exp $# */
 //@{
 
 #ifdef __GNUC__

@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// File "$Id: GPixmap.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: GPixmap.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $"
 // -- Implements class PIXMAP
 // Author: Leon Bottou 07/1997
 

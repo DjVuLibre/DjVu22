@@ -58,7 +58,7 @@
     L\'eon Bottou <leonb@research.att.com> -- initial implementation.\\
     Andrei Erofeev <eaf@research.att.com> -- bug fixes.
     @version 
-    #$Id: GContainer.h,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: GContainer.h,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# */
 //@{
 
 class GContainerBase;

@@ -47,7 +47,7 @@
     @memo
     Extract components from DjVu files.
     @version
-    #$Id: djvuextract.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $#
+    #$Id: djvuextract.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $#
     @author
     L\'eon Bottou <leonb@research.att.com> */
 //@{

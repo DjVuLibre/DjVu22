@@ -45,7 +45,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com> -- initial implementation
     @version
-    #$Id: bzz.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: bzz.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $# */
 //@{
 //@}
 

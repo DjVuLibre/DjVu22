@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// File "$Id: ByteStream.cpp,v 1.1 2000-08-17 23:23:28 bcr Exp $"
+// File "$Id: ByteStream.cpp,v 1.1.1.1 2000-08-17 23:23:28 bcr Exp $"
 // - Author: Leon Bottou, 04/1997
 
 #ifdef __GNUC__

@@ -137,7 +137,7 @@
     @memo
     Assemble DjVu files.
     @version
-    #$Id: djvumake.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $#
+    #$Id: djvumake.cpp,v 1.1.1.1 2000-08-17 23:23:29 bcr Exp $#
     @author
     L\'eon Bottou <leonb@research.att.com> */
 //@{
