@@ -2,19 +2,28 @@
 /** @name DjVu Reference Library
 
     \begin{verbatim}
-//C- Copyright (c) 1999 AT&T Corp.  All rights reserved.
+//C- -*- C++ -*-
+//C- Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.
+//C- 
+//C- This software (the "Original Code") is subject to, and may be
+//C- distributed under, the GNU General Public License, Version 2.
+//C- You may obtain a copy of the license from the Free Software
+//C- Foundation at http://www.fsf.org.
 //C-
-//C- This is part of a draft proposed American National Standard.  As such,
-//C- this is not a completed standard.  This document may be modified as a
-//C- result of comments received during public review and its approval as a
-//C- standard.
-//C-
-//C- Permission is granted to members of NCITS, its technical commitees, their
-//C- associated task groups, ANSI, and any parties participating in the public
-//C- review to reproduce this document for the purpose of NCITS
-//C- standardization activities without further permission, provided that this
-//C- notice is included.  All other rights are reserved.  Any commercial or
-//C- for-profit reproduction is strictly prohibited.
+//C- With respect to the Original Code, and subject to any third party
+//C- intellectual property claims, LizardTech grants recipient a worldwide,
+//C- royalty-free, non-exclusive license under patent claims infringed by
+//C- making, using, or selling Original Code which are now or hereafter
+//C- owned or controlled by LizardTech, but solely to the extent that any
+//C- such patent is reasonably necessary to enable you to make, have made,
+//C- practice, sell, or otherwise dispose of Original Code (or portions
+//C- thereof) and not to any greater extent that may be necessary to utilize
+//C- further modifications or combinations.
+//C- 
+//C- The Original Code is provided "AS IS" WITHOUT WARRANTY OF ANY KIND,
+//C- EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY
+//C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
+//C- FITNESS FOR A PARTICULAR PURPOSE.
     \end{verbatim}
 
 
