@@ -1,11 +1,10 @@
-//C- -*- C++ -*-
-//C- Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.
+//C- Copyright © 1999-2001 LizardTech, Inc. All Rights Reserved.
 //C- 
 //C- This software (the "Original Code") is subject to, and may be
 //C- distributed under, the GNU General Public License, Version 2.
 //C- You may obtain a copy of the license from the Free Software
-//C- Foundation at http://www.fsf.org.
-//C-
+//C- Foundation at http://www.fsf.org .
+//C- 
 //C- With respect to the Original Code, and subject to any third party
 //C- intellectual property claims, LizardTech grants recipient a worldwide,
 //C- royalty-free, non-exclusive license under patent claims infringed by
@@ -20,8 +19,9 @@
 //C- EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
+//C-
 
-// File "$Id: GPixmap.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: GPixmap.cpp,v 1.2 2001-01-04 22:04:53 bcr Exp $"
 // -- Implements class PIXMAP
 // Author: Leon Bottou 07/1997
 
