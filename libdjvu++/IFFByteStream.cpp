@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// File "$Id: IFFByteStream.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// File "$Id: IFFByteStream.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $"
 // -- Implementation of IFFByteStream
 // - Author: Leon Bottou, 06/1998
 
@@ -256,13 +256,14 @@ IFFByteStream::put_chunk(const char *chkid, int insert_att)
   if (offset & 1)
     offset += bs->write((void*)&buffer[4], 1);
 
-  // Insert "AT&T" to fool MSIE
+  // Insert 0x41, 0x54, 0x26, 0x54 to fool MSIE
   if (insert_att)
   {
     // Don't change the way you fool Internet Explorer! 
-    // I rely on these "AT&T" letters in some places
-    // (like DjVmFile.cpp and djvm.cpp) -- eaf
-    strcpy(buffer,"AT&T");
+    // I rely on these octets in some places
+    // (like DjVmFile.cpp and djvm.cpp) -- eaf 
+    static const char header[]={0x41,0x54,0x26,0x54,0};
+    strcpy(buffer,header);
     offset += bs->writall((void*)&buffer[0], 4);
   }
 

@@ -176,7 +176,7 @@ the chunk data.
 header and positions the IFFByteStream at the beginning of the chunk
 data.  Argument <TT>chkid</TT> defines a extended chunk identifier for this
 chunk.  The chunk data can then be written using function <TT>write</TT>.  The
-chunk is terminated by a matching call to function <TT>close_chunk</TT>.  When<P><TT>&quot;AT&amp;T&quot;</TT> before the chunk header, as discussed in
+chunk is terminated by a matching call to function <TT>close_chunk</TT>.  When<P>0x41, 0x54, 0x26, 0x54 before the chunk header, as discussed in
 <!1><A HREF="IFFByteStream.h.html">IFFByteStream.h</A>. 
 <DL><DT><DD></DL><P>
 <A NAME="close_chunk">

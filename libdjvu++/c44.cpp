@@ -160,7 +160,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: c44.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: c44.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $# */
 //@{
 //@}
 
@@ -239,7 +239,7 @@ usage()
          "    -crcbnone     -- do not encode chrominance at all\n"
          "    -crcbdelay n  -- select chrominance coding delay (default 10)\n"
          "                     for -crcbnormal and -crcbhalf modes\n"
-         "\n", "Copyright AT&T 1999 - All rights reserved");
+         "\n", "Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.");
   exit(1);
 }
 
@@ -594,7 +594,7 @@ main(int argc, char **argv)
           h = ibm.rows();
           iwb = new IWBitmap(&ibm, getmask(w,h));
         }
-      else if (!strncmp(prefix,"AT&TFORM",8) || !strncmp(prefix,"FORM",4))
+      else if ((prefix[0] == 0x41 && prefix[1] == 0x54 && prefix[2] == 0x26 && prefix[3] == 0x54 && !strncmp(prefix+4,"FORM",4)) || !strncmp(prefix,"FORM",4))
         {
           char *s = (prefix[0]=='F' ? prefix+8 : prefix+12);
           ibs.seek(0);

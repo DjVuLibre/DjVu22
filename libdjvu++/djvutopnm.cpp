@@ -97,7 +97,7 @@
     Yann Le Cun <yann@research.att.com>\\
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: djvutopnm.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: djvutopnm.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $# */
 //@{
 //@}
 
@@ -244,7 +244,7 @@ usage()
           "If <pnmfile> is a single dash or omitted, the decompressed image\n"
           "is sent to the standard output.  If <djvufile> is a single dash or\n"
           "omitted, the djvu file is read from the standard input.\n\n",
-          "Copyright AT&T 1999 - All rights reserved");
+          "Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.");
   exit(1);
 }
 

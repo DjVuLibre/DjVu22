@@ -74,7 +74,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: d44.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# 
+    #$Id: d44.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $# 
 */
 //@{
 //@}
@@ -107,7 +107,7 @@ usage()
          "Options:\n"
          "    -verbose     -- report decoding time and memory use\n"
          "    -chunks n    -- select number of chunks to decode\n"
-         "\n", "Copyright AT&T 1999 - All rights reserved");
+         "\n", "Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.");
   exit(1);
 }
 

@@ -137,7 +137,7 @@
     @memo
     Assemble DjVu files.
     @version
-    #$Id: djvumake.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $#
+    #$Id: djvumake.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $#
     @author
     L\'eon Bottou <leonb@research.att.com> */
 //@{
@@ -188,7 +188,7 @@ usage()
          "This program tries to issue a warning when you are building an\n"
          "incorrect djvu file.\n"
          "\n", 
-         "Copyright AT&T 1999 - All rights reserved");
+          "Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.");
   exit(1);
 }
 

@@ -58,16 +58,16 @@
     without worrying about the final file position. See class \Ref{ZPCodec}
     for more details.
     
-    {\bf AT&T IFF Files} --- We had initially planned to exactly follow the
+    {\bf DjVu IFF Files} --- We had initially planned to exactly follow the
     IFF specifications.  Then we realized that certain versions of MSIE
     recognize any IFF file as a Microsoft AIFF sound file and pop a message
     box "Cannot play that sound".  It appears that the structure of AIFF files
     is entirely modeled after the IFF standard, with small variations
     regarding the endianness of numbers and the padding rules.  We eliminate
-    this problem by casting the AT&T protection spell.  Our IFF files always
-    start with the four octets #"AT&T"# followed by the fully conformant IFF
-    byte stream.  Class #IFFByteStream# silently skips these four
-    octets when it encounters them.
+    this problem by casting an octet protection spell.  Our IFF files always
+    start with the four octets 0x41, 0x54, 0x26, 0x54 followed by the fully
+    conformant IFF byte stream.  Class #IFFByteStream# silently skips these
+    four octets when it encounters them.
 
     {\bf References} --- EA IFF 85 Interchange File Format specification:\\
     \URL{http://www.cica.indiana.edu/graphics/image_specs/ilbm.format.txt} or
@@ -78,7 +78,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: IFFByteStream.h,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: IFFByteStream.h,v 1.2 2000-08-26 00:09:30 bcr Exp $# */
 //@{
 
 #ifdef __GNUC__
@@ -163,8 +163,8 @@ public:
       data.  Argument #chkid# defines a extended chunk identifier for this
       chunk.  The chunk data can then be written using function #write#.  The
       chunk is terminated by a matching call to function #close_chunk#.  When
-      #insertatt# is non zero, function #put_chunk# inserts the four letters
-      #"AT&T"# before the chunk header, as discussed in
+      #insertatt# is non zero, function #put_chunk# inserts the four octets
+      0x41, 0x54, 0x26, 0x54 before the chunk header, as discussed in
       \Ref{IFFByteStream.h}. */
   void put_chunk(const char *chkid, int insertatt=0);
   /** Leaves the current chunk.  This function leaves the chunk previously

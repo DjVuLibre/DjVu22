@@ -45,7 +45,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com> -- initial implementation
     @version
-    #$Id: bzz.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $# */
+    #$Id: bzz.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $# */
 //@{
 //@}
 
@@ -66,7 +66,7 @@ usage(void)
           "Usage [decoding]: %s -d <infile> <outfile>\n"
           "  Argument <blocksize> must be in range [900..4096] (default 1100).\n"
           "  Arguments <infile> and <outfile> can be '-' for stdin/stdout.\n",
-          "Copyright AT&T 1999 - All rights reserved", program, program);
+          "Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.", program, program);
   exit(1);
 }
 

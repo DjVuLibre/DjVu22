@@ -49,7 +49,7 @@
 // The ZCODER option is provided for documentation purposes only. The ZCODER
 // is dangerously close to U.S. patent 5059976 (Mitsubishi).  This is why we
 // always use the ZPCODER, although it usually produces 1% larger files.
-#warning "The ZCODER may infringe non-AT&T patent(s)."
+#warning "The ZCODER may infringe non-LizardTech patent(s)."
 #warning "You should use the ZPCODER instead."
 #endif
 

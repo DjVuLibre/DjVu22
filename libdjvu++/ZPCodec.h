@@ -134,15 +134,16 @@
     Therefore we wrote the ZP-Coder (pronounce Zee-Prime Coder) which we
     believe is clear of legal problems.
     
-    Needless to say, AT&T has patents pending for both the Z-Coder and the
-    ZP-Coder. The good news however is that we can grant a license to use the
-    ZP-Coder in ``free software'' without further complication. See the
-    \Ref{AT&T Source Code Agreement} for more information.
+    Needless, to say, LizardTech has patents pending for both the Z-Coder and
+    the ZP-Coder. The good news however is that we can grant a license to use
+    the ZP-Coder in "free software" without further complication. See
+    LizardTech's Web Site for information on availability of the Reference
+    Library under the GNU GPL.
 
     @memo
     Binary adaptive quasi-arithmetic coder.
     @version
-    #$Id: ZPCodec.h,v 1.1 2000-08-17 23:23:29 bcr Exp $#
+    #$Id: ZPCodec.h,v 1.2 2000-08-26 00:09:30 bcr Exp $#
     @author
     L\'eon Bottou <leonb@research.att.com> */
 //@{

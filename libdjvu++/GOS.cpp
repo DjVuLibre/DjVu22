@@ -21,7 +21,7 @@
 //C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 
-// "$Id: GOS.cpp,v 1.1 2000-08-17 23:23:29 bcr Exp $"
+// "$Id: GOS.cpp,v 1.2 2000-08-26 00:09:30 bcr Exp $"
 
 #ifdef __GNUC__
 #pragma implementation
@@ -100,7 +100,6 @@
 // This code is derived from TL3 file fileio.c that I wrote a while ago.
 // I, Leon Bottou, hereby give AT&T a royalty-free non-exclusive
 // license to do whatever they want with this code.
-
 
 // is_file(filename) --
 // -- returns true if filename denotes a regular file.
