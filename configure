@@ -1,0 +1,260 @@
+#!/bin/sh
+#C- Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.
+#C- 
+#C- This software (the "Original Code") is subject to, and may be
+#C- distributed under, the GNU General Public License, Version 2.
+#C- You may obtain a copy of the license from the Free Software
+#C- Foundation at http://www.fsf.org.
+#C-
+#C- With respect to the Original Code, and subject to any third party
+#C- intellectual property claims, LizardTech grants recipient a worldwide,
+#C- royalty-free, non-exclusive license under patent claims infringed by
+#C- making, using, or selling Original Code which are now or hereafter
+#C- owned or controlled by LizardTech, but solely to the extent that any
+#C- such patent is reasonably necessary to enable you to make, have made,
+#C- practice, sell, or otherwise dispose of Original Code (or portions
+#C- thereof) and not to any greater extent that may be necessary to utilize
+#C- further modifications or combinations.
+#C- 
+#C- The Original Code is provided "AS IS" WITHOUT WARRANTY OF ANY KIND,
+#C- EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY
+#C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
+#C- FITNESS FOR A PARTICULAR PURPOSE.
+
+SHELL=/bin/sh
+
+### The substitutions
+prefix=/usr/local
+SRCDIR=.
+CXX=${CXX-g++}
+OPT=${OPT-"-O3 -fomit-frame-pointer -funroll-loops"}
+WARN=${WARN-"-Wall -Wno-unused"}
+RANLIB=${RANLIB-ranlib}
+AR=${AR-ar}
+LDLIBS=-lm
+DEFS=
+
+### Echo without newline
+
+if [ "`echo -n`" = "-n" ]
+then
+  echon() { 
+    echo $* "\c" 
+  }
+else
+  echon() { 
+    echo -n $* 
+  }
+fi
+
+### Check top dir
+
+conf=`basename $0`
+SRCDIR=`dirname $0`/libdjvu++
+if [ ! -r "$SRCDIR/libdjvu++.dxx" -o ! -r $SRCDIR/ZPCodec.h ] 
+then
+   echo 1>&2 "$conf: Cannot recognize source directory."
+   exit 1
+fi
+
+
+### Process arguments
+
+for arg 
+do
+   case $arg in 
+        --prefix=* )     
+           prefix=`echo $arg | sed 's/[-A-Za-z_]*=//'` 
+           ;; 
+        --with-debug )
+           OPT=-g 
+           ;;
+        --with-threads=* )
+           threads=`echo $arg | sed 's/[-A-Za-z_]*=//'` 
+           ;; 
+        --without-threads )
+           threads=no 
+           ;;
+        --with-cxxflag=* )
+           flag=`echo $arg | sed 's/[-A-Za-z_]*=//'`
+           DEFS="$DEFS $flag"
+           ;;
+        *)
+           test $arg = --help || echo 1>&2 "$conf: Unrecognized option '$arg'"
+           cat 1>&2 <<EOF
+Usage: $conf <options>
+Recognized options:
+  --prefix=PREFIXDIR                    set install directory.
+  --with-debug                          compile with debug enabled.
+  --with-cxxflag=FLAG                   gives flag FLAG to C++ compiler.
+  --without-threads                     do not use threads.
+  --with-threads=(cothreads|posix|dce)  choose a thread implementation.
+EOF
+           exit 1 ;;
+   esac
+   shift
+done
+
+### Check compiler
+
+echo 'int main(void) {return 0;}' > /tmp/$$.c
+trap "rm 2>/dev/null /tmp/$$ /tmp/$$.*" 0
+
+echon Testing C++ compiler ...
+if ( ( $CXX -c /tmp/$$.c -o /tmp/$$.o ) >/dev/null 2>&1 ) 
+then
+  echo $CXX.
+elif ( ( CC -c /tmp/$$.c -o /tmp/$$.o ) >/dev/null 2>&1 ) 
+then
+  CXX=CC
+  OPT=
+  WARN=
+  echo $CXX.
+else
+  echo
+  echo 1>&2 "$conf: Cannot find C++ compiler."
+  echo 1>&2 "$conf: Please set environment variable CXX."
+  exit 1
+fi
+
+if [ -z "$OPT" ] 
+then
+  echon Testing optimization option ... 
+  if ( $CXX -O -c /tmp/$$.c -o /tmp/$$ >/dev/null 2>&1 ) 
+  then
+     echo $OPT
+     OPT=-O
+  else
+     echo broken.
+  fi
+fi
+
+echon Testing pipe option ...
+if ( $CXX -pipe -c /tmp/$$.c -o /tmp/$$ >/dev/null 2>&1 ) 
+then
+  echo yes.
+  CXX="$CXX -pipe"
+else
+  echo no.
+fi
+
+
+### Set defines
+
+if [ -n "$threads" ] 
+then
+  case "$threads" in
+    no* )
+       DEFS="$DEFS -DTHREADMODEL=NOTHREADS" 
+       ;;       
+    jri* )
+       DEFS="$DEFS -DTHREADMODEL=JRITHREADS" 
+       ;;       
+    co* )
+       DEFS="$DEFS -DTHREADMODEL=COTHREADS" 
+       ;;       
+    posix* | dce* )
+       DEFS="$DEFS -DTHREADMODEL=POSIXTHREADS" 
+       echon "Check option -pthread ..."
+       if ( ( $CXX -pthread /tmp/$$.c -o /tmp/$$ >/tmp/$$.log 2>&1 ) \
+            && [ -z "`grep -i unrecognized /tmp/$$.log`" ] )
+       then
+         echo yes.
+         OPT="$OPT -pthread"
+       else
+         echo no.
+         echon "Check option -threads ..."
+         if ( ( $CXX -threads /tmp/$$.c -o /tmp/$$ >/tmp/$$.log 2>&1 ) \
+              && [ -z "`grep -i unrecognized /tmp/$$.log`" ] )
+         then
+           echo yes.
+           OPT="$OPT -threads"
+         else
+           echo no.
+           LDLIBS="-lpthread $LDLIBS"
+           DEFS="$DEFS -D_REENTRANT"
+         fi
+       fi
+       ;;
+    *)
+       echo 1>&2 "$conf: unrecognized argument for --with-threads"
+  esac
+fi
+
+
+### Check programs
+
+echon Searching AR program ...
+if ( $AR cq /tmp/$$.a /tmp/$$.o ) 
+then
+  echo $AR
+elif ( ar cq /tmp/$$.a /tmp/$$.o ) 
+then 
+  AR=ar
+  echo $AR
+else
+  echo
+  echo 1>&2 "$conf: Cannot find archiving program."
+  echo 1>&2 "$conf: Please set environment variable AR."
+  exit 1
+fi
+
+echon Searching RANLIB program ...
+if ( $RANLIB /tmp/$$.a )
+then
+  echo $RANLIB
+else
+  RANLIB=:
+  echo "none."
+fi
+
+# Function to generate makefiles
+
+generate_makefile()
+{
+  # compute srcdir
+  case $SRCDIR in
+      /*) # absolute path
+        srcdir=$SRCDIR/$1
+        ;;
+      *) # relative path
+        temp=$1
+        srcdir=$SRCDIR/$1
+        while [ "$temp" != "." ] 
+        do
+          srcdir=../$srcdir
+          temp=`dirname $temp`
+        done
+        ;;
+  esac
+
+  # substitute
+  sed < $SRCDIR/$1/Makefile.in > $1/Makefile \
+    -e 's!@prefix@!'"$prefix"'!g' \
+    -e 's!@srcdir@!'"$srcdir"'!g' \
+    -e 's!@cc@!'"$CC"'!g' \
+    -e 's!@cxx@!'"$CXX"'!g' \
+    -e 's!@defs@!'"$DEFS"'!g' \
+    -e 's!@opt@!'"$OPT"'!g' \
+    -e 's!@warn@!'"$WARN"'!g' \
+    -e 's!@ldlibs@!'"$LDLIBS"'!g' \
+    -e 's!@ranlib@!'"$RANLIB"'!g' \
+    -e 's!@ar@!'"$AR"'!g'
+
+  # dependencies
+  if [ -r $SRCDIR/$1/Makefile.dep ]
+  then
+    cat $SRCDIR/$1/Makefile.dep >> $1/Makefile
+  fi
+}
+
+
+# Generate makefiles
+
+generate_makefile .
+
+# Further instructions
+
+echo
+echo "Type 'make' to proceed with the compilation".
+echo

@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+   <TITLE>class  _DJVUIMAGE_H::DjVuInterface</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DjVuInterface</A></H2>
+<BLOCKQUOTE>Decoder progress notifier.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<A HREF="#DOC.1.4.18.4.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>notify_chunk</B>(const char *chkid, const char *msg)
+<DD><I>This function is called after decoding each chunk.</I>
+<DT>
+<A HREF="#DOC.1.4.18.4.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>notify_relayout</B>(void)
+<DD><I>This function is called after decoding the INFO chunk.</I>
+<DT>
+<A HREF="#DOC.1.4.18.4.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>notify_redisplay</B>(void)
+<DD><I>This function is called whenever the image should be redrawn.</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU">
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Decoder progress notifier.  The DjVu decoder keeps a pointer to an
+instance of this abstract class.  The virtual functions defined by this
+class are called during the decoding process.  This callback system
+provides a way to monitor the decoding thread and implement a progressive
+display program. </BLOCKQUOTE>
+<DL>
+
+<A NAME="notify_chunk">
+<A NAME="DOC.1.4.18.4.1">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void notify_chunk(const char *chkid, const char *msg)</B></TT>
+<DD>This function is called after decoding each chunk.  
+Argument <TT>chkid</TT> contains the chunk id.  
+Argument <TT>msg</TT> contains a message describing the chunk data. 
+<DL><DT><DD></DL><P>
+<A NAME="notify_relayout">
+<A NAME="DOC.1.4.18.4.2">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void notify_relayout(void)</B></TT>
+<DD>This function is called after decoding the INFO chunk.
+It indicates that the size of the image is now known. 
+<DL><DT><DD></DL><P>
+<A NAME="notify_redisplay">
+<A NAME="DOC.1.4.18.4.3">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void notify_redisplay(void)</B></TT>
+<DD>This function is called whenever the image should be redrawn.  It
+indicates that enough new data has been received and that the image can
+be redisplayed with increased quality. 
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<!-- This is were the DOC++ footer is defined  -->

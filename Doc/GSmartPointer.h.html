@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+   <TITLE> </TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">GSmartPointer.h</A></H2>
+<BLOCKQUOTE>Thread-Safe reference counting smart-pointers. </BLOCKQUOTE>
+
+<HR>
+<DL>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GPEnabled"></A>
+<A HREF=GPEnabled.html><B>GPEnabled</B></A><DD><I>Base class for reference counted objects.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GPBase"></A>
+<A HREF=GPBase.html><B>GPBase</B></A><DD><I>Base class for all smart-pointers.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GP"></A>
+<A HREF=GP.html><B>GP</B></A><DD><I>Reference counting pointer.</I>
+</DL>
+<A NAME="DOC.DOCU">
+<BLOCKQUOTE>
+Files <TT>&quot;GSmartPointer.h&quot;</TT> and <TT>&quot;GSmartPointer.cpp&quot;</TT> define a smart-pointer
+class which automatically performs thread-safe reference counting.  Class
+<!1><A HREF="GP.html">GP</A> implements smart-pointers by overloading the usual pointer
+assignment and dereferencing operators. The overloaded operators maintain
+the reference counters and destroy the pointed objects as soon as their
+reference counter reaches zero.  Transparent type conversions are provided
+between smart-pointers and regular pointers.  Objects referenced by
+smart-pointers must be derived from class <!1><A HREF="GPEnabled.html">GPEnabled</A>.<P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; -- initial implementation<BR>
+Andrei Erofeev &lt;eaf@research.att.com&gt; -- bug fix.
+
+<DT><B>Version:</B><DD><TT>$Id: GSmartPointer.h.html,v 1.1 2000-08-17 23:23:29 bcr Exp $</TT> 
+
+<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<!-- This is were the DOC++ footer is defined  -->

@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+   <TITLE>define _GSCALER_H_</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>define <A HREF="#DOC.DOCU">GScaler.h </A></H2>
+<BLOCKQUOTE>Rescaling images with bilinear interpolation. </BLOCKQUOTE>
+
+<HR>
+<DL>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GScaler"></A>
+<A HREF=GScaler.html><B>GScaler</B></A><DD><I>Base class for GBitmapScaler and GPixmapScaler.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GBitmapScaler"></A>
+<A HREF=GBitmapScaler.html><B>GBitmapScaler</B></A><DD><I>Fast rescaling code for gray level images.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GPixmapScaler"></A>
+<A HREF=GPixmapScaler.html><B>GPixmapScaler</B></A><DD><I>Fast rescaling code for color images.</I>
+</DL>
+<A NAME="DOC.DOCU">
+<BLOCKQUOTE>
+Files <TT>&quot;GScaler.h&quot;</TT> and <TT>&quot;GScaler.cpp&quot;</TT> implement a fast bilinear
+interpolation scheme to rescale a <!1><A HREF="GBitmap.html">GBitmap</A> or a <!1><A HREF="GPixmap.html">GPixmap</A>.
+Common setup functions are implemented by the base class <!1><A HREF="GScaler.html">GScaler</A>.
+The actual function for rescaling a gray level image is implemented by
+class <!1><A HREF="GBitmapScaler.html">GBitmapScaler</A>.  The actual function for rescaling a color
+image is implemented by class <!1><A HREF="GPixmapScaler.html">GPixmapScaler</A>.<P><B>Remark</B> --- The bilinear interpolation code relies on fixed precision
+tables.  It becomes suboptimal when upsampling (i.e. zooming into) an
+image by a factor greater than eight.  High contrast images displayed at
+high magnification may contain visible jaggies.<P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt;
+
+<DT><B>Version:</B><DD><TT>$Id: GScaler.h.html,v 1.1 2000-08-17 23:23:30 bcr Exp $</TT> 
+<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<!-- This is were the DOC++ footer is defined  -->

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+   <TITLE>class  _GTHREADS_H_::GCriticalSectionLock</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">GCriticalSectionLock</A></H2>
+<BLOCKQUOTE>Wrapper for mutually exclusive code.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<A HREF="#DOC.1.4.7.4.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GCriticalSectionLock</B>(<!1><A HREF="GCriticalSection.html">GCriticalSection</A> *gsec)
+<DD><I>Constructor.</I>
+<DT>
+<A HREF="#DOC.1.4.7.4.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>~GCriticalSectionLock</B>()
+<DD><I>Destructor.</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU">
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Wrapper for mutually exclusive code.
+This class locks a specified critical section (see <!1><A HREF="GCriticalSection.html">GCriticalSection</A>)
+at construction time and unlocks it at destruction time. It provides a
+convenient way to take advantage of the C++ implicit destruction of
+automatic variables in order to make sure that the critical section is
+unlocked when exiting the protected code.  The following code will release
+the lock when the execution thread leaves the protected scope, either
+because the protected code has executed successfully, or because an
+exception was thrown.
+<PRE>
+      {      -- protected scope
+         static GCriticalSection theSection;
+         GCriticalSectionLock lock(&amp;theSection)
+         ... -- protected code
+      }
+    </PRE> </BLOCKQUOTE>
+<DL>
+
+<A NAME="GCriticalSectionLock">
+<A NAME="DOC.1.4.7.4.1">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GCriticalSectionLock(<!1><A HREF="GCriticalSection.html">GCriticalSection</A> *gsec)</B></TT>
+<DD>Constructor. Locks the critical section object <TT>gsec</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="~GCriticalSectionLock">
+<A NAME="DOC.1.4.7.4.2">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ~GCriticalSectionLock()</B></TT>
+<DD>Destructor. Releases the associated critical section. 
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<!-- This is were the DOC++ footer is defined  -->

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+   <TITLE>define _GCONTAINER_H_</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>define <A HREF="#DOC.DOCU">GContainer.h</A></H2>
+<BLOCKQUOTE>Template class for generic containers. </BLOCKQUOTE>
+
+<HR>
+<DL>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GPosition"></A>
+<A HREF=GPosition.html><B>GPosition</B></A><DD><I>Generic iterator class.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GContainerBase"></A>
+<A HREF=GContainerBase.html><B>GContainerBase</B></A><DD><I>Abstract base class for all containers.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GContainer"></A>
+<A HREF=GContainer.html><B>GContainer</B></A><DD><I>Abstract base template class for all containers.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GArray"></A>
+<A HREF=GArray.html><B>GArray</B></A><DD><I>Dynamic array.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GSArray"></A>
+<A HREF=GSArray.html><B>GSArray</B></A><DD><I>Sortable array.</I>
+<DT>
+
+<IMG ALT="o" BORDER=0 SRC=icon1.gif><A NAME="GList"></A>
+<A HREF=GList.html><B>GList</B></A><DD><I>Doubly linked list.</I>
+</DL>
+<A NAME="DOC.DOCU">
+<BLOCKQUOTE>
+Files <TT>&quot;GContainer.h&quot;</TT> and <TT>&quot;GContainer.cpp&quot;</TT> implement three main
+template class for generic containers.  Class <!1><A HREF="GArray.html">GArray</A> implements an
+array of objects with variable bounds. Class <!1><A HREF="GList.html">GList</A> implements a
+doubly linked list of objects.  Class GMap implements a hashed
+associative map.  The container templates are not thread-safe. Thread
+safety can be implemented using the facilities provided in
+<!1><A HREF="GThreads.h.html">GThreads.h</A>.  Class <!1><A HREF="GPosition.html">GPosition</A> is a universal iterator for all
+container objects.<P><B>Historical comments</B> --- I chose to implement my own containers because
+the STL classes were not universally available and the compilers were
+rarely able to deal with such a template galore.  The following template
+classes are much simpler and (at some point) were usable with G++ 2.7.2 or
+CFront based compilers.<P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; -- initial implementation.<BR>
+Andrei Erofeev &lt;eaf@research.att.com&gt; -- bug fixes.
+
+<DT><B>Version:</B><DD><TT>$Id: GContainer.h.html,v 1.1 2000-08-17 23:23:29 bcr Exp $</TT> 
+<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<!-- This is were the DOC++ footer is defined  -->

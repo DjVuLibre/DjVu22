@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+   <TITLE> </TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">Experimental Features.</A></H2>
+<A NAME="DOC.DOCU">
+<BLOCKQUOTE>
+The DjVu format already delivers extremely high compression ratios.  Yet
+we keep evaluating new ideas and experimenting with new features.  Here is
+a brief description of the various enhancements under evaluation.  We
+intend to update the DjVu Reference Library as soon as we are satisfied
+with such enhancements.<P><B>Hyper-links</B> --- We are considering an <EM>annotation chunk</EM>
+containing directives for the DjVu image browser, such as hyper-links,
+image placement, border color or default zoom factor.  Such directives
+will be described using an extensible text syntax and stored into an
+<TT>&quot;ANTa&quot;</TT> or <TT>&quot;ANTz&quot;</TT> chunk.<P><B>Included Files</B> --- Multiple DjVu files may share information such as
+background layer or character shapes.  There are many benefits associated
+with storing such shared information in separate files.  A well designed
+browser may keep pre-decoded copies of these files in a cache.  This
+procedure would reduce the size of the data transferred over the Internet
+and also increase the display speed.  The currently envisioned scheme
+involves an <EM>inclusion chunk</EM> (chunk identifier <TT>&quot;INCL&quot;</TT>) containing
+the URL of a file to include.  The included file would be a <TT>&quot;FORM:DJVI&quot;</TT>
+chunk potentially containing any information otherwise allowed in a DjVu
+file (except for the <TT>&quot;INFO&quot;</TT> chunk of course).  The challenge consists in
+making this system fast enough to hide the cost of an extra round-trip
+between the browser and the web server.<P><B>Document Navigation</B> --- Documents can be represented using one DjVu
+file per page. Each DjVu file may contain (or better: may include a file
+containing) a <EM>navigation directory chunk</EM> (chunk identifier
+<TT>&quot;NDIR&quot;</TT>). This navigation directory simply lists the URLs of all DjVu
+files composing a document.  Once the DjVu browser knows the document
+structure, it can use smart caching, pre-fetching and pre-decoding
+strategies.<P><B>Multi-page Files</B> --- The next step consists in packaging all files in
+a document (i.e. all the pages and all the included files) as a single
+archive file.  Although this is good for archiving or emailing, using a
+single file is not very good for web applications because it does not
+provide a random access to each page.  Web designers would have the choice
+of either (a) unpacking the archive, or (b) use an appropriate Apache
+module or CGI script for unpacking the requested file on the fly.  The
+preferred archive format is a single <TT>&quot;FORM:DJVM&quot;</TT> chunk containing a
+directory (chunk identifier <TT>&quot;DIR0&quot;</TT>) and all the archived files with
+their natural IFF structure.<P><B>Per-Character Color</B> --- Compound DjVu files represent the colors of
+the text and drawings using a low resolution color image named the
+foreground color image.  We are considering an alternative representation
+using one color for each character (or more specifically, for each mask
+component).  This alternative representation would be more appropriate for
+encoding electronically produced documents.<P><B>Semantic Markups</B> --- DjVu files already contain a lot of information
+about the structure of the page.  We could create a real <EM>multi-valued
+document</EM> by adding a <TT>&quot;DXML&quot;</TT> chunk containing the textual information in
+the page with adequate semantic markups.  The association between the
+textual information and the image would be described by a <TT>&quot;DX2I&quot;</TT> chunk.
+That would allow us to do Copy/Paste with DjVu documents.  </BLOCKQUOTE>
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<!-- This is were the DOC++ footer is defined  -->

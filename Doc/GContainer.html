@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+   <TITLE>template<class TYPE> class  _GCONTAINER_H_::GContainer</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GContainer</A>: public <!1><A HREF="GContainerBase.html">GContainerBase</A></H2>
+<BLOCKQUOTE>Abstract base template class for all containers.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CGContainerBase,MGContainerBase.html,CGContainer,MGContainer.html,CGList,MGList.html,CGArray,MGArray.html">
+<param name=before value="M,M,M|_,Mr_">
+<param name=after value="Md_,M,M,M">
+<param name=indent value="0,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<A HREF="#DOC.1.4.5.3.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   const TYPE* <B>get</B>(const <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<DD><I>Returns a constant pointer to the object located in this container at position <TT>pos</TT>.</I>
+<DT>
+<A HREF="#DOC.1.4.5.3.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   TYPE* <B>get</B>(const <!1><A HREF="GPosition.html">GPosition</A> &amp;pos)
+<DD><I>Returns a pointer to a object located in this container at position <TT>pos</TT>.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GContainerBase.html">GContainerBase</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>size</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>firstpos</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>lastpos</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>nextpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>prevpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU">
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Abstract base template class for all containers.
+This abstract class provides virtual functions for accessing
+the elements of a container regardless of its nature
+(<TT>GArray</TT>, <TT>GList</TT>, or <TT>GMap</TT>).</BLOCKQUOTE>
+<DL>
+
+<A NAME="get">
+<A NAME="DOC.1.4.5.3.1">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   const TYPE* get(const <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
+<DD>Returns a constant pointer to the object located in this container at
+position <TT>pos</TT>.  This function returns the null pointer if position
+<TT>pos</TT> is not a valid position for this container. 
+<DL><DT><DD></DL><P>
+<A NAME="get">
+<A NAME="DOC.1.4.5.3.2">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   TYPE* get(const <!1><A HREF="GPosition.html">GPosition</A> &amp;pos)</B></TT>
+<DD>Returns a pointer to a object located in this container at
+position <TT>pos</TT>.  This function returns the null pointer if position
+<TT>pos</TT> is not a valid position for this container. 
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="GList.html">GList</A><BR>
+<A HREF="GArray.html">GArray</A><BR>
+</DL>
+
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<!-- This is were the DOC++ footer is defined  -->

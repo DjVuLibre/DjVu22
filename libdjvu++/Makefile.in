@@ -1,0 +1,164 @@
+#C- Copyright (c) 1999-2000 LizardTech, Inc. All Rights Reserved.
+#C- 
+#C- This software (the "Original Code") is subject to, and may be
+#C- distributed under, the GNU General Public License, Version 2.
+#C- You may obtain a copy of the license from the Free Software
+#C- Foundation at http://www.fsf.org.
+#C-
+#C- With respect to the Original Code, and subject to any third party
+#C- intellectual property claims, LizardTech grants recipient a worldwide,
+#C- royalty-free, non-exclusive license under patent claims infringed by
+#C- making, using, or selling Original Code which are now or hereafter
+#C- owned or controlled by LizardTech, but solely to the extent that any
+#C- such patent is reasonably necessary to enable you to make, have made,
+#C- practice, sell, or otherwise dispose of Original Code (or portions
+#C- thereof) and not to any greater extent that may be necessary to utilize
+#C- further modifications or combinations.
+#C- 
+#C- The Original Code is provided "AS IS" WITHOUT WARRANTY OF ANY KIND,
+#C- EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY
+#C- OF NON-INFRINGEMENT, OR ANY IMPLIED WARRANTY OF MERCHANTIBILITY OF
+#C- FITNESS FOR A PARTICULAR PURPOSE.
+
+SHELL=/bin/sh
+prefix=@prefix@
+bindir=@prefix@/bin
+SRCDIR=@srcdir@
+VPATH=@srcdir@
+CXX=@cxx@
+OPT=@opt@
+WARN=@warn@
+RANLIB=@ranlib@
+AR=@ar@
+DOCXX= doc++
+LDLIBS=@ldlibs@
+DEFS=@defs@
+CXXFLAGS= $(DEFS) $(OPT) $(WARN) -I$(SRCDIR) -DUNIX
+LDFLAGS=
+
+
+# Release info
+
+NAM= libdjvu++
+VER= 2.1
+
+# This 
+LIB= libdjvu++.a
+PROG= djvuinfo c44 d44 djvutopnm djvumake djvuextract ppmcoco bzz
+
+# Makefile for libdjvu++.a
+
+LIBOBJS= GString.o GException.o GContainer.o GRect.o GSmartPointer.o \
+	 GThreads.o ByteStream.o ZPCodec.o GBitmap.o GPixmap.o \
+	 IFFByteStream.o BSByteStream.o JB2Image.o GScaler.o IWImage.o \
+	 DjVuImage.o GOS.o DjVuGlobal.o
+
+# Make all
+
+all: $(LIB) $(PROG) 
+	echo Done.
+
+# Rule for building the library
+
+$(LIB): $(LIBOBJS) 
+	if [ -r $(LIB) ] ; then rm $(LIB) ; fi
+	$(AR) cq $(LIB) $(LIBOBJS)
+	$(RANLIB) $(LIB)
+
+# Rules for building support programs
+
+C44OBJS = c44.o
+D44OBJS = d44.o
+DJVUINFOOBJS = djvuinfo.o
+DEJAVUTOPNMOBJS = djvutopnm.o
+MAKEDEJAVUOBJS = djvumake.o
+BREAKDEJAVUOBJS = djvuextract.o
+PPMCOCOOBJS = ppmcoco.o
+ANNOTATEOBJS = annotate.o
+BZZOBJS = bzz.o BSByteStream.o ZPCodec.o ByteStream.o GException.o DjVuGlobal.o
+LIBDJVUOBJS = libdjvu.o 
+
+c44: $(C44OBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(C44OBJS) $(LIB) $(LDLIBS)
+
+d44: $(D44OBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(D44OBJS) $(LIB) $(LDLIBS)
+
+djvuinfo: $(DJVUINFOOBJS) $(LIB) 
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(DJVUINFOOBJS) $(LIB) $(LDLIBS)
+
+djvutopnm: $(DEJAVUTOPNMOBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(DEJAVUTOPNMOBJS) $(LIB) $(LDLIBS)
+
+djvumake: $(MAKEDEJAVUOBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(MAKEDEJAVUOBJS) $(LIB) $(LDLIBS)
+
+djvuextract: $(BREAKDEJAVUOBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(BREAKDEJAVUOBJS) $(LIB) $(LDLIBS)
+
+ppmcoco: $(PPMCOCOOBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(PPMCOCOOBJS) $(LIB) $(LDLIBS)
+
+annotate: $(ANNOTATEOBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(ANNOTATEOBJS) $(LIB) $(LDLIBS)
+
+bzz: $(BZZOBJS) $(LIB)
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@  $(BZZOBJS) $(LIB) $(LDLIBS)
+
+# Documentation
+
+html: libdjvu++.dxx libdjvu++.footer
+	-rm -rf ../Doc
+	-mkdir ../Doc 2>/dev/null
+	${DOCXX} -d ../Doc -B $(SRCDIR)/libdjvu++.footer libdjvu++.dxx
+
+tex:  libdjvu++.dxx
+	-@mkdir ../Doc 2>/dev/null
+	${DOCXX} -t -o ../Doc/libdjvu++.tex -ep fullpage libdjvu++.dxx
+	( cd ../Doc ; latex libdjvu++.tex ; latex libdjvu++.tex )
+	dvips ../Doc/libdjvu++.dvi -o
+	gzip -f libdjvu++.ps
+
+
+# Generic rules
+
+clean:
+	-rm 2>/dev/null -rf $(PROG) ; true
+	-rm 2>/dev/null *.o *.a *.out *.rpo ii_files ; true
+	-@echo Cleaned.
+
+realclean:
+	-rm 2>/dev/null -rf ../Doc libdjvu++.dxx libdjvu++.ps.gz ; true
+	-rm 2>/dev/null -rf ATTLicense.cpp Makefile.dep ; true
+	-@$(MAKE) clean
+
+distclean:
+	-rm 2>/dev/null -rf $(PROG) ; true
+	-rm 2>/dev/null *.o *.a *.out *.rpo ii_files Makefile ; true
+	-@echo Cleaned.
+
+install: $(PROG)
+	-@mkdir $(prefix) 2>/dev/null
+	-@mkdir $(bindir) 2>/dev/null
+	for n in $(PROG); do        \
+	  cp $$n $(bindir)        ; \
+	  chmod 755 $(bindir)/$$n ; \
+	done
+	-@echo Installed.
+
+depend:
+	( cd $(SRCDIR) ; echo "### DEPENDENCIES" ;\
+	  for n in *.cpp ; do ${CXX} -MM $(CXXFLAGS) $$n ; done ) > Makefile.dep
+	sed -e '/^### DEPENDENCIES$$/,$$d' Makefile > Makefile.new
+	cat Makefile.dep >> Makefile.new
+	mv Makefile.new Makefile
+	  
+PHONY: html tex clean realclean distclean install depend
+
+
+# Handle cpp files as C++
+.SUFFIXES: .cpp
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $(SRCDIR)/$*.cpp
+
+

@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+   <TITLE> </TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">djvumake</A></H2>
+<BLOCKQUOTE>Assemble DjVu files. </BLOCKQUOTE>
+<A NAME="DOC.DOCU">
+<BLOCKQUOTE>
+<B>Synopsis</B>
+<PRE>
+       % djvumake &lt;djvufile&gt; [Sjbz=&lt;maskfile&gt;] [FG44=&lt;fgfile&gt;] [BG44=&lt;bgfile&gt;]
+    </PRE><P><B>Description</B><P>This program assembles the DjVu file <TT>djvufile</TT> using the JB2 data
+contained in file <TT>maskfile</TT> and the IW44 data contained in files <TT>bgfile</TT>
+and <TT>fgfile</TT>.  Although this is slightly beyond the scope of the DjVu
+Reference Library, the following description explains how to prepare the
+input files required for assembling DjVu files.<P><B>Recipe for creating a Photo DjVu File</B><P>You should first use program <!1><A HREF="c44.html">c44</A> and produce an IW44 file "my.iw4".
+Assuming that this image is 640 pixels wide and 480 pixels high, you can
+assemble file <TT>&quot;my.djvu&quot;</TT> using <TT>djvumake</TT> with the following arguments.
+<PRE>
+       % djvumake my.djvu  INFO=640,480  BG44=my.iw4
+    </PRE><P>
+<B>Recipe for creating a Bilevel DjVu File</B><P>The first step consists in creating a <!1><A HREF="JB2Image.html">JB2Image</A> object according to
+the guidelines specified in section <!1><A HREF="JB2Image.h.html">JB2Image.h</A>.  Then use function
+<!1><A HREF="JB2Image.html#DOC.1.4.17.3.17">encode</A> in class <!1><A HREF="JB2Image.html">JB2Image</A> to save the JB2 data into a
+file named <TT>&quot;myjb2.q&quot;</TT> for instance.  You can then assemble file
+<TT>&quot;my.djvu&quot;</TT> using <TT>djvumake</TT> with the following arguments:<P><PRE>
+       % djvumake my.djvu Sjbz=myjb2.q
+    </PRE><P>
+<B>Recipe for creating a Compound DjVu File</B><P>Let us assume that you use a program like Gimp <A HREF=http://www.gimp.org>http://www.gimp.org</A>
+or Photoshop.  You have created your image using two layers.  The
+background layer contains all pictures and background details.  The
+foreground layer contains the text and the drawings. Transparency is
+controlled by a layer mask attached to the foreground layer.  The layer
+mask contains the shape of the text and drawings in black and white.  The
+actual foreground layer contains large patches of color which are only
+displayed where the layer mask is black.  You can see a Gimp example in
+file <TT>&quot;@Samples/layers.xcf.gz&quot;</TT>.<P>This layered model is very close to the Compound DjVu Image model.  In the
+DjVu model however, the three images (the background layer, the foreground
+layer mask, and the actual foreground layer) can have different
+resolutions.
+<UL>
+<LI>
+The size of the foreground layer mask is always equal to the size of the
+DjVu image.  You must create a JB2 file containing the foreground mask as
+explained in the <EM>Recipe for Creating a Bilevel DjVu File</EM>. Each zero
+pixel in the mask means that the corresponding pixel in the raw image
+belongs to the background. Each non zero pixel means that the
+corresponding pixel in the raw image belongs to the foreground. Let us
+call this file <TT>&quot;myjb2.q&quot;</TT>.
+<LI>
+The size of the background image is computed by rounding up the ratio
+between the size of the mask and an integer background sub-sampling ratio
+in range 1 to 12.  Choosing a sub-sampling ratio of 3 is usually a good
+starting point.  You must then subsample the background layer image and save
+it into a PPM file named <TT>&quot;mybg.ppm&quot;</TT>.  
+<LI>
+The size of the foreground color image is computed by rounding up the
+ratio between the size of the mask and an integer background sub-sampling
+ratio in range 1 to 12.  Choosing a sub-sampling ratio of 12 is usually
+adequate.  You must then subsample the background layer image and save
+it into a PPM file named <TT>&quot;myfg.ppm&quot;</TT>.  
+</UL><P>When you subsample these images, you should consider some refinements.
+The color of each pixel of the subsampled image is an average of the
+colors of a couple of pixels in the original image.  When you compute this
+average, you eliminate the original pixels which are not visible, such as
+pixels of the background layer which are masked by the foreground, or
+pixels of the foreground color layer which are not visible because of the
+mask transparency.<P>It sometimes happens that you cannot compute the color of a pixel in the
+subsampled image because none of the pixels in the corresponding image are
+visible.  That means that we do not really care about the color of the
+subsampled pixel because it is not visible at all.  It is not desirable of
+course to encode the color value of such pixels.  This is possible using
+the <EM>masking</EM> feature of the wavelet encoder.  You must first save two
+PBM images named <TT>&quot;mybg.pbm&quot;</TT> and <TT>&quot;myfg.pbm&quot;</TT>.  These images have the
+same size as the corresponding PPM images.  A black pixel in these images
+mean that we should not code the color of the corresponding pixel in the
+PPM image.<P>We must then encode both images using the <!1><A HREF="c44.html">c44</A> wavelet encoder.
+The following commands to the trick:
+<PRE>
+      % c44 -slice 74+10+9+4 -mask mybg.msk mybg.ppm mybg.iw4 
+      % c44 -slice 100 -crcbfull -mask myfg.msk myfg.ppm myfg.iw4
+    </PRE>
+Note that we use different options. The background wavelet file
+<TT>&quot;mybg.iw4&quot;</TT> contains four refinement chunks specified by option <TT>-slice</TT>.
+The foreground wavelet file <TT>&quot;myfg.iw4&quot;</TT> contains a single chunk (option
+<TT>-slice</TT>) and allocated more bits for encoding the colors (option
+<TT>-crcbfull</TT>). <P>The last step consists of assembling the DjVu file using <TT>djvumake</TT>.
+<PRE>
+       djvumake my.djvu Sjbz=myjb2.q FG44=myfg.iw4 BG44=mybg.iw4
+    </PRE><P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; 
+<DT><B>Version:</B><DD><TT>$Id: djvumake.html,v 1.1 2000-08-17 23:23:30 bcr Exp $</TT>
+
+<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<!-- This is were the DOC++ footer is defined  -->

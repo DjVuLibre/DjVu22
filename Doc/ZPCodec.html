@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+   <TITLE>class  ZPCodec</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">ZPCodec</A></H2>
+<BLOCKQUOTE>Performs ZP-Coder encoding and decoding.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<A HREF="#DOC.1.4.11.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>Constructs a ZP-Coder.</B>
+<DD><I></I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU">
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Performs ZP-Coder encoding and decoding.  A ZPCodec object must either
+constructed for encoding or for decoding.  The ZPCodec object is connected
+with a <!1><A HREF="ByteStream.html">ByteStream</A> object specified at construction time.  A ZPCodec
+object constructed for decoding reads code bits from the ByteStream and
+returns a message bit whenever function decoder is called.  A
+ZPCodec constructed for encoding processes the message bits provided by
+function encoder and writes the corresponding code bits to
+ByteStream <TT>bs</TT>.<P>You should never directly access a ByteStream object connected to a valid
+ZPCodec object. The most direct way to access the ByteStream object
+consists of using the "pass-thru" versions of functions encoder and
+decoder.<P>The ByteStream object can be accessed again after the destruction of the
+ZPCodec object.  Note that the encoder always flushes its internal buffers
+and writes a few final code bytes when the ZPCodec object is destroyed.
+Note also that the decoder often reads a few bytes beyond the last code byte
+written by the encoder.  This lag means that you must reposition the
+ByteStream after the destruction of the ZPCodec object and before re-using
+the ByteStream object (see <!1><A HREF="IFFByteStream.html">IFFByteStream</A>.)<P>Please note also that the decoder has no way to reliably indicate the end
+of the message bit sequence.  The content of the message must be designed
+in a way which indicates when to stop decoding.  Simple ways to achieve
+this consists of announcing the message length at the beginning (like a
+pascal style string), or of defining a termination code (like a null
+terminated string).  </BLOCKQUOTE>
+<DL>
+
+<A NAME="Constructs a ZP-Coder.">
+<A NAME="DOC.1.4.11.2.1">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Constructs a ZP-Coder.</B></TT>
+<DD>Constructs a ZP-Coder.  If argument
+object will read code bits from the ByteStream <TT>bs</TT> and return a message
+bit whenever function <TT>decoder</TT> is called.  If argument
+non zero, the ZP-Coder object will process the message bits provided by
+function
+ZPCodec (ByteStream &amp;bs, int encoding=0);<P>void encoder(int bit, BitContext &amp;ctx);<P>int  decoder(BitContext &amp;ctx);<P>void encoder(int bit);<P>int  decoder();<P>
+int bitcount;<P>struct Table { 
+unsigned short p;
+unsigned short m;
+BitContext     up;
+BitContext     dn;
+};
+void newtable(ZPCodec::Table *table);
+BitContext state(float prob1);
+void encoder_nolearn(int pix, BitContext &amp;ctx);
+int  decoder_nolearn(BitContext &amp;ctx);
+protected:
+ByteStream *bs;                 char encoding;                  unsigned char byte;
+unsigned char scount;
+unsigned char delay;
+unsigned int  a;
+unsigned int  code;
+unsigned int  fence;
+unsigned int  subend;
+unsigned int  buffer;
+unsigned int  nrun;
+unsigned int  p[256];
+unsigned int  m[256];
+BitContext    up[256];
+BitContext    dn[256];
+char          ffzt[256];
+void einit (void);
+void eflush (void);
+void outbit(int bit);
+void emit(int b);
+void encode_mps(BitContext &amp;ctx, unsigned int z);
+void encode_lps(BitContext &amp;ctx, unsigned int z);
+void encode_mps_simple(unsigned int z);
+void encode_lps_simple(unsigned int z);
+void encode_mps_nolearn(unsigned int z);
+void encode_lps_nolearn(unsigned int z);
+void dinit(void);
+void preload(void);
+int  ffz(unsigned int x);
+int  decode_sub(BitContext &amp;ctx, unsigned int z);
+int  decode_sub_simple(int mps, unsigned int z);
+int  decode_sub_nolearn(int mps, unsigned int z);
+private:
+ZPCodec(const ZPCodec&amp;);
+ZPCodec&amp; operator=(const ZPCodec&amp;);
+};<P><P><P><P>inline void 
+ZPCodec::encoder(int bit, BitContext &amp;ctx) 
+{
+unsigned int z = a + p[ctx];
+if (bit != (ctx &amp; 1))
+encode_lps(ctx, z);
+else if (z &gt;= 0x8000)
+encode_mps(ctx, z);
+else
+a = z;
+}<P>inline int
+ZPCodec::decoder(BitContext &amp;ctx) 
+{
+unsigned int z = a + p[ctx];
+if (z &lt;= fence) 
+{ a = z; return (ctx&amp;1); } 
+return decode_sub(ctx, z);
+}<P>inline void 
+ZPCodec::encoder_nolearn(int bit, BitContext &amp;ctx) 
+{
+unsigned int z = a + p[ctx];
+if (bit != (ctx &amp; 1))
+encode_lps_nolearn(z);
+else if (z &gt;= 0x8000)
+encode_mps_nolearn(z);
+else
+a = z;
+}<P>inline int
+ZPCodec::decoder_nolearn(BitContext &amp;ctx) 
+{
+unsigned int z = a + p[ctx];
+if (z &lt;= fence) 
+{ a = z; return (ctx&amp;1); } 
+return decode_sub_nolearn( (ctx&amp;1), z);
+}<P>inline void 
+ZPCodec::encoder(int bit)
+{
+if (bit)
+encode_lps_simple(0x8000 + (a&gt;&gt;1));
+else
+encode_mps_simple(0x8000 + (a&gt;&gt;1));
+}<P>inline int
+ZPCodec::decoder()
+{
+return decode_sub_simple(0, 0x8000 + (a&gt;&gt;1));
+}<P><P><P>
+
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<!-- This is were the DOC++ footer is defined  -->

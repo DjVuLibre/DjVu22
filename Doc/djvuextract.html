@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+   <TITLE> </TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">djvuextract</A></H2>
+<BLOCKQUOTE>Extract components from DjVu files. </BLOCKQUOTE>
+<A NAME="DOC.DOCU">
+<BLOCKQUOTE>
+<B>Synopsis</B>
+<PRE>
+    djvuextract &lt;djvufile&gt; [Sjbz=&lt;maskout&gt;] [FG44=&lt;fgout&gt;] [BG44=&lt;bgout&gt;]
+    </PRE><P><B>Description</B><BR>
+Program <TT>djvuextract</TT> analyzes the DjVu file
+<TT>&lt;djvufile&gt;</TT> and saves the various layers into the specified files.
+The reverse operation can be achieved using program <!1><A HREF="djvumake.html">djvumake</A>.
+<UL>
+<LI> When option <TT>Sjbz=&lt;maskout&gt;</TT> is specified, the foreground mask is
+saved into file <TT>&lt;maskout&gt;</TT> as JB2 data. This data file can be read
+using function <!1><A HREF="JB2Image.html#DOC.1.4.17.3.18">decode</A> in class <!1><A HREF="JB2Image.html">JB2Image</A>.
+<LI> When option <TT>FG44=&lt;fgout&gt;</TT> is specified, the foreground color image
+is saved into file <TT>&lt;fgout&gt;</TT> as IW44 data.  This data file can be processed
+using programs <!1><A HREF="d44.html">d44</A>.
+<LI> When option <TT>BG44=&lt;bgout&gt;</TT> is specified, the background color image
+is saved into file <TT>&lt;bgout&gt;</TT> as IW44 data.  This data file can be processed
+using programs <!1><A HREF="d44.html">d44</A>.
+</UL><P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>L&eacute;on Bottou &lt;leonb@research.att.com&gt; 
+<DT><B>Version:</B><DD><TT>$Id: djvuextract.html,v 1.1 2000-08-17 23:23:30 bcr Exp $</TT>
+
+<DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<!-- This is were the DOC++ footer is defined  -->

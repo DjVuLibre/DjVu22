@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+   <TITLE>class  _GCONTAINER_H_::GContainerBase</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">GContainerBase</A></H2>
+<BLOCKQUOTE>Abstract base class for all containers.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CGContainerBase,MGContainerBase.html,CGContainer,MGContainer.html">
+<param name=before value="M,M^_">
+<param name=after value="M,M">
+<param name=indent value="0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<A HREF="#DOC.1.4.5.2.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <B>~GContainerBase</B>()
+<DD><I>Virtual destructor.</I>
+<DT>
+<A HREF="#DOC.1.4.5.2.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   int <B>size</B>() const 
+<DD><I>Returns the number of contained elements.</I>
+<DT>
+<A HREF="#DOC.1.4.5.2.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>firstpos</B>() const 
+<DD><I>Returns a <TT>GPosition</TT> for the first element in the container.</I>
+<DT>
+<A HREF="#DOC.1.4.5.2.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>lastpos</B>() const 
+<DD><I>Returns a <TT>GPosition</TT> for the last element in the container.</I>
+<DT>
+<A HREF="#DOC.1.4.5.2.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>nextpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<DD><I>Moves position <TT>pos</TT> to the next element in the container.</I>
+<DT>
+<A HREF="#DOC.1.4.5.2.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>virtual   void <B>prevpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<DD><I>Moves position <TT>pos</TT> to the previous element in the container.</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU">
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Abstract base class for all containers.
+This abstract class contains virtual functions for iterating over a
+container regardless of its nature (<TT>GArray</TT>, <TT>GList</TT>, or <TT>GMap</TT>) and of
+the type of its elements.  In particular, functions <TT>nextpos</TT> and
+<TT>prevpos</TT> are called when using the pre-increment or pre-decrement
+operators on a <!1><A HREF="GPosition.html">GPosition</A> object.</BLOCKQUOTE>
+<DL>
+
+<A NAME="~GContainerBase">
+<A NAME="DOC.1.4.5.2.1">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   ~GContainerBase()</B></TT>
+<DD>Virtual destructor. 
+<DL><DT><DD></DL><P>
+<A NAME="size">
+<A NAME="DOC.1.4.5.2.2">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int size() const </B></TT>
+<DD>Returns the number of contained elements. 
+<DL><DT><DD></DL><P>
+<A NAME="firstpos">
+<A NAME="DOC.1.4.5.2.3">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="GPosition.html">GPosition</A> firstpos() const </B></TT>
+<DD>Returns a <TT>GPosition</TT> for the first element in the container.
+The <TT>GPosition</TT> object is marked as invalid when the container is empty. 
+<DL><DT><DD></DL><P>
+<A NAME="lastpos">
+<A NAME="DOC.1.4.5.2.4">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="GPosition.html">GPosition</A> lastpos() const </B></TT>
+<DD>Returns a <TT>GPosition</TT> for the last element in the container.
+The <TT>GPosition</TT> object is marked as invalid when the container is empty. 
+<DL><DT><DD></DL><P>
+<A NAME="nextpos">
+<A NAME="DOC.1.4.5.2.5">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void nextpos(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
+<DD>Moves position <TT>pos</TT> to the next element in the container.
+Argument <TT>pos</TT> is set to an invalid position when 
+(<EM>a</EM>) there is no next element in the container, or
+(<EM>b</EM>) the input value of <TT>pos</TT> is not a valid position for this container.
+This function is called by <TT>GPosition::operator++</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="prevpos">
+<A NAME="DOC.1.4.5.2.6">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void prevpos(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const </B></TT>
+<DD>Moves position <TT>pos</TT> to the previous element in the container.
+Argument <TT>pos</TT> is set to an invalid position when 
+(<EM>a</EM>) there is no previous element in the container, or
+(<EM>b</EM>) the input value of <TT>pos</TT> is not a valid position for this container. 
+This function is called by <TT>GPosition::operator--</TT>. 
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="GContainer.html">GContainer</A><BR>
+</DL>
+
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<!-- This is were the DOC++ footer is defined  -->

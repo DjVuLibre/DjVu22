@@ -1,0 +1,187 @@
+<HTML>
+<HEAD>
+   <TITLE>template<class TYPE> class  _GCONTAINER_H_::GSArray</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.1">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>template&lt;class TYPE&gt; class  <A HREF="#DOC.DOCU">GSArray</A>: public <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt;</H2>
+<BLOCKQUOTE>Sortable array.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CGContainerBase,MGContainerBase.html,CGContainer,MGContainer.html,CGArray,MGArray.html,CGSArray,MGSArray.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<A HREF="#DOC.1.4.5.5.1"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>()
+<DD><I>Constructs an empty array.</I>
+<DT>
+<A HREF="#DOC.1.4.5.5.2"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(int hibound)
+<DD><I>Constructs an array with subscripts in range 0 to <TT>hibound</TT>.</I>
+<DT>
+<A HREF="#DOC.1.4.5.5.3"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(int lobound, int hibound)
+<DD><I>Constructs an array with subscripts in range <TT>lobound</TT> to <TT>hibound</TT>.</I>
+<DT>
+<A HREF="#DOC.1.4.5.5.4"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)
+<DD><I>Constructs an array by copying the elements of container <TT>gc</TT>.</I>
+<DT>
+<A HREF="#DOC.1.4.5.5.5"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A> <B>GSArray</B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp;gc)
+<DD><I>Copy constructor.</I>
+<DT>
+<A HREF="#DOC.1.4.5.5.6"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>sort</B>()
+<DD><I>Sort array elements.</I>
+<DT>
+<A HREF="#DOC.1.4.5.5.7"><IMG ALT="[more]" BORDER=0 SRC=icon1.gif></A>void <B>sort</B>(int lo, int hi)
+<DD><I>Sort array elements in subscript range <TT>lo</TT> to <TT>hi</TT>.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GArray.html">GArray</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>lbound</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>hbound</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>TYPE&amp; <B>operator[]</B>(int n)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>const TYPE&amp; <B>operator[]</B>(int n) const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>TYPE&amp; <B>operator[]</B>(<!1><A HREF="GPosition.html">GPosition</A> pos)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>const TYPE&amp; <B>operator[]</B>(<!1><A HREF="GPosition.html">GPosition</A> pos) const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif> <B>operator TYPE* </B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif> <B>operator const TYPE* </B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>empty</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>touch</B>(int n)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>resize</B>(int hibound)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>resize</B>(int lobound, int hibound)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>shift</B>(int disp)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>del</B>(int n, unsigned int howmany=1)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>ins</B>(int n, const TYPE &amp;val, unsigned int howmany=1)
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp; <B>operator= </B>(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A> &amp;ga)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GContainer.html">GContainer</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   const TYPE* <B>get</B>(const <!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   TYPE* <B>get</B>(const <!1><A HREF="GPosition.html">GPosition</A> &amp;pos)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GContainerBase.html">GContainerBase</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>size</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>firstpos</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   <!1><A HREF="GPosition.html">GPosition</A> <B>lastpos</B>() const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>nextpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>prevpos</B>(<!1><A HREF="GPosition.html">GPosition</A> &amp;pos) const 
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU">
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Sortable array.  
+Template class <TT>GSArray&lt;TYPE&gt;</TT> implements sorting routines for the array
+elements. These sorting routines are implemented in a subclass in order
+to reduce the template instantiation overhead for class <TT>GArray</TT>.  Besides
+the <TT>TYPE</TT> constructors and operators required by class <TT>GArray</TT>, this
+template class must be able to access a less-or-equal comparison operator:
+<TT>TYPE::operator&lt;=(const TYPE&amp;)</TT>.  </BLOCKQUOTE>
+<DL>
+
+<A NAME="GSArray">
+<A NAME="DOC.1.4.5.5.1">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray()</B></TT>
+<DD>Constructs an empty array. The valid subscript range is initially
+empty. Member function <TT>touch</TT> and <TT>resize</TT> provide convenient ways
+to enlarge the subscript range. 
+<DL><DT><DD></DL><P>
+<A NAME="GSArray">
+<A NAME="DOC.1.4.5.5.2">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(int hibound)</B></TT>
+<DD>Constructs an array with subscripts in range 0 to <TT>hibound</TT>. 
+The subscript range can be subsequently modified with member functions
+<TT>touch</TT> and <TT>resize</TT>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>hibound</B> -  upper bound of the initial subscript range. <BR><DD></DL><P>
+<A NAME="GSArray">
+<A NAME="DOC.1.4.5.5.3">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(int lobound, int hibound)</B></TT>
+<DD>Constructs an array with subscripts in range <TT>lobound</TT> to <TT>hibound</TT>.  
+The subscript range can be subsequently modified with member functions
+<TT>touch</TT> and <TT>resize</TT>.
+
+<DL><DT><DT><B>Parameters:</B><DD><B>lobound</B> -  lower bound of the initial subscript range.
+<BR><B>hibound</B> -  upper bound of the initial subscript range. <BR><DD></DL><P>
+<A NAME="GSArray">
+<A NAME="DOC.1.4.5.5.4">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(const <!1><A HREF="GContainer.html">GContainer</A>&lt;TYPE&gt; &amp;gc)</B></TT>
+<DD>Constructs an array by copying the elements of container <TT>gc</TT>.
+The valid subscript will range from zero to the number of 
+elements in container <TT>gc</TT> minus one.      
+
+<DL><DT><DT><B>Parameters:</B><DD><B>gc</B> -  container from which elements will be copied. <BR><DD></DL><P>
+<A NAME="GSArray">
+<A NAME="DOC.1.4.5.5.5">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> GSArray(const <!1><A HREF="GArray.html#DOC.1.4.5.4.1">GArray</A>&lt;TYPE&gt; &amp;gc)</B></TT>
+<DD>Copy constructor. The resulting array will have the same
+valid subscript range as array <TT>gc</TT>. All elements in <TT>gc</TT>
+will be copied into the constructed array. 
+<DL><DT><DD></DL><P>
+<A NAME="sort">
+<A NAME="DOC.1.4.5.5.6">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void sort()</B></TT>
+<DD>Sort array elements.  Sort all array elements in ascending order.  Array
+elements are compared using the less-or-equal comparison operator for
+type <TT>TYPE</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="sort">
+<A NAME="DOC.1.4.5.5.7">
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void sort(int lo, int hi)</B></TT>
+<DD>Sort array elements in subscript range <TT>lo</TT> to <TT>hi</TT>.  Sort all array
+elements whose subscripts are in range <TT>lo</TT>..<TT>hi</TT> in ascending order.
+The other elements of the array are left untouched.  An exception is
+thrown if arguments <TT>lo</TT> and <TT>hi</TT> are not in the valid subscript range.
+Array elements are compared using the less-or-equal comparison operator
+for type <TT>TYPE</TT>.  
+
+<DL><DT><DT><B>Parameters:</B><DD><B>lo</B> -  low bound for the subscripts of the elements to sort.  
+<BR><B>hi</B> -  high bound for the subscripts of the elements to sort. <BR><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I><P><HR>
+<!-- This is were the DOC++ footer is defined  -->
