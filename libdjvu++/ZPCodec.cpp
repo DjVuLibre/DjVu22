@@ -931,7 +931,7 @@ ZPCodec::eflush()
   else if (subend > 0)
     subend = 0x8000;
   /* emit many mps bits */
-  while (buffer != 0xffffff)    // || subend ?
+  while (buffer != 0xffffff || subend)
     {
       emit(1 - (subend>>15) );
       subend = (unsigned short)(subend<<1);
