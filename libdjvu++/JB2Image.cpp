@@ -65,11 +65,13 @@ private:
   static const int BIGPOSITIVE;
   static const int BIGNEGATIVE;
   static const int CELLCHUNK;
+  static const int CELLEXTRA;
   int cur_ncell;
   int max_ncell;
   BitContext *bitcells;
   NumContext *leftcell;
   NumContext *rightcell;
+  void reset_numcoder(void);
   void CodeBit(int &bit, BitContext &ctx);
   void CodeNum(int &num, int lo, int hi, NumContext &ctx);
   // Info
@@ -271,7 +273,7 @@ JB2Image::decode(ByteStream &bs, int)
 #define MATCHED_REFINE_IMAGE_ONLY       (6)
 #define MATCHED_COPY                    (7)
 #define NON_MARK_DATA                   (8)
-#define LOSSLESS_REFINEMENT             (9)
+#define REQUIRED_DICT_OR_RESET          (9)
 #define PRESERVED_COMMENT               (10)
 #define END_OF_DATA                     (11)
 
@@ -281,6 +283,7 @@ JB2Image::decode(ByteStream &bs, int)
 const int _JB2Codec::BIGPOSITIVE = 262142;
 const int _JB2Codec::BIGNEGATIVE = -262143;
 const int _JB2Codec::CELLCHUNK = 20000;
+const int _JB2Codec::CELLEXTRA =   500;
 
 
 // CONSTRUCTOR
@@ -294,23 +297,7 @@ _JB2Codec::_JB2Codec(ByteStream &bs, int encoding)
     rightcell(0),
     refinementp(0),
     gotstartrecordp(0),
-    dist_comment_byte(0),
-    dist_comment_length(0),
-    dist_record_type(0),
-    dist_match_index(0),
-    dist_refinement_flag(0),
-    abs_loc_x(0),
-    abs_loc_y(0),
-    abs_size_x(0),
-    abs_size_y(0),
-    image_size_dist(0),
-    offset_type_dist(0),
-    rel_loc_x_current(0),
-    rel_loc_x_last(0),
-    rel_loc_y_current(0),
-    rel_loc_y_last(0),
-    rel_size_x(0),
-    rel_size_y(0)
+    dist_refinement_flag(0)
 {
   memset(bitdist, 0, sizeof(bitdist));
   memset(cbitdist, 0, sizeof(cbitdist));
@@ -319,11 +306,33 @@ _JB2Codec::_JB2Codec(ByteStream &bs, int encoding)
   bitcells  = new BitContext[max_ncell];
   leftcell  = new NumContext[max_ncell];
   rightcell = new NumContext[max_ncell];
-  bitcells[0] = 0; // dummy cell
-  leftcell[0] = rightcell[0] = 0;
-  cur_ncell = 1;
+  reset_numcoder();
 }
 
+void
+_JB2Codec::reset_numcoder(void)
+{
+  dist_comment_byte = 0;
+  dist_comment_length = 0;
+  dist_record_type = 0;
+  dist_match_index = 0;
+  abs_loc_x = 0;
+  abs_loc_y = 0;
+  abs_size_x = 0;
+  abs_size_y = 0;
+  image_size_dist = 0;
+  rel_loc_x_current = 0;
+  rel_loc_x_last = 0;
+  rel_loc_y_current = 0;
+  rel_loc_y_last = 0;
+  rel_size_x = 0;
+  rel_size_y = 0;
+  cur_ncell = 1;
+  for (int i=0; i<max_ncell; i++)
+    bitcells[i] = 0;
+  for (int i=0; i<max_ncell; i++)
+    leftcell[i] = rightcell[i] = 0;
+}
 
 _JB2Codec::~_JB2Codec()
 {
@@ -513,7 +522,7 @@ _JB2Codec::code_eventual_lossless_refinement()
 {
   int bit;
   if (encoding)
-    bit = refinementp;
+    bit = false;
   CodeBit(bit, dist_refinement_flag);
   if (!encoding)
     refinementp = bit;
@@ -1098,7 +1107,14 @@ _JB2Codec::code_record(int &rectype, JB2Image *jim, JB2Shape *jshp, JB2Blit *jbl
         code_comment(jim->comment);
         break;
       }
-    case LOSSLESS_REFINEMENT:
+    case REQUIRED_DICT_OR_RESET:
+      {
+        if (! gotstartrecordp)
+          THROW("Shared dictionaries are not implemented");
+        // Reset all numerical contexts to zero
+        reset_numcoder();
+        break;
+      }
     case END_OF_DATA:
       break;
     default:
@@ -1313,8 +1329,6 @@ _JB2Codec::code(JB2Image *jim)
         {
           code_record(rectype, jim, &tmpshape, &tmpblit);        
           if (rectype == END_OF_DATA)
-            break;
-          if (rectype == LOSSLESS_REFINEMENT)
             break;
         } 
       if (!gotstartrecordp)
