@@ -70,7 +70,7 @@
     @author
     L\'eon Bottou <leonb@research.att.com>
     @version
-    #$Id: DjVuImage.h,v 1.2 2001-01-04 22:04:53 bcr Exp $# */
+    #$Id: DjVuImage.h,v 1.3 2003-12-30 17:21:17 leonb Exp $# */
 //@{
 
 
@@ -104,7 +104,7 @@
     the library will attempt to decode files whose version field is smaller
     than this macro.  If the version field is greater than or equal to this
     number, the decoder will just throw a \Ref{GException}.  */
-#define DJVUVERSION_TOO_NEW  22
+#define DJVUVERSION_TOO_NEW  50
 //@}
 
 
