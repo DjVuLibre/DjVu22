@@ -109,13 +109,13 @@ bzz: $(BZZOBJS) $(LIB)
 # Documentation
 
 html: libdjvu++.dxx libdjvu++.footer
-	-rm -rf Doc/*.html Doc/*.gif Doc/*.class
+	-rm -rf Doc/*.html Doc/*.gif Doc/*.class Doc/libdjvu*
 	-@mkdir Doc 2>/dev/null
 	${DOCXX} -d Doc -B $(SRCDIR)/libdjvu++.footer $(SRCDIR)/libdjvu++.dxx
 
 tex:  libdjvu++.dxx
-	-@mkdir ../Doc 2>/dev/null
-	${DOCXX} -t -o Doc/libdjvu++.tex -ep fullpage ${SRCDIC}/libdjvu++.dxx
+	-@mkdir Doc 2>/dev/null
+	${DOCXX} -t -o Doc/libdjvu++.tex -ep fullpage ${SRCDIR}/libdjvu++.dxx
 	( cd Doc ; latex libdjvu++.tex ; latex libdjvu++.tex )
 	dvips Doc/libdjvu++.dvi -o
 	gzip -f libdjvu++.ps
