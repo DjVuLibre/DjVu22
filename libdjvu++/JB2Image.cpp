@@ -1330,6 +1330,8 @@ _JB2Codec::code(JB2Image *jim)
           code_record(rectype, jim, &tmpshape, &tmpblit);        
           if (rectype == END_OF_DATA)
             break;
+          if (refinementp && rectype == REQUIRED_DICT_OR_RESET)
+            break;
         } 
       if (!gotstartrecordp)
         THROW("Corrupted file: No start record");
