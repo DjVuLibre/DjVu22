@@ -21,7 +21,7 @@
 //C- FITNESS FOR A PARTICULAR PURPOSE.
 //C-
 
-// File "$Id: IWImage.cpp,v 1.2 2001-01-04 22:04:53 bcr Exp $"
+// File "$Id: IWImage.cpp,v 1.3 2003-12-30 17:21:45 leonb Exp $"
 // - Author: Leon Bottou, 08/1998
 
 #ifdef __GNUC__
@@ -52,147 +52,372 @@
 //----------------------------------------------------
 // Function implementing the elementary IW44 transforms
 
-static inline void 
-forward_filter(short *p, int b, int e, int z, int s)
+static void 
+filter_fv(short *p, int w, int h, int rowsize, int scale)
 {
-  int aa,bb,cc,dd,x,n;
-  int s3 = s + s + s;
-  if (z<b || z>e)
-    THROW("(_IWCoeff::forward_filter) Out of bounds [b<=z<=e]");
-  /* Step 1: prediction */
-  n = z + s;
-  aa = 0;
-  bb = p[n-s];
-  cc = (n+s<e ? p[n+s] : 0);
-  dd = (n+s3<e ? p[n+s3] : 0);
-  if (n < e)
-  {
-    x = bb;
-    if (n+s < e)
-      x = (bb+cc+1)>>1;
-    p[n] = p[n] - x;
-    n = n+s+s;
-  }
-  while (n+s3 < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=p[n+s3];
-    x = (9*(bb+cc)-(aa+dd)+8) >> 4;
-    p[n] = p[n] - x;
-    n = n+s3-s;
-  }
-  if (n+s < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=0;
-    x = (bb+cc+1)>>1;
-    p[n] = p[n] - x;
-    n = n+s+s;
-  }
-  if (n < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=0;
-    x = bb;
-    p[n] = p[n] - x;
-  }
-  /* Step2 : update */
-  n = z;
-  aa = bb = cc = 0;
-  dd = ( n+s<e ? p[n+s] : 0);
-  while (n+s3 < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=p[n+s3];
-#ifdef IW42
-    x = (bb+cc+2) >> 2;
-#else
-    x = (9*(bb+cc)-(aa+dd)+16) >> 5;
-#endif
-    p[n] += x;
-    n = n+s3-s;
-  }
-  while (n < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=0;
-#ifdef IW42
-    x = (bb+cc+2) >> 2;
-#else
-    x = (9*(bb+cc)-(aa+dd)+16) >> 5;
-#endif
-    p[n] += x;
-    n = n+s+s;
-  }
+  int y = 0;
+  int s = scale*rowsize;
+  int s3 = s+s+s;
+  h = ((h-1)/scale)+1;
+  y += 1;
+  p += s;
+  while (y-3 < h)
+    {
+      // 1-Delta
+      {
+        short *q = p;
+        short *e = q+w;
+        if (y>=3 && y+3<h)
+          {
+            // Generic case
+            while (q<e)
+              {
+                int a = (int)q[-s] + (int)q[s];
+                int b = (int)q[-s3] + (int)q[s3];
+                *q -= (((a<<3)+a-b+8)>>4);
+                q += scale;
+              }
+          }
+        else if (y<h)
+          {
+            // Special cases
+            short *q1 = (y+1<h ? q+s : q-s);
+            while (q<e)
+              {
+                int a = (int)q[-s] + (int)(*q1);
+                *q -= ((a+1)>>1);
+                q += scale;
+                q1 += scale;
+              }
+          }
+      }
+      // 2-Update
+      {
+        short *q = p-s3;
+        short *e = q+w;
+        if (y>=6 && y<h)
+          {
+            // Generic case
+            while (q<e)
+              {
+                int a = (int)q[-s] + (int)q[s];
+                int b = (int)q[-s3] + (int)q[s3];
+                *q += (((a<<3)+a-b+16)>>5);
+                q += scale;
+              }
+          }
+        else if (y>=3)
+          {
+            // Special cases
+            short *q1 = (y-2<h ? q+s : 0);
+            short *q3 = (y<h ? q+s3 : 0);
+            if (y>=6)
+              {
+                while (q<e)
+                  {
+                    int a = (int)q[-s] + (q1 ? (int)(*q1) : 0);
+                    int b = (int)q[-s3] + (q3 ? (int)(*q3) : 0);
+                    *q += (((a<<3)+a-b+16)>>5);
+                    q += scale;
+                    if (q1) q1 += scale;
+                    if (q3) q3 += scale;
+                  }
+              }
+            else if (y>=4)
+              {
+                while (q<e)
+                  {
+                    int a = (int)q[-s] + (q1 ? (int)(*q1) : 0);
+                    int b = (q3 ? (int)(*q3) : 0);
+                    *q += (((a<<3)+a-b+16)>>5);
+                    q += scale;
+                    if (q1) q1 += scale;
+                    if (q3) q3 += scale;
+                  }
+              }
+            else
+              {
+                while (q<e)
+                  {
+                    int a = (q1 ? (int)(*q1) : 0);
+                    int b = (q3 ? (int)(*q3) : 0);
+                    *q += (((a<<3)+a-b+16)>>5);
+                    q += scale;
+                    if (q1) q1 += scale;
+                    if (q3) q3 += scale;
+                  }
+              }
+          }
+      }
+      y += 2;
+      p += s+s;
+    }
 }
 
-
-static inline void 
-backward_filter(short *p, int b, int e, int z, int s)
+static void 
+filter_fh(short *p, int w, int h, int rowsize, int scale)
 {
-  int aa,bb,cc,dd,x,n;
-  int s3 = s + s + s;
-  if (z<b || z>e)
-    THROW("(_IWCoeff::backward_filter) Out of bounds [b<=z<=e]");
-  // Step 1: lifting
-  n = z;
-  aa = bb = cc = 0;
-  dd = ( n+s<e ? p[n+s] : 0);
-  while (n+s3 < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=p[n+s3];
-#ifdef IW42
-    x = (bb+cc+2) >> 2;
-#else
-    x = (9*(bb+cc)-(aa+dd)+16) >> 5;
-#endif
-    p[n] -= x;
-    n = n+s3-s;
-  }
-  while (n < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=0;
-#ifdef IW42
-    x = (bb+cc+2) >> 2;
-#else
-    x = (9*(bb+cc)-(aa+dd)+16) >> 5;
-#endif
-    p[n] -= x;
-    n = n+s+s;
-  }
-  // Step 2: interpolation
-  n = z + s;
-  aa = 0;
-  bb = p[n-s];
-  cc = (n+s<e ? p[n+s] : 0);
-  dd = (n+s3<e ? p[n+s3] : 0);
-  if (n < e)
-  {
-    x = bb;
-    if (n+s < e)
-      x = (bb+cc+1)>>1;
-    p[n] += x;
-    n = n+s+s;
-  }
-  while (n+s3 < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=p[n+s3];
-    x = (9*(bb+cc)-(aa+dd)+8) >> 4;
-    p[n] += x;
-    n = n+s3-s;
-  }
-  if (n+s < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=0;
-    x = (bb+cc+1)>>1;
-    p[n] += x;
-    n = n+s+s;
-  }
-  if (n < e)
-  {
-    aa=bb; bb=cc; cc=dd; dd=0;
-    x = bb;
-    p[n] += x;
-  }
+  int y = 0;
+  int s = scale;
+  int s3 = s+s+s;
+  rowsize *= scale;
+  while (y<h)
+    {
+      short *q = p+s;
+      short *e = p+w;
+      int a0=0, a1=0, a2=0, a3=0;
+      int b0=0, b1=0, b2=0, b3=0;
+      if (q < e)
+        {
+          // Special case: x=1
+          a1 = a2 = a3 = q[-s];
+          if (q+s<e)
+            a2 = q[s];
+          if (q+s3<e)
+            a3 = q[s3];
+          b3 = q[0] - ((a1+a2+1)>>1);
+          q[0] = b3;
+          q += s+s;
+        }
+      while (q+s3 < e)
+        {
+          // Generic case
+          a0=a1; 
+          a1=a2; 
+          a2=a3;
+          a3=q[s3];
+          b0=b1; 
+          b1=b2; 
+          b2=b3;
+          b3 = q[0] - ((((a1+a2)<<3)+(a1+a2)-a0-a3+8) >> 4);
+          q[0] = b3;
+          q[-s3] = q[-s3] + ((((b1+b2)<<3)+(b1+b2)-b0-b3+16) >> 5);
+          q += s+s;
+        }
+      while (q < e)
+        {
+          // Special case: w-3 <= x < w
+          a1=a2; 
+          a2=a3;
+          b0=b1; 
+          b1=b2; 
+          b2=b3;
+          b3 = q[0] - ((a1+a2+1)>>1);
+          q[0] = b3;
+          q[-s3] = q[-s3] + ((((b1+b2)<<3)+(b1+b2)-b0-b3+16) >> 5);
+          q += s+s;
+        }
+      while (q-s3 < e)
+        {
+          // Special case  w <= x < w+3
+          b0=b1; 
+          b1=b2; 
+          b2=b3;
+          b3=0;
+          if (q-s3 >= p)
+            q[-s3] = q[-s3] + ((((b1+b2)<<3)+(b1+b2)-b0-b3+16) >> 5);
+          q += s+s;
+        }
+      y += scale;
+      p += rowsize;
+    }
 }
 
+static void 
+filter_bv(short *p, int w, int h, int rowsize, int scale)
+{
+  int y = 0;
+  int s = scale*rowsize;
+  int s3 = s+s+s;
+  h = ((h-1)/scale)+1;
+  while (y-3 < h)
+    {
+      // 1-Lifting
+      {
+        short *q = p;
+        short *e = q+w;
+        if (y>=3 && y+3<h)
+          {
+            // Generic case
+            while (q<e)
+              {
+                int a = (int)q[-s] + (int)q[s];
+                int b = (int)q[-s3] + (int)q[s3];
+                *q -= (((a<<3)+a-b+16)>>5);
+                q += scale;
+              }
+          }
+        else if (y<h)
+          {
+            // Special cases
+            short *q1 = (y+1<h ? q+s : 0);
+            short *q3 = (y+3<h ? q+s3 : 0);
+            if (y>=3)
+              {
+                while (q<e)
+                  {
+                    int a = (int)q[-s] + (q1 ? (int)(*q1) : 0);
+                    int b = (int)q[-s3] + (q3 ? (int)(*q3) : 0);
+                    *q -= (((a<<3)+a-b+16)>>5);
+                    q += scale;
+                    if (q1) q1 += scale;
+                    if (q3) q3 += scale;
+                  }
+              }
+            else if (y>=1)
+              {
+                while (q<e)
+                  {
+                    int a = (int)q[-s] + (q1 ? (int)(*q1) : 0);
+                    int b = (q3 ? (int)(*q3) : 0);
+                    *q -= (((a<<3)+a-b+16)>>5);
+                    q += scale;
+                    if (q1) q1 += scale;
+                    if (q3) q3 += scale;
+                  }
+              }
+            else
+              {
+                while (q<e)
+                  {
+                    int a = (q1 ? (int)(*q1) : 0);
+                    int b = (q3 ? (int)(*q3) : 0);
+                    *q -= (((a<<3)+a-b+16)>>5);
+                    q += scale;
+                    if (q1) q1 += scale;
+                    if (q3) q3 += scale;
+                  }
+              }
+          }
+      }
+      // 2-Interpolation
+      {
+        short *q = p-s3;
+        short *e = q+w;
+        if (y>=6 && y<h)
+          {
+            // Generic case
+            while (q<e)
+              {
+                int a = (int)q[-s] + (int)q[s];
+                int b = (int)q[-s3] + (int)q[s3];
+                *q += (((a<<3)+a-b+8)>>4);
+                q += scale;
+              }
+          }
+        else if (y>=3)
+          {
+            // Special cases
+            short *q1 = (y-2<h ? q+s : q-s);
+            while (q<e)
+              {
+                int a = (int)q[-s] + (int)(*q1);
+                *q += ((a+1)>>1);
+                q += scale;
+                q1 += scale;
+              }
+          }
+      }
+      y += 2;
+      p += s+s;
+    }
+}
 
-
+static void 
+filter_bh(short *p, int w, int h, int rowsize, int scale)
+{
+  int y = 0;
+  int s = scale;
+  int s3 = s+s+s;
+  rowsize *= scale;
+  while (y<h)
+    {
+      short *q = p;
+      short *e = p+w;
+      int a0=0, a1=0, a2=0, a3=0;
+      int b0=0, b1=0, b2=0, b3=0;
+      if (q<e)
+        {
+          // Special case:  x=0
+          if (q+s < e)
+            a2 = q[s];
+          if (q+s3 < e)
+            a3 = q[s3];
+          b2 = b3 = q[0] - ((((a1+a2)<<3)+(a1+a2)-a0-a3+16) >> 5);
+          q[0] = b3;
+          q += s+s;
+        }
+      if (q<e)
+        {
+          // Special case:  x=2
+          a0 = a1;
+          a1 = a2;
+          a2 = a3;
+          if (q+s3 < e)
+            a3 = q[s3];
+          b3 = q[0] - ((((a1+a2)<<3)+(a1+a2)-a0-a3+16) >> 5);
+          q[0] = b3;
+          q += s+s;
+        }
+      if (q<e)
+        {
+          // Special case:  x=4
+          b1 = b2;
+          b2 = b3;
+          a0 = a1;
+          a1 = a2;
+          a2 = a3;
+          if (q+s3 < e)
+            a3 = q[s3];
+          b3 = q[0] - ((((a1+a2)<<3)+(a1+a2)-a0-a3+16) >> 5);
+          q[0] = b3;
+          q[-s3] = q[-s3] + ((b1+b2+1)>>1);
+          q += s+s;
+        }
+      while (q+s3 < e)
+        {
+          // Generic case
+          a0=a1; 
+          a1=a2; 
+          a2=a3;
+          a3=q[s3];
+          b0=b1; 
+          b1=b2; 
+          b2=b3;
+          b3 = q[0] - ((((a1+a2)<<3)+(a1+a2)-a0-a3+16) >> 5);
+          q[0] = b3;
+          q[-s3] = q[-s3] + ((((b1+b2)<<3)+(b1+b2)-b0-b3+8) >> 4);
+          q += s+s;
+        }
+      while (q < e)
+        {
+          // Special case:  w-3 <= x < w
+          a0=a1;
+          a1=a2; 
+          a2=a3;
+          a3=0;
+          b0=b1; 
+          b1=b2; 
+          b2=b3;
+          b3 = q[0] - ((((a1+a2)<<3)+(a1+a2)-a0-a3+16) >> 5);
+          q[0] = b3;
+          q[-s3] = q[-s3] + ((((b1+b2)<<3)+(b1+b2)-b0-b3+8) >> 4);
+          q += s+s;
+        }
+      while (q-s3 < e)
+        {
+          // Special case  w <= x < w+3
+          b0=b1; 
+          b1=b2; 
+          b2=b3;
+          if (q-s3 >= p)
+            q[-s3] = q[-s3] + ((b1+b2+1)>>1);
+          q += s+s;
+        }
+      y += scale;
+      p += rowsize;
+    }
+}
 
 
 
@@ -206,12 +431,8 @@ forward(short *p, int w, int h, int rowsize, int begin, int end)
 {  
   for (int scale=begin; scale<end; scale<<=1)
     {
-      for (int i=0; i<h; i+=scale)
-        forward_filter(p, i*rowsize, i*rowsize+w, i*rowsize, scale);
-      for (int j=0; j<w; j+=scale)
-        forward_filter(p, j, j+h*rowsize, j, scale*rowsize);
-      // Progress
-      DJVU_PROGRESS("decomp",scale);
+      filter_fh(p, w, h, rowsize, scale);
+      filter_fv(p, w, h, rowsize, scale);
     }
 }
 
@@ -220,10 +441,8 @@ backward(short *p, int w, int h, int rowsize, int begin, int end)
 { 
   for (int scale=begin>>1; scale>=end; scale>>=1)
     {
-      for (int j=0; j<w; j+=scale)
-        backward_filter(p, j, j+h*rowsize, j, scale*rowsize);
-      for (int i=0; i<h; i+=scale)
-        backward_filter(p, i*rowsize, i*rowsize+w, i*rowsize, scale);
+      filter_bv(p, w, h, rowsize, scale);
+      filter_bh(p, w, h, rowsize, scale);
     }
 }
 
@@ -370,8 +589,6 @@ interpolate_mask(short *data16, int w, int h, int rowsize,
   // free memory
   delete [] count;
   delete [] sdata;
-  // progress
-  DJVU_PROGRESS("interpolate",0);
 }
 
 
@@ -390,13 +607,8 @@ forward_mask(short *data16, int w, int h, int rowsize, int begin, int end,
   m = smask;
   for (i=0; i<h; i+=1, m+=w, mask8+=mskrowsize)
     memcpy((void*)m, (void*)mask8, w);
-  // Compute maximal number of iterations
-  int maxit = 8+5+1;
-  for (rp=w*h; rp>0; rp>>=1)
-    maxit += 1;
   // Loop over scale
-  int minerr = iw_round;
-  for (int scale=begin; scale<end; scale<<=1, minerr>>=1)
+  for (int scale=begin; scale<end; scale<<=1)
     {
       // Copy data into sdata buffer
       p = data16;
@@ -408,89 +620,44 @@ forward_mask(short *data16, int w, int h, int rowsize, int begin, int end,
           p += rowsize * scale;
           d += w * scale;
         }
-      // Iterate
-      int lasterr = 255 << iw_shift;
-      int overshoot = 1;
-      for (rp=0; rp<maxit; rp++)
+      // Decompose
+      forward(sdata, w, h, w, scale, scale+scale);
+      // Cancel masked coefficients
+      d = sdata;
+      m = smask;
+      for (i=0; i<h; i+=scale+scale)
         {
-          DJVU_PROGRESS("masking", scale*1000 + rp);
-          // Decompose
-          for (i=0; i<h; i+=scale)
-            forward_filter(sdata, i*w, i*w+w, i*w, scale);
-          for (j=0; j<w; j+=scale)
-            forward_filter(sdata, j, j+h*w, j, scale*w);
-          // Zero masked coefficients
-          d = sdata;
-          m = smask;
-          for (i=0; i<h; i+=scale+scale)
-            {
-              for (j=scale; j<w; j+=scale+scale)
-                if (m[j])
-                  d[j] = (overshoot ? -d[j]>>1 : 0);
-              d += w * scale;
-              m += w * scale;
-              if (i+scale < h)
-                {
-                  for (j=0; j<w; j+=scale)
-                    if (m[j])
-                      d[j] = (overshoot ? -d[j]>>1 : 0);
-                  d += w * scale;
-                  m += w * scale;
-                }
-            }
-          if (lasterr <= minerr)
-            break;
-          if (quickmask && scale==1)
-            break;
-          // Reconstruct
-          for (j=0; j<w; j+=scale)
-            backward_filter(sdata, j, j+h*w, j, scale*w);
-          for (i=0; i<h; i+=scale)
-            backward_filter(sdata, i*w, i*w+w, i*w, scale);
-          // Evaluate max error
-          lasterr = 0;
-          p = data16;
-          d = sdata;
-          m = smask;
-          for (i=0; i<h; i+=scale)
+          for (j=scale; j<w; j+=scale+scale)
+            if (m[j])
+              d[j] = 0;
+          d += w * scale;
+          m += w * scale;
+          if (i+scale < h)
             {
               for (j=0; j<w; j+=scale)
-                if (! m[j])
-                  {
-                    short error = p[j] - d[j];
-                    if (error > lasterr)
-                      lasterr = error;
-                    else if (-error > lasterr)
-                      lasterr = -error;
-                    d[j] = (overshoot ? p[j] + (error>>1) : p[j]);
-                  }
-              p += rowsize*scale;
-              m += w*scale;
-              d += w*scale;
-            }
-#ifdef TRACEMASK
-          printf("scale %d, iteration %d, maxerr=%d %c\n", 
-                 scale, rp, lasterr, overshoot ? '+' : ' ');
-#endif
-          // Cancel overshooting and force continuation
-          if (lasterr<=minerr && overshoot) 
-            {
-              lasterr = 255 << iw_shift;
-              overshoot = 0;
+                if (m[j])
+                  d[j] = 0;
+              d += w * scale;
+              m += w * scale;
             }
         }
-      // Decompose if we had too many iterations
-      if (rp >= maxit)
+      // Reconstruct
+      backward(sdata, w, h, w, scale+scale, scale);
+      // Correct visible pixels
+      p = data16;
+      d = sdata;
+      m = smask;
+      for (i=0; i<h; i+=scale)
         {
-#ifdef TRACEMASK
-          printf("numerical accuracy limit reached at scale %d\n", scale);
-#endif
-          delete [] sdata;
-          delete [] smask;
-          forward(data16, w, h, rowsize, scale, end);
-          DJVU_PROGRESS("masking", 999999);
-          return;
+          for (j=0; j<w; j+=scale)
+            if (! m[j])
+              d[j] = p[j];
+          p += rowsize*scale;
+          m += w*scale;
+          d += w*scale;
         }
+      // Decompose again (no need to iterate actually!)
+      forward(sdata, w, h, w, scale, scale+scale);
       // Copy coefficients from sdata buffer
       p = data16;
       d = sdata;
@@ -501,7 +668,7 @@ forward_mask(short *data16, int w, int h, int rowsize, int begin, int end,
           p += rowsize * scale;
           d += w * scale;
         }
-      // Compute new mask
+      // Compute new mask for next scale
       m = smask;
       signed char *m0 = m;
       signed char *m1 = m;
@@ -511,7 +678,9 @@ forward_mask(short *data16, int w, int h, int rowsize, int begin, int end,
           if (i+scale < h)
             m1 = m + w*scale;
           for (j=0; j<w; j+=scale+scale)
-            if (m[j] && m0[j] && m1[j] && (j<=0 || m[j-scale]) && (j+scale>=w || m[j+scale]))
+            if (m[j] && m0[j] && m1[j] 
+                && (j<=0 || m[j-scale]) 
+                && (j+scale>=w || m[j+scale]))
               m[j] = 1;
             else
               m[j] = 0;
@@ -521,8 +690,6 @@ forward_mask(short *data16, int w, int h, int rowsize, int begin, int end,
   // Free buffers
   delete [] sdata;
   delete [] smask;
-  // Progress
-  DJVU_PROGRESS("masking", 999999);
 }
 
 
@@ -904,8 +1071,6 @@ _IWMap::create(const signed char *img8, int imgrowsize,
     }
   // Free decomposition buffer
   delete [] data16;
-  // Progress
-  DJVU_PROGRESS("decomposition",0);
 }
 
 void 
@@ -2220,7 +2385,6 @@ IWBitmap::encode_chunk(ByteStream &bs, const IWEncoderParms &parm)
           if (ycodec->curband==0 || estdb>=parm.decibels-DECIBEL_PRUNE)
             estdb = ycodec->estimate_decibel(db_frac);
         nslices++;
-        DJVU_PROGRESS("slice", cslice+nslices);
       }
   }
   // Write primary header
@@ -2332,46 +2496,120 @@ rgb_to_ycc[3][3] =
   { 0.463768F, -0.405797F, -0.057971F},
   {-0.173913F, -0.347826F,  0.521739F} };
 
-static inline signed char
-RGB_to_Y(int r, int g, int b)
-{
-  int y = (int) ( rgb_to_ycc[0][0] * r +
-                  rgb_to_ycc[0][1] * g + 
-                  rgb_to_ycc[0][2] * b + 0.5 );
-  assert(y>=0 && y<256);
-  return (signed char) (y - 128);
+#ifdef min
+#undef min
+#endif
+static inline 
+int min(const int x,const int y) {
+  return (x<y)?x:y; 
+}
+#ifdef max
+#undef max
+#endif
+static inline 
+int max(const int x,const int y) {
+  return (x>y)?x:y;
 }
 
-static inline signed char
-RGB_to_CR(int r, int g, int b)
+
+/* Extracts Y */
+static void RGB_to_Y(const GPixel *p, 
+                     int w, int h, int rowsize, 
+                     signed char *out, int outrowsize)
 {
-  int cr = (int) ( rgb_to_ycc[1][0] * r +
-                   rgb_to_ycc[1][1] * g + 
-                   rgb_to_ycc[1][2] * b + 0.5 );
-  return (signed char) max(-128, min(127, cr));
+  int rmul[256], gmul[256], bmul[256];
+  for (int k=0; k<256; k++)
+    {
+      rmul[k] = (int)(k*0x10000*rgb_to_ycc[0][0]);
+      gmul[k] = (int)(k*0x10000*rgb_to_ycc[0][1]);
+      bmul[k] = (int)(k*0x10000*rgb_to_ycc[0][2]);
+    }
+  for (int i=0; i<h; i++, p+=rowsize, out+=outrowsize)
+    {
+      const GPixel *p2 = p;
+      signed char *out2 = out;
+      for (int j=0; j<w; j++,p2++,out2++)
+        {
+          int y = rmul[p2->r] + gmul[p2->g] + bmul[p2->b] + 32768;
+          *out2 = (y>>16) - 128;
+        }
+    }
 }
 
-static inline signed char
-RGB_to_CB(int r, int g, int b)
+/* Extracts Cb */
+static void 
+RGB_to_Cb(const GPixel *p, 
+          int w, int h, int rowsize, 
+          signed char *out, int outrowsize)
 {
-  int cb = (int) ( rgb_to_ycc[2][0] * r +
-                   rgb_to_ycc[2][1] * g + 
-                   rgb_to_ycc[2][2] * b + 0.5 );
-  return (signed char) max(-128, min(127, cb));
+  int rmul[256], gmul[256], bmul[256];
+  for (int k=0; k<256; k++)
+    {
+      rmul[k] = (int)(k*0x10000*rgb_to_ycc[2][0]);
+      gmul[k] = (int)(k*0x10000*rgb_to_ycc[2][1]);
+      bmul[k] = (int)(k*0x10000*rgb_to_ycc[2][2]);
+    }
+  for (int i=0; i<h; i++, p+=rowsize, out+=outrowsize)
+    {
+      const GPixel *p2 = p;
+      signed char *out2 = out;
+      for (int j=0; j<w; j++,p2++,out2++)
+        {
+          int c = rmul[p2->r] + gmul[p2->g] + bmul[p2->b] + 32768;
+          *out2 = max(-128, min(127, c>>16));
+        }
+    }
 }
 
-static inline void
-YCC_to_RGB(int y, int b, int r, GPixel *p)
+/* Extracts Cr */
+static void 
+RGB_to_Cr(const GPixel *p, 
+          int w, int h, int rowsize, 
+          signed char *out, int outrowsize)
 {
-  int t1 = b >> 2 ; 
-  int t2 = r + (r >> 1);
-  int t3 = y + 128 - t1;
-  int tr = y + 128 + t2;
-  int tg = t3 - (t2 >> 1);
-  int tb = t3 + (b << 1);
-  p->r = max(0,min(255,tr));
-  p->g = max(0,min(255,tg));
-  p->b = max(0,min(255,tb));
+  int rmul[256], gmul[256], bmul[256];
+  for (int k=0; k<256; k++)
+    {
+      rmul[k] = (int)((k*0x10000)*rgb_to_ycc[1][0]);
+      gmul[k] = (int)((k*0x10000)*rgb_to_ycc[1][1]);
+      bmul[k] = (int)((k*0x10000)*rgb_to_ycc[1][2]);
+    }
+  for (int i=0; i<h; i++, p+=rowsize, out+=outrowsize)
+    {
+      const GPixel *p2 = p;
+      signed char *out2 = out;
+      for (int j=0; j<w; j++,p2++,out2++)
+        {
+          int c = rmul[p2->r] + gmul[p2->g] + bmul[p2->b] + 32768;
+          *out2 = max(-128, min(127, c>>16));
+        }
+    }
+}
+
+static void 
+YCbCr_to_RGB(GPixel *p, 
+             int w, int h, int rowsize)
+{
+  for (int i=0; i<h; i++,p+=rowsize)
+    {
+      GPixel *q = p;
+      for (int j=0; j<w; j++,q++)
+        {
+          signed char y = ((signed char*)q)[0];
+          signed char b = ((signed char*)q)[1];
+          signed char r = ((signed char*)q)[2];
+          // This is the Pigeon transform
+          int t1 = b >> 2 ; 
+          int t2 = r + (r >> 1);
+          int t3 = y + 128 - t1;
+          int tr = y + 128 + t2;
+          int tg = t3 - (t2 >> 1);
+          int tb = t3 + (b << 1);
+          q->r = max(0,min(255,tr));
+          q->g = max(0,min(255,tg));
+          q->b = max(0,min(255,tb));
+        }
+    }
 }
 
 
@@ -2450,15 +2688,13 @@ IWPixmap::init(const GPixmap *pm, const GBitmap *mask, CRCBMode crcbmode)
           mskrowsize = mask->rowsize();
         }
       // Fill buffer with luminance information
-      for (i=0; i<h; i++)
+      RGB_to_Y((*pm)[0], w, h, pm->rowsize(), buffer, w);
+      if (crcb_delay < 0)
         {
-          signed char *bufrow = buffer + i*w;
-          const GPixel *pixrow = (*pm)[i];
-          for (int j=0; j<w; j++, pixrow++)
-            bufrow[j] = RGB_to_Y(pixrow->r, pixrow->g, pixrow->b);
-          if (crcb_delay < 0)
-            for (int j=0; j<w; j++, pixrow++)
-              bufrow[j] = 255 - bufrow[j];
+          // Stupid inversion for gray images
+          signed char *e = buffer + w*h;
+          for (signed char *b=buffer; b<e; b++)
+            *b = 255 - *b;
         }
       // Create YMAP
       ymap->create(buffer, w, msk8, mskrowsize);
@@ -2467,24 +2703,12 @@ IWPixmap::init(const GPixmap *pm, const GBitmap *mask, CRCBMode crcbmode)
         {
           // Fill buffer with CB information
           cbmap = new _IWMap(w,h);
-          for (i=0; i<h; i++)
-            {
-              signed char *bufrow = buffer + i*w;
-              const GPixel *pixrow = (*pm)[i];
-              for (int j=0; j<w; j++, pixrow++)
-                bufrow[j] = RGB_to_CB(pixrow->r, pixrow->g, pixrow->b);
-            }
+          RGB_to_Cb((*pm)[0], w, h, pm->rowsize(), buffer, w);
           // Create chrominance map (CB) with half resolution
           cbmap->create(buffer, w, msk8, mskrowsize, crcb_half);
           // Fill buffer with CR information
           crmap = new _IWMap(w,h);
-          for (i=0; i<h; i++)
-            {
-              signed char *bufrow = buffer + i*w;
-              const GPixel *pixrow = (*pm)[i];
-              for (int j=0; j<w; j++, pixrow++)
-                bufrow[j] = RGB_to_CR(pixrow->r, pixrow->g, pixrow->b);
-            }
+          RGB_to_Cr((*pm)[0], w, h, pm->rowsize(), buffer, w); 
           // Create chrominance map (CR) with half resolution
           crmap->create(buffer, w, msk8, mskrowsize, crcb_half);
           // Perform chrominance reduction (CRCBhalf)
@@ -2589,29 +2813,25 @@ IWPixmap::get_pixmap()
   int pixsep = sizeof(GPixel);
   ymap->image(ptr, rowsep, pixsep);
   if (crmap && cbmap && crcb_delay >= 0)
-  {
-    cbmap->image(ptr+1, rowsep, pixsep, crcb_half);
-    crmap->image(ptr+2, rowsep, pixsep, crcb_half);
-  }
-  // Convert image data to RGB
-  for (int i=0; i<h; i++)
     {
-      GPixel *pixrow = (*ppm)[i];
-      if (crmap && cbmap && crcb_delay >= 0)
+      cbmap->image(ptr+1, rowsep, pixsep, crcb_half);
+      crmap->image(ptr+2, rowsep, pixsep, crcb_half);
+    }
+  // Convert image data to RGB
+  if (crmap && cbmap && crcb_delay >= 0)
+    {
+      YCbCr_to_RGB((*ppm)[0], w, h, ppm->rowsize());
+    }
+  else
+    {
+      for (int i=0; i<h; i++)
         {
-          for (int j=0; j<w; j++, pixrow++)
-            YCC_to_RGB(((signed char*)pixrow)[0], 
-                       ((signed char*)pixrow)[1], 
-                       ((signed char*)pixrow)[2], 
-                       pixrow );
-        }
-      else
-        {
+          GPixel *pixrow = (*ppm)[i];
           for (int j=0; j<w; j++, pixrow++)
             pixrow->b = pixrow->g = pixrow->r 
               = 127 - (int)(((signed char*)pixrow)[0]);
         }
-    }
+    }      
   // Return
   return ppm;
 }
@@ -2638,24 +2858,20 @@ IWPixmap::get_pixmap(int subsample, const GRect &rect)
     crmap->image(subsample, rect, ptr+2, rowsep, pixsep, crcb_half);
   }
   // Convert image data to RGB
-  for (int i=0; i<h; i++)
+  if (crmap && cbmap && crcb_delay >= 0)
     {
-      GPixel *pixrow = (*ppm)[i];
-      if (crmap && cbmap && crcb_delay >= 0)
-        {
-          for (int j=0; j<w; j++, pixrow++)
-            YCC_to_RGB(((signed char*)pixrow)[0], 
-                       ((signed char*)pixrow)[1], 
-                       ((signed char*)pixrow)[2], 
-                       pixrow );
-        }
-      else
-        {
-          for (int j=0; j<w; j++, pixrow++)
-          pixrow->b = pixrow->g = pixrow->r 
-            = 127 - (int)(((signed char*)pixrow)[0]);
-        }
+      YCbCr_to_RGB((*ppm)[0], w, h, ppm->rowsize());
     }
+  else
+    {
+      for (int i=0; i<h; i++)
+        {
+          GPixel *pixrow = (*ppm)[i];
+          for (int j=0; j<w; j++, pixrow++)
+            pixrow->b = pixrow->g = pixrow->r 
+              = 127 - (int)(((signed char*)pixrow)[0]);
+        }
+    }      
   // Return
   return ppm;
 }
@@ -2793,7 +3009,6 @@ IWPixmap::encode_chunk(ByteStream &bs, const IWEncoderParms &parm)
             flag |= crcodec->code_slice(zp);
           }
         nslices++;
-        DJVU_PROGRESS("slice", cslice+nslices);
       }
   }
   // Write primary header
